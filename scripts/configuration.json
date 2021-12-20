@@ -1,0 +1,257 @@
+{
+    "APP": {
+        "NAME": "ANS translation service",
+        "ENVIRONMENT": "test",
+        "DEBUG": true
+    },
+    "TRAINING": {
+        "1st ROUND DATASETS": ["ICD-10", "CHU Rouen", "ORDO", "ACAD 2019", "MEDDRA", "ATC", "MESH", "ICD-O", "DBPEDIA", "ICPC", "ICF"],
+        "3rd ROUND DATASETS": ["ICD-10", "CHU Rouen", "ORDO", "ACAD 2019", "MEDDRA", "ATC", "MESH", "ICD-O", "DBPEDIA", "ICF"],
+        "4th ROUND DATASETS": ["ICD-10", "CHU Rouen", "ORDO", "ACAD 2019", "MEDDRA", "ATC", "MESH", "ICD-O", "DBPEDIA", "ICPC", "ICF", "PATTR"],
+        "5th ROUND DATASETS": ["ICD-10", "CHU Rouen", "ORDO", "ACAD 2019", "MEDDRA", "ATC", "MESH", "ICD-O", "DBPEDIA", "ICF", "MEDLINE", "SCIELO"],
+    },
+    "TEST": {
+        "ground_truth_ASIP": {
+            "path": "ground_truth_ASIP.csv"
+        },
+        "regressions": {
+            "path": "regressions.csv"
+        }
+    },
+    "INFERENCE": {
+        "MULTIPLE": false,
+        "GPU": true,
+    }
+    "TRANSLATE TERMINOLOGY": {
+        "GENERAL RULES": {
+            "PREPROCESSING": {
+              "REMOVE RARE SPECIAL CHARACTERS": true
+            }
+        },
+        "ICD11": {
+            "TRAINING DATASETS": ["ICD10", "MESH"],
+            "RULES": {
+              "TRAINING LOWERCASE ALL": false,
+              "REMOVE LEADING OR TRAILING PUNCTUATION": false,
+              "PREPROCESSING": {
+
+              },
+              "POSTPROCESSING": {
+                "rules": {
+                  "replace": {
+                  "items": {
+                    "non classée ailleurs": "SAI",
+                    "non classé ailleurs": "SAI",
+                    " nca": " sai"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "SNOMED-CT": {
+            "TRAINING DATASETS": [],
+            "RULES": {
+              "LOWERCASE ALL": false,
+              "GENERAL": {
+                  "Style général et syntaxe": {
+                    "ss1": {
+                        "description_en": "General case: Term - including the first letter - in lowercase and insensitive to case.",
+                        "description_fr" : "Cas général : Terme – y compris la première lettre – en minuscules et insensible à la casse.",
+                        "exceptions" : "présence de noms propres, symboles, codes, sigles, acronymes ou taxons comportant des majuscules et/ou des minuscules imposées.",
+                        "exemple": "pH ; IgG ; ADN ; Legionella anisa ; Epstein-Barr",
+                        "solution": "do not lower all dataset or use existing lowered case datasets during training",
+                        "int": "x"
+                    },
+                    "ss2": {
+                        "description_fr": "Terme au singulier sauf pour les concepts impliquant un pluriel intrinsèque.",
+                        "description_en": "Singular term except for concepts involving an intrinsic plural.",
+                        "exemples": "Exemples :
+                                  - Hospital furniture -> mobilier d’hôpital (et non meubles d’hôpitaux)
+                                  - Breasts asymmetrical -> seins asymétriques
+                                  - Inpatient rehabilitation environment -> milieu de réadaptation pour patients hospitalisés",
+                        "solution": "remove data that do not follow the rule",
+                        "int": "x"
+                    },
+                    "ss3": {
+                        "description_fr": "Recherche de l’économie de mots pour le terme préféré : privilégier forme adjectivale ou participe présent pour éviter une proposition relative ou un complément prépositionnel.",
+                        "description_en": "Word economy search for the preferred term: favor adjectival form or present participle to avoid a relative clause or a prepositional complement.",
+                        "Exemples": "traumatisme crânien ; maladie affectant la grossesse",
+
+                    }
+                  },
+                  "Graphie : application minimale de la nouvelle orthographe de 1990": {
+                    "or1": {
+                        "description_fr": "Positionner les trémas sur la lettre à prononcer.",
+                        "description_en": "Position the umlauts on the letter to be pronounced.",
+                        "exemple": "otite aigüe (et non pas aiguë)",
+                        "solution": "replace letters with right ones",
+                        "apply": "or1_orthographe_replace"
+                    }
+                  },
+                  "Emploi des abréviations, acronymes et sigles": {
+                    "ab1": {
+                        "description_fr": "Eviter les abréviations et écrire les mots en entier sauf abréviation incontournable consacrée par l’usage.",
+                        "description_en": "Avoid abbreviations and write the words in full except for unavoidable abbreviations established by usage.",
+                        "exemple": "Salmonella enterica subsp. diarizonae -> Salmonella enterica subspecies Diarizonae",
+                        "solution": "replace words not in vocabulary with period in the end with most suitable"
+                    },
+                  },
+                  "Unités de mesure": {
+                    "um1": {
+                      "description_fr": "Les unités de mesure sont abrégées conformément aux règles du SI",
+                      "description_en": "The units of measurement are abbreviated according to the rules of the SI",
+                      "exemples": "m = mètre ; s = seconde ; Pa = pascal ; m3 = mètre cube",
+                      "int": "x"
+                    },
+                    "um2": {
+                      "description_fr": "Les unités de température sont exprimées en forme développée - degrés Celsius.",
+                      "description_en": "Temperature units are expressed in the developed form - degrees Celsius.",
+                      "exemple": "Fever greater than 38 Celsius -> Fièvre supérieure à 38 degrés Celsius"
+                    },
+                    "um3": {
+                      "description_fr": "Les degrés d’angle sont exprimés en forme développée sauf lorsque le contexte ne laisse aucune ambigüité sur la nature de l’unité.",
+                      "description_en": "Angle degrees are expressed in expanded form except when the context leaves no ambiguity about the nature of the unit.",
+                      "exemple": "Left axis deviation greater than -90 degrees by electrocardiogram -> déviation de l’axe gauche supérieure à -90 degrés par électrocardiogramme"
+                    },
+                    "um4": {
+                      "description_fr": "L'abréviation de l’unité de mesure 'litre' est la lettre majuscule L pour éviter toute confusion entre l'abréviation de litre (l) et le chiffre 1.",
+                      "description_en": "The abbreviation for the unit of measurement 'liter' is the capital letter L to avoid confusion between the abbreviation of liter (l) and the number 1.",
+                      "exemple": "mmol/L = millimoles par litre ; umol/L = micromoles par litre"
+                    },
+                    "um5": {
+                      "description_fr": "Dans la représentation d’une quantité un espace sépare le nombre de l’unité de mesure qui le qualifie.",
+                      "description_en": "In the representation of a quantity, a space separates the number from the unit of measurement that qualifies it.",
+                      "exemple": "0,75 g"
+                    },
+                    "um6": {
+                      "description_fr": 'L'anglais "percent" et "%" se traduisent par le symbole %. Un espace sépare la quantité du symbole (rôle d'unité).',
+                      "description_en": 'English "percent" and "%" translate to the symbol%. A space separates the quantity from the symbol (unit role).',
+                      "exemple : 75 %",
+                      "solution": {
+                          "replace": {
+                            "percent": "%"
+                          }
+                      }
+                    },
+                    "um8": {
+                      "description_fr": "La lettre μ signifiant micro dans une unité est remplacé par la lettre u.",
+                      "description_en": "The letter μ meaning micro in a unit is replaced by the letter u.",
+                      "exemple", "umol / L (micromoles per liter)",
+                      "solution": "when unit is found, μ is replaced with u",
+                      "apply":  "um8_unit_replace"
+                    }
+                  },
+                  "Symboles scientifiques, chiffres et nombres": {
+                    "sc4": {
+                      "description_fr": "Le séparateur des milliers est l'espace.",
+                      "description_en": "The separator of the thousands is space.",
+                      "exemple": "100 000 000 (pour cent millions)"
+                    },
+                    "sc6": {
+                      "description_fr": "Les symboles de comparaison '<' (inférieur à) et '>' sont remplacés par l'expression en clair pour éviter les risques de mésinterprétation.",
+                      "description_en": "The comparison symbols '<' (less than) and '>' are replaced by the plain expression to avoid the risk of misinterpretation.",
+                      "exemple": "T1 : taille de la tumeur inférieure à 1 cm, limitée à la glande thyroïde ; marge supérieure ou égale à 1 mm"
+                    }
+                  },
+                  "Lettres grecques": {
+                    "gr1": {
+                      "description_fr": "Les lettres grecques sont écrites en forme longue.",
+                      "description_en": "Greek letters are written in long form.",
+                      "exception": "la lettre μ (micro) dans une unité (comme indiqué plus haut)",
+                      "exemple": "- Beta-lactamase inhibitor -> inhibiteur de bêta-lactamase - Alpha fetoprotein -> alpha-fœtoprotéine",
+                      "solution": "replace greek letters with long form",
+                      "apply": "gr1_replace_greek_letter_with_long"
+                    }
+                  },
+                  "Règles propres à la hiérarchie des pathologies (disorder)": {
+                    "pa1": {
+                      "description_fr": "Le synonyme préféré du concept 64572001 |Disease (disorder)|est « pathologie », terme le plus général pouvant regrouper les maladies, troubles, anomalies, traumas et blessures présents dans cette hiérarchie.",
+                      "description_en": "The preferred synonym for the concept 64572001 | Disease (disorder) | is “pathology”, the most general term that can group together the diseases, disorders, anomalies, traumas and injuries present in this hierarchy."
+                    },
+                    "pa2": {
+                      "description_fr": "Le mot « disorder » apparaissant dans le terme préféré anglais se traduit selon les cas par :
+                                        - trouble (si l’objet est une fonction),
+                                        - affection (si l’objet est une structure corporelle),
+                                        - désordre ou anomalie ou rien dans les autres cas",
+                      "description_fr": "The word 'disorder' appearing in the preferred English term is translated as appropriate by:
+                                          - trouble (if the object is a function),
+                                          - affection (if the object is a body structure),
+                                          - disorder or anomaly or nothing in other cases",
+                      "exemple": "Eating disorder -> trouble de l’alimentation
+                                  Sleep disorder -> trouble du sommeil
+                                  Developmental disorder -> trouble du développement Disorder of skin -> affection de la peau
+                                  Lung disorder -> affection du poumon
+                                  Rectal disorder -> affection rectale
+                                  Disorder of electrolytes -> désordre hydroélectrolytique
+                                  Chromosomal disorder -> anomalie chromosomique
+                                  Disorder of acid-base balance -> déséquilibre acidobasique",
+                      "apply": "disorder_fix"
+                    }
+                  },
+                  "Règles propres à la hiérarchie des procédures": {
+                    "pr1": {
+                      "description_fr": "Le sommet de hiérarchie 71388002 |Procedure (procedure)| a pour terme préféré « procédure » qui est le terme le plus général et le plus neutre pour couvrir toutes les catégories d’actions intentionnelles du champ sanitaire présentes dans cette hiérarchie : interventions chirurgicales, consultations, conseil, administration de médicaments, régimes alimentaires, procédures administratives, examens et tests, évaluations ...",
+                      "description_en": "The top of the hierarchy 71388002 | Procedure (procedure) | has for preferred term 'procedure' which is the most general and the most neutral term to cover all the categories of intentional actions of the health field present in this hierarchy: surgical interventions, consultations, advice, administration of drugs, diets, procedures administrative, examinations and tests, evaluations ..."
+                    },
+                    "pr2": {
+                      "description_fr": "le nom « procedure » apparaissant dans les termes de cette hiérarchie se traduit par « procédure » sauf lorsque le terme représente une intervention chirurgicale auquel cas c’est le nom « intervention » qui s’impose.",
+                      'description_en': 'the name "procedure" appearing in the terms of this hierarchy translates to "procedure" except when the term represents a surgical intervention in which case the name "intervention" is required.',
+                      "exemple": "Administrative procedure -> procédure administrative,
+                                  Delivery procedure -> intervention liée à l’accouchement,
+                                  Postoperative procedure -> procédure postopératoire,
+                                  Laboratory procedure -> procédure de laboratoire,
+                                  Laparoscopic procedure -> intervention laparoscopique,
+                                  Obstetric procedure -> procédure obstétricale,
+                                  Administration of anesthesia for obstetric procedure -> administration d’anesthésique pour une intervention obstétricale"
+                    },
+                    "pr3": {
+                      'description_fr': 'Le nom « consultation » se traduit par « consultation »',
+                      'description_en': 'The name "consultation" translates to "consultation"'
+                    },
+                    "pr4": {
+                      "description_fr": "Traduction de « excision », « resection » et du suffixe « ectomy » :
+                                          • l’ablation d’un fragment d’organe est désignée par le français « excision »
+                                          • l’ablation d’un organe entier ou d’un corps étranger est désignée par le français « exérèse »
+                                          • l’ablation d’un segment d’organe est désignée par le français « résection »
+                                          • l’ablation de tissu se traduit par « ablation »
+                                          • l’ablation d’un artefact ou dispositif se traduit par
+                                          « retrait »
+                                          • excisional biopsy se traduit par « biopsie-exérèse »
+                                          • incisional biopsy se traduit par « biopsie incisionnelle »
+                                          • la terminaison « ectomy » donne « ectomie » en français
+                                          • amputation se conserve en frança,.wis « amputation »",
+                      "description_en": 'Translation of "excision", "resection" and of the suffix "ectomy":
+                                          • the removal of an organ fragment is referred to in French as "excision"
+                                          • the ablation of an entire organ or a foreign body is referred to in French as "exeresis"
+                                          • the ablation of an organ segment is referred to in French as "resection"
+                                          • tissue ablation results in "ablation"
+                                          • the removal of an artefact or device results in
+                                          " withdrawal "
+                                          • excisional biopsy translates to "excisional biopsy"
+                                          • incisional biopsy translates to "incisional biopsy"
+                                          • the ending "ectomy" gives 'ectomy' in French
+                                          • amputation is kept in French amputation',
+                      "exemple": "Lung excision -> excision du poumon ; Lobectomy of lung -> lobectomie du poumon ; Amputation of the foot -> amputation du pied ; Removal of sebaceous cyst -> exérèse d'un kyste sébacé ; removal of soft tissue -> ablation de tissu mou
+                                  cast removal -> retrait de plâtre, Resection of segment of liver -> résection d’un segment du foie"
+                    }
+                  }
+
+              },
+              "DEFAULT_PREPROCESSING":{
+                "apply": {"ss1", "pr1"}
+              },
+              "DEFAULT_POSTPROCESSING": {
+                "apply": {"ss2", "pr3"}
+              }
+            },
+        },
+        "NCIT": {
+            "TRAINING": [],
+            "RULES": {
+              "LOWERCASE ALL": true,
+            },
+        }
+    }
+
+}
