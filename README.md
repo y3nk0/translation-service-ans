@@ -1,5 +1,7 @@
 # ANS Translation Service
-Flask API for the ANS translation service and web interface. 
+
+## Demo & API
+Web interface and Flask API for the ANS translation service and  
 
 ## Usage
 
