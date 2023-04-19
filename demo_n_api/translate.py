@@ -3,9 +3,23 @@ import os
 from typing import List
 import torch
 import nltk
-nltk.download('punkt')
+import numpy as np
+import math
+# nltk.download('punkt')
 from nltk.tokenize import sent_tokenize
+from transformers import pipeline
+from sequence_scorer import SequenceScorer
 
+from conf_processing import sc6_replace_comp_symbols, replace_with_right_trans, um2_temperature, disorder_fix, gr1_replace_greek_letter_with_long, ar2_remove_article_from_start, replace_1st_letter_with_lower
+
+from flask import jsonify
+from sentence_transformers import SentenceTransformer, util
+
+import sys
+sys.path.insert(0,'..')
+from sequence_scorer import SequenceScorer
+
+model_sim = SentenceTransformer('sentence-transformers/stsb-xlm-r-multilingual', device='cpu')
 #en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', source_lang='en', target_lang='fr', tokenizer='moses', bpe='subword_nmt', checkpoint_file='/home/dbnet/kostas/icd11/checkpoints/fconv_wmt_en_fr_medical_dicts_5th_round_2021/checkpoint_best.pt')
 #en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', source_lang='en', target_lang='fr', tokenizer='moses', bpe='subword_nmt', checkpoint_file='/home/dbnet/kostas/icd11/round_3rd/1_checkpoint_best.pt')
 #en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', source_lang='en', target_lang='fr', tokenizer='moses', bpe='subword_nmt', checkpoint_file='/home/dbnet/kostas/icd11/round_4th/2_checkpoint_best.pt')
@@ -13,12 +27,15 @@ from nltk.tokenize import sent_tokenize
 
 class Translator():
     def __init__(self, models_dir):
-        en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', source_lang='en', target_lang='fr', tokenizer='moses', bpe='subword_nmt', checkpoint_file='/home/dbnet/kostas/icd11/checkpoints/fconv_wmt_en_fr_medical_dicts_5th_round_2021/checkpoint_best.pt')
-        #en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', source_lang='en', target_lang='fr', tokenizer='moses', bpe='subword_nmt', checkpoint_file='/home/dbnet/kostas/icd11/round_3rd/1_checkpoint_best.pt')
-        #en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', source_lang='en', target_lang='fr', tokenizer='moses', bpe='subword_nmt', checkpoint_file='/home/dbnet/kostas/icd11/round_4th/2_checkpoint_best.pt')
-        en2fr.eval()
+        # en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', encoding='utf8', tokenizer='moses', bpe='subword_nmt', source_lang='en', target_lang='fr', checkpoint_file='E:/icd11/models/round_5th_checkpoint_best.pt')
+        self.model = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', tokenizer='moses', bpe='subword_nmt', source_lang='en', target_lang='fr', checkpoint_file='E:/icd11/models/round_3rd_checkpoint_best.pt|E:/icd11/models/round_4th_checkpoint_best.pt|E:/icd11/models/round_5th_checkpoint_best.pt')
+        # en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', tokenizer='moses', bpe='subword_nmt', source_lang='en', target_lang='fr', checkpoint_file='E:\icd11\models\round_3rd_checkpoint_best.pt:E:\icd11\models\round_4th_checkpoint_best.pt:E:\icd11\models\round_5th_checkpoint_best.pt')
+        self.model.eval()  # disable dropout
+        self.model.cuda()
 
-        self.model = en2fr
+        model_checkpoint = "Helsinki-NLP/opus-mt-fr-en"
+        self.rev = pipeline("translation", model=model_checkpoint)
+
         self.models = {}
         self.models_dir = models_dir
 
@@ -27,22 +44,21 @@ class Translator():
         return routes
 
     def load_model(self, trModel):
-        #model = f'opus-mt-{route}'
-        #path = os.path.join(self.models_dir,model)
-        #try:
-        #    model = MarianMTModel.from_pretrained(path)
-        #    tok = MarianTokenizer.from_pretrained(path)
-        #except:
-        #    return 0,f"Make sure you have downloaded model for {route} translation"
-        #self.models[route] = (model,tok)
-        #return 1,f"Successfully loaded model for {route} transation"
         if trModel=="fr":
-            from fairseq.models.fconv import FConvModel
-            en2fr = FConvModel.from_pretrained('/home/dbnet/kostas/icd11/checkpoints/fconv_wmt_en_fr_medical_dicts_5th_round_reverse_2021/', checkpoint_file='checkpoint_best.pt', data_name_or_path='/home/dbnet/kostas/icd11/data_bin_reverse_2021', source_lang='fr', target_lang='en', bpe='subword_nmt', bpe_codes='/home/dbnet/kostas/wmt14.en-fr.fconv-py/bpecodes')
+            # from fairseq.models.fconv import FConvModel
+            # en2fr = FConvModel.from_pretrained('E:/icd11/models/checkpoints/fconv_wmt_en_fr_medical_dicts_5th_round_reverse_2021/', checkpoint_file='checkpoint_best.pt', data_name_or_path='E:/icd11/models/data_bin_reverse_2021', source_lang='fr', target_lang='en', bpe='subword_nmt', bpe_codes='/home/dbnet/kostas/wmt14.en-fr.fconv-py/bpecodes')
+            model_checkpoint = "Helsinki-NLP/opus-mt-fr-en"
+            self.rev = pipeline("translation", model=model_checkpoint)
+        elif trModel=="en":
+            en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', tokenizer='moses', bpe='subword_nmt', source_lang='en', target_lang='fr', checkpoint_file='E:/icd11/models/round_3rd_checkpoint_best.pt|E:/icd11/models/round_4th_checkpoint_best.pt|E:/icd11/models/round_5th_checkpoint_best.pt')
+            en2fr.eval()
+            en2fr.cuda()
+            self.model = en2fr
         else:
-            en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', source_lang='en', target_lang='fr', tokenizer='moses', bpe='subword_nmt', checkpoint_file='/home/dbnet/kostas/icd11/checkpoints/fconv_wmt_en_fr_medical_dicts_5th_round_2021/checkpoint_best.pt')
-        en2fr.eval()
-        self.model = en2fr
+            en2fr = torch.hub.load('pytorch/fairseq', 'transformer.wmt14.en-fr', tokenizer='moses', bpe='fastbpe', source_lang='en', target_lang='fr', checkpoint_file='E:/icd11/models/transf/checkpoint_best.pt')
+            en2fr.eval()
+            en2fr.cuda()
+            self.model = en2fr
         return "1"
 
     def translate(self, source, target, text):
@@ -57,51 +73,150 @@ class Translator():
         words: List[str] = self.models[route][1].batch_decode(gen, skip_special_tokens=True)
         return words
 
-    def translate_fairseq(self, text, multiple):
-        
-        if multiple=="true":
-            #translation = en2fr.translate(text, beam=5000)
-            en_toks = self.model.tokenize(text)
-            # Manually apply BPE:
-            en_bpe = self.model.apply_bpe(en_toks)
-            # assert en_bpe == 'H@@ ello world !'
-            # Manually binarize:
-            en_bin = self.model.binarize(en_bpe)
-            # Generate five translations with top-k sampling:
-            #fr_bin = en2fr.generate(en_bin, beam=20, nbest=1, sampling=True, sampling_topk=150)
-
-            fr_bin = self.model.generate(en_bin, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
-
-            # Convert one of the samples to a string and detokenize
-            translation = ""
-            translations = [] 
-            for ind, fr in enumerate(fr_bin):
-                fr_sample = fr_bin[ind]['tokens']
-                fr_bpe = self.model.string(fr_sample)
-                fr_toks = self.model.remove_bpe(fr_bpe)
-                fr = self.model.detokenize(fr_toks)
-                #translation += fr + "\n"
-                translations.append(fr)
-            translations = list(set(translations))
-            
-            translation = "\n".join(translations)
+    def translate_reverse(self, text, multiple, apply_rules):
+        trans = ""
+        if len(text)>500:
+            sents = text.split(". ")
+            for sent in sents:
+                translation = self.rev(sent)
+                translation = translation[0]['translation_text']
+                trans += translation.strip(".").strip() + ". "
         else:
-            #translation = ""
-            if len(text)>700:
-                sents = sent_tokenize(text)
-                translation = ""
-                for sent in sents:
-                    if len(sent)>500:
-                        new_sents = sent.split(";")
-                        for new_sent in new_sents:
-                            translation += self.model.translate(new_sent) + "; "
+            trans = self.rev(text)
+            trans = trans[0]['translation_text']
+        return trans
 
+    def translate_fairseq(self, text, multiple, apply_rules, metric):
+        score = 9999
+        if len(text)<5000:
+            texts = text.split("\n")
+            trans = []
+            scores = []
+            for text in texts:
+                if multiple=="True":
+                    #translation = en2fr.translate(text, beam=5000)
+                    en_toks = self.model.tokenize(text)
+                    # Manually apply BPE:
+                    en_bpe = self.model.apply_bpe(en_toks)
+                    # assert en_bpe == 'H@@ ello world !'
+                    # Manually binarize:
+                    en_bin = self.model.binarize(en_bpe)
+                    # Generate five translations with top-k sampling:
+                    #fr_bin = en2fr.generate(en_bin, beam=20, nbest=1, sampling=True, sampling_topk=150)
+                    fr_bin = self.model.generate(en_bin, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
+
+                    # Convert one of the samples to a string and detokenize
+                    translation = ""
+                    translations = []
+                    scored = {}
+                    scored2 = {}
+                    for ind, fr in enumerate(fr_bin):
+                        fr_sample = fr_bin[ind]['tokens']
+                        fr_bpe = self.model.string(fr_sample)
+                        fr_toks = self.model.remove_bpe(fr_bpe)
+                        fr = self.model.detokenize(fr_toks)
+                        #translation += fr + "\n"
+                        if metric=="True":
+                            score = fr_bin[ind]['score'].item()
+                            score = math.exp(score)
+                            score = "{:.2f}".format(score)
+
+                            # model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2', device='cpu', cache_folder='/')
+
+                            corpus_embedding = model_sim.encode(text, convert_to_tensor=True, normalize_embeddings=True)
+                            query_embedding = model_sim.encode(translation, convert_to_tensor=True, normalize_embeddings=True)
+                            hits = util.cos_sim(query_embedding, corpus_embedding)
+                            score2 = "{:.2f}".format(float(hits[0][0].item()))
+                            if fr not in translations:
+                                translations.append(fr+" l:"+score+" M:"+score2)
+                                scored[fr] = float(score)
+                                scored2[fr] = float(score2)
+
+                        else:
+                            if fr not in translations:
+                                translations.append(fr)
+                    # translations = list(set(translations))
+                    new_trans = []
+                    if metric=="True":
+                        for w in sorted(scored, key=scored.get, reverse=True):
+                            new_trans.append(w+" L:"+"{:.2f}".format(scored[w])+" M:" +"{:.2f}".format(scored2[w]))
+                        translation = "\n".join(new_trans)
                     else:
-                        translation += self.model.translate(sent) + " "
-                translation = translation.strip()
-            else:
-                #for beam in [5,10,100,200,1000,5000]:
-                translation = self.model.translate(text)
+                        translation = "\n".join(translations)
+
+
+
+                else:
+                    #translation = ""
+
+                    if len(text)>700:
+                        sents = sent_tokenize(text)
+                        translation = ""
+                        for sent in sents:
+                            if len(sent)>500:
+                                new_sents = sent.split(";")
+                                for new_sent in new_sents:
+                                    translation += self.model.translate(new_sent) + "; "
+
+                            else:
+                                translation += self.model.translate(sent) + " "
+                        translation = translation.strip()
+                    else:
+                        #for beam in [5,10,100,200,1000,5000]:
+                        #translation = self.model.translate(text)
+                        en = self.model.encode(text)
+                        # output = self.model.generate(en, beam=5)
+                        output = self.model.generate(en, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
+                        translation = self.model.decode(output[0]['tokens'])
+
+                    if metric=="True":
+                        # scorer = SequenceScorer(self.model.tgt_dict)
+                        # enc_src = self.model.encode(text).to('cuda')
+                        # ref_enc = self.model.encode(translation).to('cuda')
+                        # prev = torch.LongTensor([self.model.tgt_dict.eos() for _ in ref_enc]).unsqueeze(0).to('cuda')
+                        # net_input = {"net_input": {"src_tokens": enc_src.unsqueeze(0), "src_lengths": [enc_src.shape[0]], "prev_output_tokens": prev}, "target": ref_enc.unsqueeze(0)}
+                        # score = scorer.generate(self.model.models, net_input)
+                        # # print log_e prob
+                        # score = float(score[0][0]["score"].item())
+                        # # score = math.exp(score)
+                        # score = "{:.2f}".format(score)
+
+                        en_toks = self.model.tokenize(text)
+                        # Manually apply BPE:
+                        en_bpe = self.model.apply_bpe(en_toks)
+                        # assert en_bpe == 'H@@ ello world !'
+                        # Manually binarize:
+                        en_bin = self.model.binarize(en_bpe)
+                        # Generate five translations with top-k sampling:
+                        #fr_bin = en2fr.generate(en_bin, beam=20, nbest=1, sampling=True, sampling_topk=150)
+                        # fr_bin = self.model.generate(en_bin, stochastic_beam_search=True)
+                        fr_bin = self.model.generate(en_bin, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
+                        score = fr_bin[0]['score'].item()
+                        score = math.exp(score)
+                        score = "{:.2f}".format(score)
+
+                        # model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2', device='cpu', cache_folder='/')
+                        # model_sim = SentenceTransformer('sentence-transformers/stsb-xlm-r-multilingual', device='cpu')
+                        corpus_embedding = model_sim.encode(text, convert_to_tensor=True, normalize_embeddings=True)
+                        query_embedding = model_sim.encode(translation, convert_to_tensor=True, normalize_embeddings=True)
+                        hits = util.cos_sim(query_embedding, corpus_embedding)
+                        score2 = "{:.2f}".format(float(hits[0][0].item()))
+
+                if apply_rules=="True":
+                    # translation = sc6_replace_comp_symbols(translation)
+                    translation = replace_with_right_trans(text,translation)
+                    # translation = um2_temperature(translation)
+                    translation = disorder_fix(text,translation)
+                    # translation = gr1_replace_greek_letter_with_long(translation)
+                    translation = ar2_remove_article_from_start(translation)
+                    translation = replace_1st_letter_with_lower(translation)
+
+                trans.append(translation)
+            translation = "\n".join(trans)
+        else:
+            translation = "Text too long to translate."
             #translation += tr + "\n"
 
+        if metric=="True":
+            return translation, score, score2
         return translation

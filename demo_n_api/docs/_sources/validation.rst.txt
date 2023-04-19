@@ -1,0 +1,16 @@
+Ground truth data for validation/evaluation
+===========================================
+
+We have created two ground truth datasets for evaluating our trained neural translation models. As our main target was to translate ICD-11, the first ground truth dataset we created was smaller subset of ICD-11. For the second one we tried to create a larger corpus which would include more terms and sentences.
+
+ICD-11 subset
+-------------
+
+For ICD-11 given the fact that there is presently no human validated reference translation for French, we manually created one.
+Our attempt offers the possibilities of speeding up the process of translating medical lexicons and documents, saving valuable human and computational resources. We evaluate our pipeline in two datasets: a sample of ICD-11 and the whole ICF terminologies. In the case of ICF terminology, we have access to both English and French medical experts validated versions. For ICD-11, since the French official version does not exist yet, we develop a method to evaluate and validate our results.
+Through our studies, we discovered that a sample of the English ICD-11 terms can be found in existing French dictionaries. Thus, we can use these terms along with their French translation as already human-validated sentences. We end up having 24242 pairs in English and French that are already integrated in terminologies like ORDO, MESH INSERM, LOINC 2.66 and others. Although, existing terms may as well require revision by a medical expert, the process indisputably accelerates the translation pipeline, compared to translating a terminology from scratch.
+
+ATIH validated corpus
+---------------------
+
+We use a new ATIH Validated corpus to evaluate translation with BLEU and BLEU2VEC scores. ATIH provided a human translated subset of ICD11 for reference corresponding of human validated translation preformed in 2019. 75861 terms among which the majority of labels (95%) have less than 70 chars (or 10 words) were used  to compare BLEU2VEC and BLEU scores.

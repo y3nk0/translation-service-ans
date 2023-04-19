@@ -53,15 +53,15 @@ CUDA_VISIBLE_DEVICES=0 fairseq-train $DATA_DIR \
     --save-dir checkpoints/fconv_wmt_en_fr_medical_dicts_NEW_VALID_2021_PATR
 
 
-from fairseq.models.fconv import FConvModel
-fr2en = FConvModel.from_pretrained(
-  '/path/to/checkpoints',
-  checkpoint_file='checkpoint_best.pt',
-  data_name_or_path='data-bin/wmt17_zh_en_full',
-  bpe='subword_nmt',
-  bpe_codes='data-bin/wmt17_zh_en_full/zh.code'
-)
-fr2en.translate('你好 世界')
+# from fairseq.models.fconv import FConvModel
+# fr2en = FConvModel.from_pretrained(
+#   '/path/to/checkpoints',
+#   checkpoint_file='checkpoint_best.pt',
+#   data_name_or_path='data-bin/wmt17_zh_en_full',
+#   bpe='subword_nmt',
+#   bpe_codes='data-bin/wmt17_zh_en_full/zh.code'
+# )
+# fr2en.translate('你好 世界')
 
 ######################################
 # Averaging

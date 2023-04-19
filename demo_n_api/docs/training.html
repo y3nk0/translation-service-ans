@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training &mdash; ANS Translation Service 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Postprocessing" href="postprocessing.html" />
+    <link rel="prev" title="Preprocessing" href="preprocessing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ANS Translation Service
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline.html">Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessing.html">Preprocessing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postprocessing.html">Postprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Ground truth data for validation/evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unsupervised_metric.html">Unsupervised quality estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use-cases.html">Use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vizseq.html">VizSeq</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ANS Translation Service</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Training</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/training.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="training">
+<h1>Training<a class="headerlink" href="#training" title="Permalink to this heading"></a></h1>
+<p>A pre-trained model is utilized (which is trained on a large general textual corpus) and then we fine-tune (continue training) on a specialized dataset, in our case medical terminologies. For the pre-trained model, we select the CNN one offered by fairseq. Next, we show the training script we use:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">FAIRSEQ</span><span class="o">=</span>~/fairseq
+<span class="nv">PRETRAINED_MODEL</span><span class="o">=</span>~/wmt14.en-fr.fconv-py
+
+<span class="nv">SEED</span><span class="o">=</span><span class="m">1</span>
+
+<span class="nv">EXP_NAME</span><span class="o">=</span>fine-tune
+
+<span class="nv">SRC</span><span class="o">=</span>en
+<span class="nv">TRG</span><span class="o">=</span>fr
+
+<span class="nv">SRC_VOCAB</span><span class="o">=</span><span class="nv">$PRETRAINED_MODEL</span>/dict.<span class="nv">$SRC</span>.txt
+<span class="nv">TRG_VOCAB</span><span class="o">=</span><span class="nv">$PRETRAINED_MODEL</span>/dict.<span class="nv">$TRG</span>.txt
+
+<span class="nv">PRETRAINED_MODEL_FILE</span><span class="o">=</span><span class="nv">$PRETRAINED_MODEL</span>/model.pt
+
+<span class="nv">CORPUS_DIR</span><span class="o">=</span>~/data
+<span class="nv">DATA_DIR</span><span class="o">=</span>~/data-bin
+
+<span class="nv">TRAIN_PREFIX</span><span class="o">=</span><span class="nv">$CORPUS_DIR</span>/train
+<span class="nv">DEV_PREFIX</span><span class="o">=</span><span class="nv">$CORPUS_DIR</span>/valid
+
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$CORPUS_DIR</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$DATA_DIR</span>
+
+<span class="c1">######################################</span>
+<span class="c1"># Preprocessing</span>
+<span class="c1">######################################</span>
+<span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>fairseq-preprocess<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--source-lang<span class="w"> </span><span class="nv">$SRC</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--target-lang<span class="w"> </span><span class="nv">$TRG</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--trainpref<span class="w"> </span><span class="nv">$TRAIN_PREFIX</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--validpref<span class="w"> </span><span class="nv">$DEV_PREFIX</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--destdir<span class="w"> </span><span class="nv">$DATA_DIR</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--srcdict<span class="w"> </span><span class="nv">$SRC_VOCAB</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--tgtdict<span class="w"> </span><span class="nv">$TRG_VOCAB</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--workers<span class="w"> </span><span class="sb">`</span>nproc<span class="sb">`</span><span class="w"> </span><span class="se">\</span>
+
+
+<span class="c1">######################################</span>
+<span class="c1"># Training</span>
+<span class="c1">######################################</span>
+<span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>fairseq-train<span class="w"> </span><span class="nv">$DATA_DIR</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--restore-file<span class="w"> </span><span class="nv">$PRETRAINED_MODEL_FILE</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--lr<span class="w"> </span><span class="m">0</span>.5<span class="w"> </span>--clip-norm<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--dropout<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span>--max-tokens<span class="w"> </span><span class="m">3000</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--criterion<span class="w"> </span>label_smoothed_cross_entropy<span class="w"> </span>--label-smoothing<span class="w"> </span><span class="m">0</span>.1<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--lr-scheduler<span class="w"> </span>fixed<span class="w"> </span>--force-anneal<span class="w"> </span><span class="m">50</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--arch<span class="w"> </span>fconv_wmt_en_fr<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--reset-optimizer<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--skip-invalid-size-inputs-valid-test<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--save-dir<span class="w"> </span>checkpoints/fconv_wmt_en_fr_saved
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="preprocessing.html" class="btn btn-neutral float-left" title="Preprocessing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="postprocessing.html" class="btn btn-neutral float-right" title="Postprocessing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Konstantinos Skianis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

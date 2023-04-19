@@ -1,0 +1,59 @@
+Training
+========
+
+A pre-trained model is utilized (which is trained on a large general textual corpus) and then we fine-tune (continue training) on a specialized dataset, in our case medical terminologies. For the pre-trained model, we select the CNN one offered by fairseq. Next, we show the training script we use:
+
+.. highlight:: bash
+
+::
+
+   FAIRSEQ=~/fairseq
+   PRETRAINED_MODEL=~/wmt14.en-fr.fconv-py
+
+   SEED=1
+
+   EXP_NAME=fine-tune
+
+   SRC=en
+   TRG=fr
+
+   SRC_VOCAB=$PRETRAINED_MODEL/dict.$SRC.txt
+   TRG_VOCAB=$PRETRAINED_MODEL/dict.$TRG.txt
+
+   PRETRAINED_MODEL_FILE=$PRETRAINED_MODEL/model.pt
+
+   CORPUS_DIR=~/data
+   DATA_DIR=~/data-bin
+
+   TRAIN_PREFIX=$CORPUS_DIR/train
+   DEV_PREFIX=$CORPUS_DIR/valid
+
+   mkdir -p $CORPUS_DIR
+   mkdir -p $DATA_DIR
+
+   ######################################
+   # Preprocessing
+   ######################################
+   CUDA_VISIBLE_DEVICES=0 fairseq-preprocess \
+       --source-lang $SRC \
+       --target-lang $TRG \
+       --trainpref $TRAIN_PREFIX \
+       --validpref $DEV_PREFIX \
+       --destdir $DATA_DIR \
+       --srcdict $SRC_VOCAB \
+       --tgtdict $TRG_VOCAB \
+       --workers `nproc` \
+
+
+   ######################################
+   # Training
+   ######################################
+   CUDA_VISIBLE_DEVICES=0 fairseq-train $DATA_DIR \
+       --restore-file $PRETRAINED_MODEL_FILE \
+       --lr 0.5 --clip-norm 0.1 --dropout 0.1 --max-tokens 3000 \
+       --criterion label_smoothed_cross_entropy --label-smoothing 0.1 \
+       --lr-scheduler fixed --force-anneal 50 \
+       --arch fconv_wmt_en_fr \
+       --reset-optimizer \
+       --skip-invalid-size-inputs-valid-test \
+       --save-dir checkpoints/fconv_wmt_en_fr_saved

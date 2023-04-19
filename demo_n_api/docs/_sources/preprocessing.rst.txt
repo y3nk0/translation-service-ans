@@ -1,0 +1,108 @@
+Preprocessing
+=============
+
+Datasets
+--------
+
+In the following table, we present the parallel datasets that we will first preprocess and then use later for training and resulting models.
+
+.. list-table::
+   :widths: 25 25 25
+   :header-rows: 1
+
+   * - Rounds
+     - Model
+     - Description
+   * - 1st and 2nd rounds
+     - CNN
+     - 2020 Datasets: ICD-10, CHU Rouen, ORDO, ACAD, MEDDRA, ATC, MESH, ICD-O, DBPEDIA, ICPC, ICF
+   * - 3rd round
+     - CNN
+     - Cleaning to remove bilingual sentences leading to ambiguities (e.g. ICPC is not relevantly structured for use in a training set)
+   * - 4th round
+     - CNN
+     - 3rd round + PatTR corpus (patents database)
+   * - 5th round
+     - CNN
+     - 3rd round + Medline (training2), Scielo datasets
+   * - 6th round
+     - Transformer
+     - 5th, with Transformer architecture
+   * - Ensemble
+     - CNNs
+     - an ensemble of the 3 CNN models was created : 3rd, 4th, 5th rounds
+
+
+Download pretrained model
+--------------------------
+
+We also need to download the pretrained model from https://github.com/facebookresearch/fairseq/blob/main/examples/translation/README.md:
+
+.. code-block:: bash
+
+  mkdir -p data-bin
+  curl https://dl.fbaipublicfiles.com/fairseq/models/wmt14.v2.en-fr.fconv-py.tar.bz2 | tar xvjf - -C data-bin
+
+
+Running preprocessing
+---------------------
+
+Assuming we have our palallel datasets in the files training.fr and training.en we are now ready to execute the preprocessing script:
+
+.. highlight:: bash
+
+::
+
+  SCRIPTS=mosesdecoder/scripts
+  TOKENIZER=$SCRIPTS/tokenizer/tokenizer.perl
+  CLEAN=$SCRIPTS/training/clean-corpus-n.perl
+  NORM_PUNC=$SCRIPTS/tokenizer/normalize-punctuation.perl
+  REM_NON_PRINT_CHAR=$SCRIPTS/tokenizer/remove-non-printing-char.perl
+  BPEROOT=subword-nmt/subword_nmt
+  BPE_TOKENS=50000
+
+  src=en
+  tgt=fr
+  lang=en-fr
+  tmp=tmp
+  orig=orig
+
+  mkdir -p $tmp $prep
+
+  echo "pre-processing train data..."
+  for l in $src $tgt; do
+      rm $tmp/train.tags.$lang.tok.$l
+      cat 'data/training.$l | \
+          perl $NORM_PUNC $l | \
+          perl $REM_NON_PRINT_CHAR | \
+          perl $TOKENIZER -threads 8 -a -l $l >> $tmp/train.tags.$lang.tok.$l
+  done
+
+  echo "splitting train and valid..."
+  for l in $src $tgt; do
+      awk '{if (NR%500 == 0)  print $0; }' $tmp/train.tags.$lang.tok.$l > $tmp/valid.$l
+      awk '{if (NR%500 != 0)  print $0; }' $tmp/train.tags.$lang.tok.$l > $tmp/train.$l
+  done
+
+  TRAIN=$tmp/train.fr-en
+  BPE_CODE=../wmt14.en-fr.fconv-py/bpecodes
+
+  rm -f $TRAIN
+  for l in $src $tgt; do
+      cat $tmp/train.$l >> $TRAIN
+  done
+
+  #echo "learn_bpe.py on ${TRAIN}..."
+  #python $BPEROOT/learn_bpe.py -s $BPE_TOKENS < $TRAIN > $BPE_CODE
+
+  for L in $src $tgt; do
+      for f in train.$L valid.$L; do
+          echo "apply_bpe.py to ${f}..."
+          python $BPEROOT/apply_bpe.py -c $BPE_CODE < $tmp/$f > $tmp/bpe.$f
+      done
+  done
+
+  #python $BPEROOT/apply_bpe.py -c $BPE_CODE < test.$lang.tok.en > data/bpe.test
+
+  perl $CLEAN -ratio 1.5 $tmp/bpe.train $src $tgt data_2021/train 1 5000
+  perl $CLEAN -ratio 1.5 $tmp/bpe.valid $src $tgt data_2021/valid 1 5000

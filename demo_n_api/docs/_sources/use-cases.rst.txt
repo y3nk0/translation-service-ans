@@ -1,0 +1,31 @@
+Use cases
+============
+
+Training a translation model
+----------------------------
+
+The first use-case of our tool, is to train a custom translation model:
+
+#. Gather training datasets
+#. Pre-process and create large single file dataset
+#. Set the configuration file
+
+Translating terms or files
+--------------------------
+
+Given that we have access to a translation model (it may be one of our own trained models or a custom one), a user will be able to translate single or multiple terms via the web application or the API.
+
+
+Validating translations
+-----------------------
+
+A user will be able to suggest improvements or validate the translation of a requested term or sentence. Furthermore, in order to ensure quality of suggested translations and receive constructive feedback, we plan to have groups of users with specific rights of use:
+
+*	Simple user: will be able only to translate single terms or sentences
+* Privileged user: will also be able to get translation of files
+*	Expert: will also be able to provide feedback on a translation with a rank and suggest a new one
+
+Using the API
+-------------
+
+Developers will be able to use the API service for direct translations programmatically.

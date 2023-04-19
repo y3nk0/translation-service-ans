@@ -1,0 +1,44 @@
+.. ANSTranslationService documentation master file, created by
+   sphinx-quickstart on Fri Apr  8 12:19:48 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to ANS Translation Service's documentation!
+===================================================
+
+.. figure:: images/agence.png
+   :alt: ans
+
+Our objectives can be summarized in the following points:
+
+* An automated pipeline for translating and evaluating medical terminologies
+* Generate ground truth datasets to evaluate our models
+* Introduced supervised and unsupervised metrics
+* Create online services to provide access to our tools
+* Enable researchers and healthcare end-users globally with a jump start approach that allows fast and effective translation of newly updated versions of terminologies
+* Beyond translation, the approach can be used to enrich terminologies (e.g. using synonyms) or connect them
+
+Check out the :doc:`installation` section for installing the required packages.
+
+.. toctree::
+   :maxdepth: 10
+   :caption: Contents:
+
+   installation
+   pipeline
+   preprocessing
+   training
+   postprocessing
+   validation
+   unsupervised_metric
+   configuration
+   api
+   use-cases
+   vizseq
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

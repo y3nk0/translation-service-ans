@@ -54,14 +54,14 @@
             "RULES": {
               "LOWERCASE ALL": false,
               "GENERAL": {
-                  "Style général et syntaxe": {
                     "ss1": {
-                        "description_en": "General case: Term - including the first letter - in lowercase and insensitive to case.",
                         "description_fr" : "Cas général : Terme – y compris la première lettre – en minuscules et insensible à la casse.",
+                        "description_en": "General case: Term - including the first letter - in lowercase and insensitive to case.",
                         "exceptions" : "présence de noms propres, symboles, codes, sigles, acronymes ou taxons comportant des majuscules et/ou des minuscules imposées.",
                         "exemple": "pH ; IgG ; ADN ; Legionella anisa ; Epstein-Barr",
                         "solution": "do not lower all dataset or use existing lowered case datasets during training",
-                        "int": "x"
+                        "int": "x",
+                        "apply": "ss1"
                     },
                     "ss2": {
                         "description_fr": "Terme au singulier sauf pour les concepts impliquant un pluriel intrinsèque.",
@@ -70,7 +70,7 @@
                                   - Hospital furniture -> mobilier d’hôpital (et non meubles d’hôpitaux)
                                   - Breasts asymmetrical -> seins asymétriques
                                   - Inpatient rehabilitation environment -> milieu de réadaptation pour patients hospitalisés",
-                        "solution": "remove data that do not follow the rule",
+                        "solution": "lemmatization or remove these examples from dataset",
                         "int": "x"
                     },
                     "ss3": {
@@ -78,26 +78,90 @@
                         "description_en": "Word economy search for the preferred term: favor adjectival form or present participle to avoid a relative clause or a prepositional complement.",
                         "Exemples": "traumatisme crânien ; maladie affectant la grossesse",
 
-                    }
-                  },
-                  "Graphie : application minimale de la nouvelle orthographe de 1990": {
+                    },
                     "or1": {
                         "description_fr": "Positionner les trémas sur la lettre à prononcer.",
                         "description_en": "Position the umlauts on the letter to be pronounced.",
                         "exemple": "otite aigüe (et non pas aiguë)",
                         "solution": "replace letters with right ones",
                         "apply": "or1_orthographe_replace"
-                    }
-                  },
-                  "Emploi des abréviations, acronymes et sigles": {
+                    },
+                    "or2":{
+                      "description_fr": "Mettre la graphie en accord avec la prononciation lorsque é se prononce è. Un synonyme acceptable peut être ajouté dans l’ancienne orthographe pour être adopté comme terme préféré par l’un des pays francophones.",
+                      "exemple": "terme préféré (nouvelle orthographe) : évènement de la vie, terme acceptable (ancienne orthographe) : événement de la vie"
+                    },
+
+                    "ar1": {
+                        "description_fr": "D’une façon générale les articles sont à éviter sauf règle particulière exposée ci-dessous.",
+                        "description_en": "In general, articles are to be avoided unless there is a special rule set out below.",
+                        "exemple": "cicatrice congénitale",
+                        "apply": "ar1_remove_articles"
+                    },
+                    "ar2": {
+                        "description_fr": "Pas d’article en début de terme.",
+                        "description_en": "No article at the beginning of the term.",
+                        "exemple": "syndrome hépatorénal",
+                        "apply": "ar2_remove_article_from_start"
+                    },
+                    "ar3": {
+                        "description_fr": "Article défini singulier appliqué à une partie du corps unique.",
+                        "description_en": "Singular definite article applied to a single part of the body.",
+                        "exemple": "anévrisme du cœur ; brûlure électrique de la peau",
+                        "apply": ""
+                    },
+                    "ar4": {
+                        "description_fr": "Article défini singulier appliqué à une partie du corps double, sauf lorsque la forme adjectivale est préférée (règle ss3).",
+                        "description_en": "Singular definite article applied to a dual body part, except when the adjectival form is preferred (rule ss3).",
+                        "exemple": "Exemples avec article : entorse du pied ; polype de la corde vocale ; irritation de l’œil ; douleur à l’aine ; tumeur de la trompe de Fallope ou de l’ovaire.
+                                    Exemples avec forme adjectivale : mélanome oculaire ; herpès labial ; neuropathie fémorale",
+                        "apply": ""
+                    },
+                    "ar5": {
+                        "description_fr": "Article indéfini singulier appliqué à une partie du corps possédant plus de deux occurrences, sauf lorsque la forme adjectivale est préférée (règle ss3).",
+                        "description_en": "Singular indefinite article applied to a part of the body having more than two occurrences, except when the adjectival form is preferred (rule ss3).",
+                        "exemple": "infection d’un doigt ; entorse costale",
+                        "apply": "",
+                        "comment": "deleted"
+                    },
+                    "ar6": {
+                        "description_fr": "Lorsque le terme désigne un dispositif ou un produit ciblant une partie du corps, celle-ci ne requiert pas d’article.",
+                        "description_en": "When the term designates a device or product targeting a part of the body, this does not require an article.",
+                        "exemple": "prothèse de hanche ; sonde nasale ; pommade à lèvres",
+                        "apply": ""
+                    },
+                    "ar7": {
+                        "description_fr": "Article défini pluriel lorsque le terme anglais spécifie « all » ou « both »",
+                        "description_en": "Plural definite article when the English term specifies 'all' or 'both'",
+                        "exemple": "Congenital absence of all fingers -> absence congénitale de tous les doigts ; Lesion of both ears -> lésion des deux oreilles",
+                        "apply": "",
+                        "comment": "generally present"
+                    },
+                    "np1": {
+                        "description_fr": "Eviter de faire figurer un éponyme ou un toponyme dans un terme préféré sauf lorsque ce nom propre est consacré par l’usage, et dans ce cas le nom commence par une majuscule.",
+                        "description_en": "Avoid including an eponym or a toponym in a preferred term except when this proper name is established by usage, and in this case the name begins with a capital letter.",
+                        "exemple": "Bell’s palsy -> paralysie de Bell ; Lyme arthritis -> arthrite de Lyme",
+                        "apply": "",
+                        "comment": "generally present"
+                    },
                     "ab1": {
                         "description_fr": "Eviter les abréviations et écrire les mots en entier sauf abréviation incontournable consacrée par l’usage.",
                         "description_en": "Avoid abbreviations and write the words in full except for unavoidable abbreviations established by usage.",
                         "exemple": "Salmonella enterica subsp. diarizonae -> Salmonella enterica subspecies Diarizonae",
-                        "solution": "replace words not in vocabulary with period in the end with most suitable"
+                        "solution": "replace words not in vocabulary with period in the end with most suitable",
+                        "comment": "generally present"
                     },
-                  },
-                  "Unités de mesure": {
+                    "ab2": {
+                        "description_fr": "Eviter sigles et acronymes : écrire les mots en entier, sauf si le sigle ou acronyme est consacré par l'usage. Il est dans ce cas écrit en majuscules non accentuées. Un tiret simple (UTF8 0x2D) encadré de deux espaces peut introduire l'expression développée. Lorsque le sigle ou l'acronyme fait partie d'un terme plus vaste son développement est placé à sa suite, entre parenthèses. Cette règle concerne le terme préféré du français commun",
+                        "description_en": "Avoid abbreviations and acronyms: write the words in full, unless the abbreviation or acronym is established by usage. In this case, it is written in unaccented capital letters. A single dash (UTF8 0x2D) surrounded by two spaces can introduce the expanded expression. When the abbreviation or acronym is part of a broader term, its development is placed after it, in parentheses. This rule concerns the preferred term of common French",
+                        "exemple": "SIDA - syndrome d’immunodéficience acquise ; coronavirus lié au SRAS (syndrome respiratoire aigu sévère) ; S’il est consacré par l’usage, l’acronyme peut persister seul dans un terme acceptable du français commun.",
+                        "solution": ""
+                    },
+                    "ab3": {
+                        "description_fr": "Les sigles et acronymes courants se lexicalisent c’est-à-dire qu’ils deviennent des noms communs. Ils s'écrivent alors en minuscule, prennent le pluriel comme des noms et entraînent parfois la formation de « dérivés » c’est à dire qu'ils se retrouvent parfois incorporés dans un nouveau mot.",
+                        "description_en": "Common acronyms and acronyms are lexicalized, i.e. they become common nouns. They are then written in lower case, take the plural as nouns and sometimes lead to the formation of 'derivatives', that is to say that they are sometimes incorporated into a new word.",
+                        "exemple": "Exemples : laser ; - sidéen",
+                        "solution": ""
+                    },
                     "um1": {
                       "description_fr": "Les unités de mesure sont abrégées conformément aux règles du SI",
                       "description_en": "The units of measurement are abbreviated according to the rules of the SI",
@@ -107,7 +171,8 @@
                     "um2": {
                       "description_fr": "Les unités de température sont exprimées en forme développée - degrés Celsius.",
                       "description_en": "Temperature units are expressed in the developed form - degrees Celsius.",
-                      "exemple": "Fever greater than 38 Celsius -> Fièvre supérieure à 38 degrés Celsius"
+                      "exemple": "Fever greater than 38 Celsius -> Fièvre supérieure à 38 degrés Celsius",
+                      "apply": "um2_temperature"
                     },
                     "um3": {
                       "description_fr": "Les degrés d’angle sont exprimés en forme développée sauf lorsque le contexte ne laisse aucune ambigüité sur la nature de l’unité.",
@@ -125,8 +190,8 @@
                       "exemple": "0,75 g"
                     },
                     "um6": {
-                      "description_fr": 'L'anglais "percent" et "%" se traduisent par le symbole %. Un espace sépare la quantité du symbole (rôle d'unité).',
-                      "description_en": 'English "percent" and "%" translate to the symbol%. A space separates the quantity from the symbol (unit role).',
+                      "description_fr": "L'anglais 'percent' et '%' se traduisent par le symbole %. Un espace sépare la quantité du symbole (rôle d'unité).",
+                      "description_en": "English 'percent' and '%' translate to the symbol %. A space separates the quantity from the symbol (unit role).",
                       "exemple : 75 %",
                       "solution": {
                           "replace": {
@@ -140,9 +205,7 @@
                       "exemple", "umol / L (micromoles per liter)",
                       "solution": "when unit is found, μ is replaced with u",
                       "apply":  "um8_unit_replace"
-                    }
-                  },
-                  "Symboles scientifiques, chiffres et nombres": {
+                    },
                     "sc4": {
                       "description_fr": "Le séparateur des milliers est l'espace.",
                       "description_en": "The separator of the thousands is space.",
@@ -151,10 +214,9 @@
                     "sc6": {
                       "description_fr": "Les symboles de comparaison '<' (inférieur à) et '>' sont remplacés par l'expression en clair pour éviter les risques de mésinterprétation.",
                       "description_en": "The comparison symbols '<' (less than) and '>' are replaced by the plain expression to avoid the risk of misinterpretation.",
-                      "exemple": "T1 : taille de la tumeur inférieure à 1 cm, limitée à la glande thyroïde ; marge supérieure ou égale à 1 mm"
-                    }
-                  },
-                  "Lettres grecques": {
+                      "exemple": "T1 : taille de la tumeur inférieure à 1 cm, limitée à la glande thyroïde ; marge supérieure ou égale à 1 mm",
+                      "apply": "sc6_replace_comp_symbols"
+                    },
                     "gr1": {
                       "description_fr": "Les lettres grecques sont écrites en forme longue.",
                       "description_en": "Greek letters are written in long form.",
@@ -162,52 +224,172 @@
                       "exemple": "- Beta-lactamase inhibitor -> inhibiteur de bêta-lactamase - Alpha fetoprotein -> alpha-fœtoprotéine",
                       "solution": "replace greek letters with long form",
                       "apply": "gr1_replace_greek_letter_with_long"
-                    }
-                  },
-                  "Règles propres à la hiérarchie des pathologies (disorder)": {
+                    },
+                    "se6": {
+                      "description_fr": "Le double point encadré par deux espaces peut être utilisé en remplacement d’une préposition pour introduire une précision en style télégraphique, si cela apporte un gain de concision.",
+                      "description_en": "The colon surrounded by two spaces can be used instead of a preposition to introduce precision in telegraphic style, if this brings a gain of conciseness.",
+                      "exemple": "antécédents familiaux : goutte ; antécédents personnels d’asthme ; antécédents : lipides sanguins élevés. Le double point encadré par deux espaces peut introduire le résultat d’une observation dans la hiérarchie des findings.",
+                      "solution": "",
+                      "apply": ""
+                    },
+                    "se7": {
+                      "description_fr": "le tiret simple (UTF8 0x2D - même caractère que le signe moins) encadré par deux espaces ne sert que pour introduire la forme développée d’un sigle ou d’un acronyme (voir règle ab2 sur les sigles et acronymes).",
+                      "description_en": "the single dash (UTF8 0x2D - same character as the minus sign) surrounded by two spaces is only used to introduce the expanded form of an acronym or acronym (see rule ab2 on acronyms and acronyms).",
+                      "exemple": "TDAH - trouble déficitaire de l’attention avec hyperactivité ; BPCO - bronchopneumopathie chronique obstructive",
+                      "solution": "",
+                      "comment": "generally present",
+                      "apply": ""
+                    },
+                    "co1": {
+                      "description_fr": "Le synonyme préféré du concept 404684003 |Clinical finding (finding)| est « constatation clinique ».",
+                      "description_en": "The preferred synonym of the concept 404684003 |Clinical finding (finding)| is “clinical finding”.",
+                      "exemple": "",
+                      "solution": "",
+                      "apply": ""
+                    },
+                    "co2": {
+                      "description_fr": "Le mot « finding » lorsqu’il apparait dans le terme préféré anglais se traduit en français, selon les cas, par :
+                      - « constatation à propos de » + article défini + l’objet,
+                      - « constatation » concernant + article défini + l’objet,
+                      - « constatation » + forme adjectivale de l’objet,
+                      - ou est omis s’il est redondant par rapport à l’énoncé.",
+                      "description_en": "The word “finding” when it appears in the English preferred term is translated in French, as the case may be, by:
+                      - “observation about” + definite article + the object,
+                      - “observation” concerning + definite article + the object,
+                      - “observation” + adjectival form of the object,
+                      - or is omitted if it is redundant with respect to the statement.",
+                      "exemple": "- neurological finding -> constatation neurologique
+                                  - finding of small intestine -> constatation concernant l’intestin grêle
+                                  - finding of abnormal level of metal in blood -> niveau anormal de métal lourd dans le sang",
+                      "solution": "",
+                      "apply": ""
+                    },
+                    "co3": {
+                      "description_fr": "Les concepts « On examination » - [objet de l’examen] comportent un attribut finding method = physical examination. Ces concepts se traduisent par : à l’examen de + article défini + l’objet examiné
+                          ou bien par à l’examen + forme adjectivale de l’objet examiné.",
+                      "description_en": "The “On examination” - [object of the examination] concepts have an attribute finding method = physical examination. These concepts result in: on examination of + definite article + the object examined
+                          or by at examination + adjectival form of the object examined.",
+                      "exemple": "- On examination - eye -> à l’examen de l’œil
+                                  ou bien -> à l’examen ophtalmologique
+                                  - On examination – ear, nose and throat -> à l’examen ORL (otorhinolaryngologique)",
+                      "solution": "",
+                      "apply": ""
+                    },
+                    "co4": {
+                      "description_fr": "Les concepts « On examination » - [résultat observé] comportent un attribut finding method = physical examination. Ces concepts se traduisent par : observation de + article indéfini + résultat observé.",
+                      "description_en": "“On examination” - [observed result] concepts have an attribute finding method = physical examination. These concepts translate into: observation of + indefinite article + observed result.",
+                      "exemple": "- On examination - strabismus - squint -> observation d’un strabisme
+                                  - On examination - Amputated left above knee -> observation d’une amputation du membre inférieur gauche au-dessus du genou
+                                  - On examination - edema of legs -> observation d’un œdème des membres inférieurs",
+                      "solution": "",
+                      "apply": ""
+                    },
                     "pa1": {
                       "description_fr": "Le synonyme préféré du concept 64572001 |Disease (disorder)|est « pathologie », terme le plus général pouvant regrouper les maladies, troubles, anomalies, traumas et blessures présents dans cette hiérarchie.",
-                      "description_en": "The preferred synonym for the concept 64572001 | Disease (disorder) | is “pathology”, the most general term that can group together the diseases, disorders, anomalies, traumas and injuries present in this hierarchy."
+                      "description_en": "The preferred synonym for the concept 64572001 | Disease (disorder) | is “pathology”, the most general term that can group together the diseases, disorders, anomalies, traumas and injuries present in this hierarchy.",
+                      "apply": "disorder_fix"
                     },
                     "pa2": {
                       "description_fr": "Le mot « disorder » apparaissant dans le terme préféré anglais se traduit selon les cas par :
                                         - trouble (si l’objet est une fonction),
                                         - affection (si l’objet est une structure corporelle),
                                         - désordre ou anomalie ou rien dans les autres cas",
-                      "description_fr": "The word 'disorder' appearing in the preferred English term is translated as appropriate by:
+                      "description_en": "The word 'disorder' appearing in the preferred English term is translated as appropriate by:
                                           - trouble (if the object is a function),
                                           - affection (if the object is a body structure),
                                           - disorder or anomaly or nothing in other cases",
                       "exemple": "Eating disorder -> trouble de l’alimentation
                                   Sleep disorder -> trouble du sommeil
-                                  Developmental disorder -> trouble du développement Disorder of skin -> affection de la peau
+                                  Developmental disorder -> trouble du développement
+                                  Disorder of skin -> affection de la peau
                                   Lung disorder -> affection du poumon
                                   Rectal disorder -> affection rectale
                                   Disorder of electrolytes -> désordre hydroélectrolytique
                                   Chromosomal disorder -> anomalie chromosomique
                                   Disorder of acid-base balance -> déséquilibre acidobasique",
                       "apply": "disorder_fix"
-                    }
-                  },
-                  "Règles propres à la hiérarchie des procédures": {
+                    },
+                    "me1": {
+                      "description_fr": "Les concepts 'product containing <substance> ...' ont leur terme préféré construit suivant cette forme : 'médicament contenant substance (et substance (et substance) ...)', les substances étant listées sans article, dans l’ordre alphabétique. Un terme acceptable du français commun peut remplacer le et par un +",
+                      "description_en": "The concepts 'product containing <substance> ...' have their preferred term constructed following this form: 'medicine containing substance (and substance (and substance) ...)', the substances being listed without an article, in alphabetical order . An acceptable common French term can replace the and with a +",
+                      "exemple": "- médicament contenant amoxicilline et acide clavulanique
+                                  - médicament contenant amoxicilline + acide clavulanique",
+                      "apply": ""
+                    },
+                    "me2": {
+                      "description_fr": "Les concepts 'product containing only <substance> ...' ont leur terme préféré construit suivant cette forme : 'médicament contenant seulement substance (et substance)', les substances étant listées sans article, dans l’ordre alphabétique. Un terme acceptable du français commun peut remplacer le et par un +",
+                      "description_en": "The concepts 'product containing only <substance> ...' have their preferred term constructed in this form: 'medication containing only substance (and substance)', the substances being listed without an article, in alphabetical order. An acceptable common French term can replace the and with a +",
+                      "exemple": "- médicament contenant seulement paracétamol et codéine et caféine
+                                  - médicament contenant seulement paracétamol + codéine + caféine",
+                      "apply": ""
+                    },
+                    "me3": {
+                      "description_fr": "Les concepts de médicaments virtuels (clinical drug) précisent leurs ingrédients avec leur dosage et leur forme fabriquée.",
+                      "description_en": "The virtual drug concepts (clinical drug) specify their ingredients with their dosage and their manufactured form.",
+                      "exemple": "377353009 |Product containing precisely diltiazem maleate 219 milligram and enalapril maleate 5 milligram/1 each conventional release oral tablet (clinical drug)|
+                                  le terme préféré français énonce les ingrédients avec leur dosage et les coordonne avec la conjonction « et », la forme introduite par une virgule (cf règle se1) apporte une précision finale au libellé.
+                                  Exemple : maléate de diltiazem 219 mg et maléate d'énalapril 5 mg, comprimé oral
+                                  Un terme synonyme acceptable peut être ajouté avec une formulation proche du FSN anglais : médicament contenant précisément substance dosage et substance dosage ... par forme fabriquée
+                                  Exemple : médicament contenant précisément maléate de diltiazem 219 mg et maléate d'énalapril 5 mg par comprimé oral",
+                      "apply": ""
+                    },
+                    "me4": {
+                      "description_fr": "La caractéristique de libération de la forme fabriquée n’est pas reprise dans le terme préféré français lorsque sa valeur est « libération conventionnelle (ou classique) », car il s’agit de la valeur par défaut.",
+                      "description_en": "The release characteristic of the manufactured form is not included in the French preferred term when its value is 'conventional (or classic) release', as this is the default.",
+                      "exemple": "Ceci reprend la règle éditoriale internationale : Pharmaceutical dose form editorial guidelines, v 2019-10-04 p16 : PT exclude <dose form release characteristic> when 736849007 |conventional release|
+                                Exemple : maléate de diltiazem 219 mg et maléate d'énalapril 5 mg, comprimé oral",
+                      "apply": ""
+                    },
+                    "ec1": {
+                      "description_fr": "Le concept 123038009 |Specimen (specimen)| a pour terme préféré français « échantillon » et pour terme acceptable « spécimen ».",
+                      "description_en": "The concept 123038009 |Specimen (specimen)| has the French preferred term “sample” and the acceptable term 'specimen'.",
+                      "exemple": "",
+                      "apply": ""
+                    },
+                    "ec2": {
+                      "description_fr": "Le terme préféré des concepts de cette hiérarchie commence systématiquement par le mot « échantillon ». Lorsque nécessaire des synonymes employant le mot
+                                  « spécimen » peuvent être ajoutés.",
+                      "description_en": "The preferred term for concepts in this hierarchy always begins with the word “sample”.
+                                      When necessary synonyms using the word 'specimen' can be added.",
+                      "exemple": "",
+                      "apply": ""
+                    },
+                    "sb1": {
+                      "description_fr": "Les concepts « evacuated <substantif milieu biologique> collection tube <caractéristiques> » possèdent un terme français construit ainsi :
+                                        tube sous vide <caractéristiques> pour prélèvement <adjectif du milieu biologique>.",
+                      "description_en": "The concepts “evacuated <substantive biological medium> collection tube <characteristics>” have a French term constructed as follows:
+                                        vacuum tube <characteristics> for sampling <adjective of the biological medium>.",
+                      "exemple": "- Evacuated blood collection tube, K2EDTA/aprotinin -> tube sous vide EDTA avec anticoagulant irréversible-K2/aprotinine pour prélèvement sanguin",
+                      "apply": ""
+                    },
+                    "sb2": {
+                      "description_fr": "Les concepts « evacuated <substantif milieu biologique> specimen container <caractéristiques> » possèdent un terme français construit ainsi :
+                                        support sous vide <caractéristiques> pour prélèvement <adjectif du milieu biologique>.",
+                      "description_en": "The concepts “evacuated <substantive biological medium> specimen container <characteristics>” have a French term constructed as follows:
+                                        vacuum support <characteristics> for sampling <adjective of the biological medium>.",
+                      "exemple": "- Evacuated urine specimen container, boric acid (H3BO3) -> support sous vide boraté pour prélèvement urinaire",
+                      "apply": ""
+                    },
                     "pr1": {
                       "description_fr": "Le sommet de hiérarchie 71388002 |Procedure (procedure)| a pour terme préféré « procédure » qui est le terme le plus général et le plus neutre pour couvrir toutes les catégories d’actions intentionnelles du champ sanitaire présentes dans cette hiérarchie : interventions chirurgicales, consultations, conseil, administration de médicaments, régimes alimentaires, procédures administratives, examens et tests, évaluations ...",
                       "description_en": "The top of the hierarchy 71388002 | Procedure (procedure) | has for preferred term 'procedure' which is the most general and the most neutral term to cover all the categories of intentional actions of the health field present in this hierarchy: surgical interventions, consultations, advice, administration of drugs, diets, procedures administrative, examinations and tests, evaluations ..."
                     },
                     "pr2": {
                       "description_fr": "le nom « procedure » apparaissant dans les termes de cette hiérarchie se traduit par « procédure » sauf lorsque le terme représente une intervention chirurgicale auquel cas c’est le nom « intervention » qui s’impose.",
-                      'description_en': 'the name "procedure" appearing in the terms of this hierarchy translates to "procedure" except when the term represents a surgical intervention in which case the name "intervention" is required.',
+                      "description_en": "the name procedure appearing in the terms of this hierarchy translates to procedure except when the term represents a surgical intervention in which case the name intervention is required.",
                       "exemple": "Administrative procedure -> procédure administrative,
                                   Delivery procedure -> intervention liée à l’accouchement,
                                   Postoperative procedure -> procédure postopératoire,
                                   Laboratory procedure -> procédure de laboratoire,
                                   Laparoscopic procedure -> intervention laparoscopique,
                                   Obstetric procedure -> procédure obstétricale,
-                                  Administration of anesthesia for obstetric procedure -> administration d’anesthésique pour une intervention obstétricale"
+                                  Administration of anesthesia for obstetric procedure -> administration d’anesthésique pour une intervention obstétricale",
+                      "comment": "generally present"
                     },
                     "pr3": {
-                      'description_fr': 'Le nom « consultation » se traduit par « consultation »',
-                      'description_en': 'The name "consultation" translates to "consultation"'
+                      "description_fr": "Le nom « consultation » se traduit par « consultation »",
+                      "description_en": "The name 'consultation' translates to 'consultation'",
+                      "comment": "generally present"
                     },
                     "pr4": {
                       "description_fr": "Traduction de « excision », « resection » et du suffixe « ectomy » :
@@ -215,34 +397,41 @@
                                           • l’ablation d’un organe entier ou d’un corps étranger est désignée par le français « exérèse »
                                           • l’ablation d’un segment d’organe est désignée par le français « résection »
                                           • l’ablation de tissu se traduit par « ablation »
-                                          • l’ablation d’un artefact ou dispositif se traduit par
-                                          « retrait »
+                                          • l’ablation d’un artefact ou dispositif se traduit par « retrait »
                                           • excisional biopsy se traduit par « biopsie-exérèse »
                                           • incisional biopsy se traduit par « biopsie incisionnelle »
                                           • la terminaison « ectomy » donne « ectomie » en français
                                           • amputation se conserve en frança,.wis « amputation »",
-                      "description_en": 'Translation of "excision", "resection" and of the suffix "ectomy":
-                                          • the removal of an organ fragment is referred to in French as "excision"
-                                          • the ablation of an entire organ or a foreign body is referred to in French as "exeresis"
-                                          • the ablation of an organ segment is referred to in French as "resection"
-                                          • tissue ablation results in "ablation"
-                                          • the removal of an artefact or device results in
-                                          " withdrawal "
-                                          • excisional biopsy translates to "excisional biopsy"
-                                          • incisional biopsy translates to "incisional biopsy"
-                                          • the ending "ectomy" gives 'ectomy' in French
-                                          • amputation is kept in French amputation',
-                      "exemple": "Lung excision -> excision du poumon ; Lobectomy of lung -> lobectomie du poumon ; Amputation of the foot -> amputation du pied ; Removal of sebaceous cyst -> exérèse d'un kyste sébacé ; removal of soft tissue -> ablation de tissu mou
-                                  cast removal -> retrait de plâtre, Resection of segment of liver -> résection d’un segment du foie"
+                      "description_en": "Translation of 'excision', 'resection' and of the suffix 'ectomy':
+                                          • the removal of an organ fragment is referred to in French as 'excision'
+                                          • the ablation of an entire organ or a foreign body is referred to in French as 'exeresis'
+                                          • the ablation of an organ segment is referred to in French as 'resection'
+                                          • tissue ablation results in 'ablation'
+                                          • the removal of an artefact or device results in 'withdrawal'
+                                          • excisional biopsy translates to 'excisional biopsy'
+                                          • incisional biopsy translates to 'incisional biopsy'
+                                          • the ending 'ectomy' gives 'ectomy' in French
+                                          • amputation is kept in French amputation'",
+                      "exemple": "Lung excision -> excision du poumon ;
+                                Lobectomy of lung -> lobectomie du poumon ;
+                                Amputation of the foot -> amputation du pied ;
+                                Removal of sebaceous cyst -> exérèse d'un kyste sébacé ;
+                                removal of soft tissue -> ablation de tissu mou
+                                  cast removal -> retrait de plâtre,
+                                  Resection of segment of liver -> résection d’un segment du foie"
                     }
                   }
 
               },
               "DEFAULT_PREPROCESSING":{
-                "apply": {"ss1", "pr1"}
+                "apply": {"ss3", "ss4","ss5","or1","or2","or3","or4","or5","or6","ar7","ab3","um1","um4","um5","um6","um7","um8","sc1","sc2","sc3","sc4","sc5","gr1","ll1","se1","se2","se3","se4"}
               },
               "DEFAULT_POSTPROCESSING": {
-                "apply": {"ss2", "pr3"}
+                "apply": {"ss1", "ss2","ar1","ar2","ar3","ar4","ar5","ar6","np1","ab1","ab2","um2","um3","sc6","se6","se7","co1","co2","co3","co4","pa1","pa2","me1","me2","me3","me4","ec1","ec2","sb1","sb2","pr1","pr2","pr3","pr4"}
+              }
+              ,
+              "MY_MODEL":{
+                "apply": "ss1, ss2"
               }
             },
         },

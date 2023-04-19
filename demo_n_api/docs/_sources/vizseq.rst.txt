@@ -1,0 +1,115 @@
+VizSeq
+======
+
+VizSeq is a Python toolkit for visual analysis on text generation tasks like machine translation, summarization, image captioning, speech translation and video description. It takes multi-modal sources, text references as well as text predictions as inputs, and analyzes them visually
+in Jupyter Notebook or a built-in Web App (the former has Fairseq integration). VizSeq also provides a collection of multi-process scorers as a normal Python package.
+
+Please also see the paper `https://arxiv.org/pdf/1909.05424.pdf <https://arxiv.org/pdf/1909.05424.pdf>`_ for more details.
+
+Task Coverage
+-------------
+
+VizSeq accepts various source types, including text, image, audio, video or any combination of them. This covers a wide
+range of text generation tasks, examples of which are listed below:
+
+.. list-table::
+   :widths: 25 25
+   :header-rows: 1
+
+   * - Source
+     - Example Tasks
+   * - Text
+     - Machine translation, text summarization, dialog generation, grammatical error correction, open-domain question answering
+   * - Image
+     - Image captioning, image question answering, optical character recognition
+   * - Audio
+     - Speech recognition, speech translation
+   * - Video
+     - Video description
+   * - Multimodal
+     - Multimodal machine translation
+
+
+Metric Coverage
+---------------
+**Accelerated with multi-processing/multi-threading.**
+
+.. list-table::
+   :widths: 25 25
+   :header-rows: 1
+
+   * - Type
+     - Metrics
+   * - N-gram-based
+     - * BLEU ([Papineni et al., 2002](https://www.aclweb.org/anthology/P02-1040))
+       * NIST ([Doddington, 2002](http://www.mt-archive.info/HLT-2002-Doddington.pdf))
+       * METEOR ([Banerjee et al., 2005](https://www.aclweb.org/anthology/W05-0909))
+       * TER ([Snover et al., 2006](http://mt-archive.info/AMTA-2006-Snover.pdf))
+       * RIBES ([Isozaki et al., 2010](https://www.aclweb.org/anthology/D10-1092))
+       * chrF ([Popović et al., 2015](https://www.aclweb.org/anthology/W15-3049))
+       * GLEU ([Wu et al., 2016](https://arxiv.org/pdf/1609.08144.pdf))
+       * ROUGE ([Lin, 2004](https://www.aclweb.org/anthology/W04-1013))
+       * CIDEr ([Vedantam et al., 2015](https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Vedantam_CIDEr_Consensus-Based_Image_2015_CVPR_paper.pdf))
+       * WER
+   * - Embedding-based
+     - * LASER ([Artetxe and Schwenk, 2018](https://arxiv.org/pdf/1812.10464.pdf))
+       * BERTScore ([Zhang et al., 2019](https://arxiv.org/pdf/1904.09675.pdf))
+
+
+Add metric
+----------
+
+VizSeq has an open API for adding user-defined metrics. You are welcomed to contribute new scorers to enlarge VizSeq's metric coverage!
+
+Implementing A New Scorer Class
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To start with, first add `new_metric.py` to `vizseq/scorers`, in which a new scorer class is inherited from
+`VizSeqScorer` and a `score` method is defined. And then register the new scorer class with an id and a name using
+`vizseq.scorers.register_scorer`:
+
+.. highlight:: python
+
+::
+
+  from typing import Optional, List
+  from vizseq.scorers import register_scorer, VizSeqScorer, VizSeqScore
+
+  @register_scorer('new_metric_id', 'New Metric Name')
+  class NewMetricScorer(VizSeqScorer):
+     def score(
+             self, hypothesis: List[str], references: List[List[str]],
+             tags: Optional[List[List[str]]] = None
+     ) -> VizSeqScore:
+         # calculate the number of workers by number of examples
+         self._update_n_workers(len(hypothesis))
+
+         corpus_score, group_scores, sent_scores = None, None, None
+
+         if self.corpus_level:
+             # implement corpus-level score
+             corpus_score = 99.9
+         if self.sent_level:
+             # implement sentence-level score
+             sent_scores=[99.9, 99.9]
+         if tags is not None:
+             tag_set = self._unique(tags)
+             # implement group-level (by sentence tags) score
+             group_scores={t: 99.9 for t in tag_set}
+
+         return VizSeqScore.make(
+             corpus_score=corpus_score, sent_scores=sent_scores,
+             group_scores=group_scores
+         )
+
+Testing the New Scorer Class
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+All the scorer classes need to be covered by tests. To achieve that, Add a unit test `test_new_metric.py` to
+`tests/scorers` and run: ::
+
+   python -m unittest tests.scorers.test_new_metric
+
+License
+-------
+
+VizSeq is licensed under `MIT <https://github.com/facebookresearch/vizseq/blob/master/LICENSE>`_.

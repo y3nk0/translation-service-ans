@@ -1,0 +1,29 @@
+Postprocessing
+==============
+
+Rules to process output translation
+-----------------------------------
+
+#. Mettre la graphie en accord avec la prononciation lorsque é se prononce è. Un synonyme acceptable peut être ajouté dans l’ancienne orthographe pour être adopté comme terme préféré par l’un des pays francophones.
+
+#. le trait d’union coordonnant deux noms propres ou géographiques est conservé pour marquer l’égalité des deux noms. Exemple : hépatite Epstein-Barr
+
+#. le trait d’union est conservé avec les préfixes demi-, mi-, semi-, ex-, sous-, vice-, non-
+
+#. Les symboles mathématiques ou scientifiques sont employés en respectant la graphie fixée par les standards internationaux.
+
+#. Les symboles de comparaison '<' (inférieur à) et '>' sont remplacés par l'expression en clair pour éviter les risques de mésinterprétation. Exemples : T1 : taille de la tumeur inférieure à 1 cm, limitée à la glande thyroïde ; marge supérieure ou égale à 1 mm
+
+#. Cas général : Terme – y compris la première lettre – en minuscules et insensible à la casse. Exemples : pH ; IgG ; ADN ; Legionella anisa ; Epstein-Barr
+
+#. Positionner les trémas sur la lettre à prononcer. Exemple : otite aigüe (et non pas aiguë). Un synonyme acceptable peut être ajouté dans l’ancienne orthographe pour être adopté comme terme préféré par l’un des pays francophones.
+
+#. Les unités de température sont exprimées en forme développée - degrés Celsius. Exemple : Fever greater than 38 Celsius -> Fièvre supérieure à 38 degrés Celsius
+
+#. Les lettres ligaturées doivent être employées à bon escient et avec le bon codage : æ : UTF8 = 0xC3 0xA6 ; (Alt 0230 sous Windows) Æ : UTF8 = 0xC3 0x86 ; (Alt 0198 sous Windows) œ : UTF8 = 0xC5 0x93 ; (Alt 0156 sous Windows) Œ : UTF8 = 0xC5 0x92 ; (Alt 0140 sous Windows) Exemples : fœtal ; œsophage ; nævus
+
+#. Les lettres grecques sont écrites en forme longue. Exception : la lettre μ (micro) dans une unité (comme indiqué plus haut). Exemples : Beta-lactamase inhibitor -> inhibiteur de bêta-lactamase - Alpha fetoprotein -> alpha-fœtoprotéine, umol/L (pour micromoles par litre)
+
+#. Pas d’article en début de terme. Exemple : syndrome hépatorénal
+
+#. Article défini pluriel lorsque le terme anglais spécifie « all » ou « both ». Exemples : Congenital absence of all fingers -> absence congénitale de tous les doigts ; Lesion of both ears -> lésion des deux oreilles

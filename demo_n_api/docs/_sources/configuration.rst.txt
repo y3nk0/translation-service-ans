@@ -1,0 +1,52 @@
+Configuration
+=============
+
+Json file
+---------
+
+The configuration json file contains all the rules for fixing errors or applying specific definitions that a medical terminology may require. Configuration rules may be applied before the training process (pre-processing the training dataset) or after inference (post-processing the output translation).
+
+Settings
+^^^^^^^^
+
+All settings that can be adjusted and changed will be present in a configuration file, in a form of a json file. This way, a user will be able to easily customize the pipeline, having multiple options:
+
+*	Selecting on which ground truth to evaluate a new model
+*	Scoring of the translation (when there is no ground truth)
+*	Applying specific language rules (described in the next section)
+
+Rules
+^^^^^
+
+In order to be able to train a custom translation model for a specific terminology, we may be interested into forcing some grammatical or syntactical rules. The rules can be either applied during the pre- or post-processing steps:
+
+*	pre-process: rules to apply on the datasets that we use for training translation models (slower as we need to retrain a model). The idea here is that we may not want to apply all rules before training as it will change the model and its outcomes. Moreover, not all rules can be applied easily in the training sets. For example, word order or using different words. We do that only if we are sure that we want a customized model for a specific terminology
+*	post-process: rules to apply on the outcome of translation (faster). This way we may have a very general trained model that can give us a good result, but then we can apply our rules to go towards a specific terminology. In a smaller output, we could be able to identify patterns that can be changed easier even in cases of word order.
+
+Setup
+^^^^^
+
+Here, we describe the setup that we will use to train our models:
+
+*	We will tune the process by changing the training datasets corpora between rounds. The combination of different size of datasets enable enrich the capacity of translation pipeline by improving the capture of general medical domain expression (within large data sets) or specific domains vocabulary (found in smaller datasets).
+*	We use Facebook’s largely pretrained model which is trained on general domain data with FAIRSEQ, and then fine-tune it with, on medical terminologies-datasets.
+*	We fine-tune the largely pre-trained model on medical terminologies, via transfer learning, improving the quality of the translation
+*	We use CNNs (with attention mechanisms that capture dependencies) and Transformer (a fully attention-based model) and examine Ensembles of the CNNs (combine and score models via probabilities)
+
+Translation metrics
+^^^^^^^^^^^^^^^^^^^
+
+BLEU (Bilingual Evaluation Understudy) (Papineni et al., 2002) is calculated for individual translated segments (n-grams) by comparing them with a dataset of reference translations, BLEU is a dimensionless metric varying between 0 (possibly wrong translation) to 1 (exact match). Low BLEU score means high mismatch and higher score means a better match.
+Recent results point out that BLEU is very harsh on penalizing sentences that may carry synonyms, which is applicable in cases where reference is limited. Therefore a relevant translation might get a very low BLEU score.
+In order to improve translation metrics we have exploited BLEU2VEC (Tattar, Fishel 2017), a metric which utilizes word embeddings for taking under consideration similarity between translation and reference.
+
+Ground truth data for validation/evaluation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We have created two ground truth datasets for evaluating our trained neural translation models. As our main target was to translate ICD-11, the first ground truth dataset we created was smaller subset of ICD-11. For the second one we tried to create a larger corpus which would include more terms and sentences.
+
+
+Code file
+---------
+
+The configuration scripts files contains all the methods required for the pipeline to apply the configuration rules, as stated the json file.

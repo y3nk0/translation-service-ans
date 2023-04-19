@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ground truth data for validation/evaluation &mdash; ANS Translation Service 0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Unsupervised quality estimation" href="unsupervised_metric.html" />
+    <link rel="prev" title="Postprocessing" href="postprocessing.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ANS Translation Service
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline.html">Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessing.html">Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="training.html">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postprocessing.html">Postprocessing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Ground truth data for validation/evaluation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#icd-11-subset">ICD-11 subset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#atih-validated-corpus">ATIH validated corpus</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="unsupervised_metric.html">Unsupervised quality estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use-cases.html">Use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vizseq.html">VizSeq</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ANS Translation Service</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Ground truth data for validation/evaluation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/validation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="ground-truth-data-for-validation-evaluation">
+<h1>Ground truth data for validation/evaluation<a class="headerlink" href="#ground-truth-data-for-validation-evaluation" title="Permalink to this heading"></a></h1>
+<p>We have created two ground truth datasets for evaluating our trained neural translation models. As our main target was to translate ICD-11, the first ground truth dataset we created was smaller subset of ICD-11. For the second one we tried to create a larger corpus which would include more terms and sentences.</p>
+<section id="icd-11-subset">
+<h2>ICD-11 subset<a class="headerlink" href="#icd-11-subset" title="Permalink to this heading"></a></h2>
+<p>For ICD-11 given the fact that there is presently no human validated reference translation for French, we manually created one.
+Our attempt offers the possibilities of speeding up the process of translating medical lexicons and documents, saving valuable human and computational resources. We evaluate our pipeline in two datasets: a sample of ICD-11 and the whole ICF terminologies. In the case of ICF terminology, we have access to both English and French medical experts validated versions. For ICD-11, since the French official version does not exist yet, we develop a method to evaluate and validate our results.
+Through our studies, we discovered that a sample of the English ICD-11 terms can be found in existing French dictionaries. Thus, we can use these terms along with their French translation as already human-validated sentences. We end up having 24242 pairs in English and French that are already integrated in terminologies like ORDO, MESH INSERM, LOINC 2.66 and others. Although, existing terms may as well require revision by a medical expert, the process indisputably accelerates the translation pipeline, compared to translating a terminology from scratch.</p>
+</section>
+<section id="atih-validated-corpus">
+<h2>ATIH validated corpus<a class="headerlink" href="#atih-validated-corpus" title="Permalink to this heading"></a></h2>
+<p>We use a new ATIH Validated corpus to evaluate translation with BLEU and BLEU2VEC scores. ATIH provided a human translated subset of ICD11 for reference corresponding of human validated translation preformed in 2019. 75861 terms among which the majority of labels (95%) have less than 70 chars (or 10 words) were used  to compare BLEU2VEC and BLEU scores.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="postprocessing.html" class="btn btn-neutral float-left" title="Postprocessing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="unsupervised_metric.html" class="btn btn-neutral float-right" title="Unsupervised quality estimation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Konstantinos Skianis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
