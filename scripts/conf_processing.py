@@ -48,19 +48,6 @@ def replace_nos_with_sai(st):
     return st
 
 def replace_1st_letter_with_lower(st_en, st_fr):
-    # changed = False
-    # if st_en.split()[0].lower()==st_fr.split()[0].lower():
-    #     if not st_en.split()[0].isupper():
-    #         st_fr = st_fr[0].lower() + "".join(st_fr[1:])
-    #         changed = True
-    # else:
-    #     if len(st_en.split())>1:
-    #         if st_en.split()[1].lower()==st_fr.split()[0].lower():
-    #             if not st_en.split()[1].isupper():
-    #                 st_fr = st_fr[0].lower() + "".join(st_fr[1:])
-    #                 changed = True
-    #
-    # if not changed:
     if not st_fr.split()[0].isupper():
         doc = nlp(st_fr)
         if doc[0].pos_=="NOUN" or doc[0].pos_=="ADJ" or doc[0].pos_=="ADP":
@@ -1034,6 +1021,85 @@ def rule_fluid(st_en, st_fr):
     return st_fr
 
 
+def get_dicts():
+
+    bs2_dict = {}
+    df_bs = pd.read_excel("../resources/Avancement_traduction_anatomie-1.xlsx", sheet_name="bs2")
+    df_bs = df_bs.fillna('')
+    for index, row in df_bs.iterrows():
+        err = str(row['erroneous_translation'])
+        corr = str(row['correct_translation_prefLabel'])
+        if corr!="":
+            bs2_dict[err] = corr
+
+    bs3_dict = {}
+    df_bs = pd.read_excel("../resources/Avancement_traduction_anatomie-1.xlsx", sheet_name="bs3")
+    df_bs = df_bs.fillna('')
+    for index, row in df_bs.iterrows():
+        err = str(row['erroneous_translation'])
+        corr = str(row['correct_translation_prefLabel'])
+        if corr!="":
+            bs3_dict[err] = corr
+
+    hyphen_dict_pref = {}
+    hyphen_dict_alt = {}
+    df_hyphen = pd.read_excel("../resources/Avancement_traduction_anatomie-1.xlsx", sheet_name="Hyphen")
+    df_hyphen = df_hyphen.fillna('')
+    for index, row in df_hyphen.iterrows():
+        err = str(row['erroneous_translation'])
+        corr = str(row['correct_translation_prefLabel'])
+        corr_alt = str(row['correct_translation_altLabel'])
+
+        if "[" not in corr:
+            if corr!="":
+                hyphen_dict_pref[err] = corr
+        else:
+            if corr=="[TO REMOVE]":
+                hyphen_dict_pref[err] = ""
+
+        if err!="" and corr_alt!="":
+            hyphen_dict_alt[err] = corr_alt
+
+    ar7_dict_pref = {}
+    ar7_dict_alt = {}
+    ar7_dict_eng = {}
+    df_ar = pd.read_excel("../resources/Avancement_traduction_anatomie-1.xlsx", sheet_name="ar7")
+    df_ar = df_ar.fillna('')
+    for index, row in df_ar.iterrows():
+        err = str(row['erroneous_translation'])
+        corr = str(row['correct_translation_prefLabel'])
+        corr_alt = str(row['correct_translation_altLabel'])
+        eng = str(row['english_term'])
+
+        if err!="" and corr!="":
+            ar7_dict_pref[err] = corr
+        if err!="" and corr_alt!="":
+            ar7_dict_alt[err] = corr_alt
+        if err!="" and eng!="":
+            ar7_dict_eng[err] = eng
+
+    ll1_dict = {}
+    df_ll1 = pd.read_excel("../resources/Avancement_traduction_anatomie-1.xlsx", sheet_name="ll1")
+    df_ll1 = df_ll1.fillna('')
+    for index, row in df_ll1.iterrows():
+        err = str(row['erroneous_translation'])
+        corr = str(row['correct_translation'])
+        if corr!="":
+            ll1_dict[err] = corr
+
+    custom_dict = {}
+    df_custom = pd.read_excel("../resources/Avancement_traduction_anatomie-1.xlsx", sheet_name="custom")
+    df_custom = df_custom.fillna('')
+    for index, row in df_custom.iterrows():
+        err = str(row['erroneous_translation'])
+        corr = str(row['correct_translation'])
+        if corr!="":
+            custom_dict[err] = corr
+
+    return bs2_dict, bs3_dict, hyphen_dict_pref, hyphen_dict_alt, ar7_dict_pref, ar7_dict_alt, ar7_dict_eng, ll1_dict, custom_dict
+
+
+
 def run_tests():
 
     st_fr = "aiguë"
@@ -1141,78 +1207,7 @@ def run_tests():
 
 def snomed_testing():
 
-    bs2_dict = {}
-    df_bs = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="bs2")
-    df_bs = df_bs.fillna('')
-    for index, row in df_bs.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        if corr!="":
-            bs2_dict[err] = corr
-
-    bs3_dict = {}
-    df_bs = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="bs3")
-    df_bs = df_bs.fillna('')
-    for index, row in df_bs.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        if corr!="":
-            bs3_dict[err] = corr
-
-    hyphen_dict_pref = {}
-    hyphen_dict_alt = {}
-    df_hyphen = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="Hyphen")
-    df_hyphen = df_hyphen.fillna('')
-    for index, row in df_hyphen.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        corr_alt = str(row['correct_translation_altLabel'])
-
-        if "[" not in corr:
-            if corr!="":
-                hyphen_dict_pref[err] = corr
-        else:
-            if corr=="[TO REMOVE]":
-                hyphen_dict_pref[err] = ""
-
-        if err!="" and corr_alt!="":
-            hyphen_dict_alt[err] = corr_alt
-
-    ar7_dict_pref = {}
-    ar7_dict_alt = {}
-    ar7_dict_eng = {}
-    df_ar = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="ar7")
-    df_ar = df_ar.fillna('')
-    for index, row in df_ar.iterrows():
-        err = str(row['erroneous_translation'])
-        eng = str(row['english_term'])
-        corr = str(row['correct_translation_prefLabel'])
-        corr_alt = str(row['correct_translation_altLabel'])
-
-        if err!="" and corr!="":
-            ar7_dict_pref[err] = corr
-        if err!="" and corr_alt!="":
-            ar7_dict_alt[err] = corr_alt
-        if err!="" and eng!="":
-            ar7_dict_eng[err] = eng
-
-    ll1_dict = {}
-    df_ll1 = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="ll1")
-    df_ll1 = df_ll1.fillna('')
-    for index, row in df_ll1.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation'])
-        if corr!="":
-            ll1_dict[err] = corr
-
-    custom_dict = {}
-    df_custom = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="custom")
-    df_custom = df_custom.fillna('')
-    for index, row in df_custom.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation'])
-        if corr!="":
-            custom_dict[err] = corr
+    bs2_dict, bs3_dict, hyphen_dict_pref, hyphen_dict_alt, ar7_dict_pref, ar7_dict_alt, ar7_dict_eng, ll1_dict, custom_dict = get_dicts()
 
     to_check = [['BO - Buccal-occlusal',
                 'BO - bucco-occlusal',
@@ -1394,87 +1389,9 @@ def snomed_testing():
 
 def fix_snomed_rules():
 
-    # mypath = '../../results_snomed_2022_new'
-    # onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
-    #
-    # for onlyfile in onlyfiles:
-    #     if onlyfile.endswith("csv"):
-    #         print(onlyfile+"\n")
+    bs2_dict, bs3_dict, hyphen_dict_pref, hyphen_dict_alt, ar7_dict_pref, ar7_dict_alt, ar7_dict_eng, ll1_dict, custom_dict = get_dicts()
 
-    bs2_dict = {}
-    df_bs = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="bs2")
-    df_bs = df_bs.fillna('')
-    for index, row in df_bs.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        if corr!="":
-            bs2_dict[err] = corr
-
-    bs3_dict = {}
-    df_bs = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="bs3")
-    df_bs = df_bs.fillna('')
-    for index, row in df_bs.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        if corr!="":
-            bs3_dict[err] = corr
-
-    hyphen_dict_pref = {}
-    hyphen_dict_alt = {}
-    df_hyphen = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="Hyphen")
-    df_hyphen = df_hyphen.fillna('')
-    for index, row in df_hyphen.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        corr_alt = str(row['correct_translation_altLabel'])
-
-        if "[" not in corr:
-            if corr!="":
-                hyphen_dict_pref[err] = corr
-        else:
-            if corr=="[TO REMOVE]":
-                hyphen_dict_pref[err] = ""
-
-        if err!="" and corr_alt!="":
-            hyphen_dict_alt[err] = corr_alt
-
-    ar7_dict_pref = {}
-    ar7_dict_alt = {}
-    ar7_dict_eng = {}
-    df_ar = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="ar7")
-    df_ar = df_ar.fillna('')
-    for index, row in df_ar.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        corr_alt = str(row['correct_translation_altLabel'])
-        eng = str(row['english_term'])
-
-        if err!="" and corr!="":
-            ar7_dict_pref[err] = corr
-        if err!="" and corr_alt!="":
-            ar7_dict_alt[err] = corr_alt
-        if err!="" and eng!="":
-            ar7_dict_eng[err] = eng
-
-    ll1_dict = {}
-    df_ll1 = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="ll1")
-    df_ll1 = df_ll1.fillna('')
-    for index, row in df_ll1.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation'])
-        if corr!="":
-            ll1_dict[err] = corr
-
-    custom_dict = {}
-    df_custom = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="custom")
-    df_custom = df_custom.fillna('')
-    for index, row in df_custom.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation'])
-        if corr!="":
-            custom_dict[err] = corr
-
-    df = pd.read_csv("/Users/konstantinosskianis/Documents/icd11-translation/snomed-2022/123037004_Body_structure-1.csv",sep='|')
+    df = pd.read_csv("../../../snomed-2022/123037004_Body_structure-1.csv",sep='|')
     #
     # path = "../../results_snomed_2022_after_rules/snomed_2022_english_terms_cased.txt"
     # f = open(path,"r")
@@ -1491,9 +1408,9 @@ def fix_snomed_rules():
 
     nlp_en = spacy.load("en_core_web_trf")
 
-    df_old = pd.read_csv("/Users/konstantinosskianis/Documents/icd11-translation/extension-2021/results_snomed_2022_after_rules/123037004_Body_structure_translated_RULES_NEW.csv",sep="|")
+    df_old = pd.read_csv("../../results_snomed_2022_after_rules/123037004_Body_structure_translated_RULES_NEW.csv",sep="|")
 
-    df_all = pd.read_excel("/Users/konstantinosskianis/Documents/icd11-translation/extension-2021/results_snomed_2022_after_rules/SNOMED_123037004_body_structure_27-10-2022.xlsx")
+    df_all = pd.read_excel("../../results_snomed_2022_after_rules/SNOMED_123037004_body_structure_27-10-2022.xlsx")
 
     ffr = open("../../results_snomed_2022_after_rules/123037004_Body_structure.csv_translated_all.csv_RULES_2-2-2023_PROPN_only.csv","w")
     ffr.write("URI|PROPERTY|ENGLISH LABEL|TRANSLATION|FIXED\n")
@@ -1539,27 +1456,6 @@ def fix_snomed_rules():
         if doc_en[0].pos_=="PROPN": #and doc_en[0].dep_=="poss":
             st_fr = st_fr_old
 
-        ## this is to catch missing words
-        # if len(st_fr_old.split())>len(st_fr.split()):
-        #     st_fr = st_fr_old
-
-        # import ipdb; ipdb.set_trace()
-        # if not cat_row.empty:
-        #     if str(cat_row['uri'])==uri and str(cat_row['property'])==prop:
-        #         st_fr_orig = str(cat_row['orig_translation'])
-        #         st_fr = str(cat_row['fixed_translation_after_rules'])
-        # else:
-        #     cat_row = df_all.loc[df_all['en_term'] == st_en.split("(")[0].strip()].squeeze()
-        #     # import ipdb; ipdb.set_trace()
-        #     if str(cat_row['uri'])==uri and str(cat_row['property'])==prop:
-        #         st_fr_orig = str(cat_row['orig_translation'])
-        #         st_fr = str(cat_row['fixed_translation_after_rules'])
-
-        # if st_fr=="":
-        # st_fr_orig = lines_fr[counter].replace("\n","")
-        # st_fr = lines_fr[counter].replace("\n","")
-        # st_fr_orig = lines_fr[index].replace("\n","")
-        # st_fr = lines_fr[index].replace("\n","")
         counter += 1
 
         st_fr = st_fr.strip(".")
@@ -1569,22 +1465,6 @@ def fix_snomed_rules():
         st_fr = st_fr.replace(" ; ",";")
 
         st_fr = st_fr.replace(" +", "+")
-        # if "+" in st_fr:
-        #     st_fr_new = ""
-        #     positions = [pos for pos, char in enumerate(st_fr) if char == "+"]
-        #
-        #     if len(positions)>1:
-        #         for pos in positions[0:len(positions)-1]:
-        #             if st_fr[pos+1]==" ":
-        #                 st_fr_new = st_fr[:pos+1] + st_fr[pos+2:]
-        #
-        #         st_en_spl = st_en.split()
-        #         for st in st_fr_new.split():
-        #             if "+" in st:
-        #                 if st not in st_en_spl:
-        #                     st_fr_new = st_fr
-        #
-        #         st_fr = st_fr_new
 
         if "+" in st_fr:
             st_fr_new = ""
@@ -1729,42 +1609,6 @@ def fix_ncit_rules():
 
         if row['Type']=="def":
             line = line[0].upper() + "".join(line[1:])
-        # else:
-        #     ## FIX case
-        #     line_s = line.split()
-        #
-        #     ### check extreme cases
-        #     line_en_s = line_en.split()
-        #
-        #     if not line_s[0].isupper():
-        #         line = line_s[0].lower() + " " + " ".join(line_s[1:])
-        #
-        #         if line_en_s[0]==line_s[0]:
-        #             if line_en_s[0].strip("s").isupper():
-        #                 line = prev_line[0] + " " + " ".join(line_s[1:])
-        #
-        #         if line_en_s[0].split("-")[0]==line_s[0].split("-")[0]:
-        #             if line_en_s[0].split("-")[0].isupper():
-        #                 line = prev_line[0] + " " + " ".join(line_s[1:])
-
-            ## FIX singular
-            # single = True
-            # for word in line_en.split():
-            #     if p.singular_noun(word):
-            #         single = False
-            #
-            # single_fr = True
-            # if single:
-            #     for word in line.split():
-            #         if singular_or_plural_fr(word)=='plural':
-            #             single_fr = False
-            #
-            #     if not single_fr:
-            #         sent = ""
-            #         for word in line.split():
-            #             sent += " " + pluralizefr.singularize(word)
-            #
-            #         line = sent.strip()
 
         for l in line_en.split():
             if l in acronyms:
@@ -2002,294 +1846,40 @@ def check_upper():
         print(token.text, token.pos_, token.dep_)
 
 
+
 def fix_environ_snomed_rules():
-
-
-
-    # df = pd.read_csv("/Users/konstantinosskianis/Documents/icd11-translation/snomed-2022/123037004_Body_structure-1.csv",sep='|')
-    # df = pd.read_csv("/Users/konstantinosskianis/Documents/icd11-translation/snomed-2022/Environnment_geographical_location.csv",sep='|',encoding='utf-8')
-
-    df = pd.read_excel("/Users/konstantinosskianis/Documents/icd11-translation/extension-2021/data/feedback_environment (1).xlsx")
-    df = df.fillna('')
-
-    # path = "../../results_snomed_2022_after_rules/snomed_2022_english_terms_cased.txt"
-    # f = open(path,"r")
-    # lines_en = f.readlines()
-    # f.close()
-
-    fr_to_tran = open("../../results_snomed_2022_after_rules/multiple_results_scores.txt","r")
-    lines_fr = fr_to_tran.readlines()
-    fr_to_tran.close()
-
-    fr_to_tran = open("../../results_snomed_2022_after_rules/multiple_results_lower_scores.txt","r")
-    lines_fr_lower = fr_to_tran.readlines()
-    fr_to_tran.close()
-
-    df_sep = pd.read_csv("../../../snomed-2022/SEP.csv",sep="|")
-
-    nlp_en = spacy.load("en_core_web_trf")
-
-    ffr = open("../../results_snomed_2022_after_rules/environ_translated_RULES_31-3-2023.csv","w")
-    ffr.write("URI|PROPERTY|ENGLISH LABEL|TRANSLATION\n")
-    # fr = open("../../results_snomed_2022_after_rules/123037004_Body_structure.csv_translated_all.csv_RULES_2-2-2023_changed_PROPN_only.csv","w")
-
-    changed = 0
-    counter = 0
-
-    for index, row in tqdm(df.iterrows(), total=df.shape[0]):
-
-        uri = str(row['URI'])
-        prop = str(row['PROPERTY'])
-        st_en = str(row['ENGLISH']).replace("\n","").strip()
-        # rules = str(row['rules']).split(",")
-        # st_en_cased = lines_en[index].replace("\n","")
-
-        row_sep = df_sep.loc[df_sep['URI'] == uri]
-        try:
-            sep = str(row_sep['SEP'].item())
-        except:
-            pass
-        # import ipdb; ipdb.set_trace()
-        # print(sep)
-
-        doc_en = nlp_en(st_en)
-
-        # st_fr = ""
-        st_fr_orig = lines_fr[index].strip()
-        st_fr_lower = lines_fr_lower[index].strip()
-        # import ipdb; ipdb.set_trace()
-
-        # bs_tag = str(df_bs.iloc[index]['rules'])
-
-        st_fr = st_fr_lower
-        if doc_en[0].pos_=="PROPN": #and doc_en[0].dep_=="poss":
-            st_fr = st_fr_orig
-
-        # for word in doc_en.ents:
-        # import ipdb; ipdb.set_trace()
-        if len(doc_en.ents)>0:
-            # print(st_fr_orig)
-            if st_en.split()[0]==doc_en.ents[0].text:
-                if doc_en.ents[0].label_=="ORG" or doc_en.ents[0].label_=="GPE":
-                    st_fr = st_fr_orig
-                    print(st_fr+" "+doc_en.ents[0].label_)
-
-        counter += 1
-
-        st_fr = st_fr.strip(".")
-        st_fr = st_fr.replace(" / ","/")
-        st_fr = st_fr.replace("( ","(")
-        st_fr = st_fr.replace(" )",")")
-        st_fr = st_fr.replace(" ; ",";")
-
-        st_fr = st_fr.replace(" +", "+")
-
-        if "+" in st_fr:
-            st_fr_new = ""
-            positions = [pos for pos, char in enumerate(st_fr) if char == "+"]
-
-            if len(positions)>=1:
-                for pos in positions[0:len(positions)-1]:
-                    if st_fr[pos+1]==" ":
-                        st_fr = st_fr[:pos+1] + st_fr[pos+2:]
-
-        # print(st_en)
-        # print(st_fr)
-        st_fr = replace_1st_letter_with_lower(st_en,st_fr)
-
-        st_fr = or2_accent(st_fr)
-        st_fr = or3_or4_or5_hyphen(st_fr,hyphen_dict_pref, hyphen_dict_alt, prop)
-
-        st_fr = sc1_roman_uppercase(st_fr)
-        st_fr = sc6_replace_comp_symbols(st_fr)
-
-        st_fr = ss1_ss2_rule(st_en, st_fr)
-
-        st_fr = or1_orthographe_replace(st_fr)
-
-        st_fr = bs1_replace_with_right_trans(st_en,st_fr)
-
-        # if "bs2" in bs_tag:
-        st_fr = bs2_replace(st_en,st_fr,bs2_dict)
-
-        if st_fr not in ar7_dict_pref and st_fr not in ar7_dict_alt:
-            # if "bs3" in bs_tag:
-
-            if "all" not in st_en and "All" not in st_en:
-                st_fr = bs3_replace(st_en,st_fr,bs3_dict, prop)
-
-                # if "pref" in prop and "structure" in st_en and sep=="SEP-S":
-                #     st_fr = st_fr.replace("structure de","")
-                #     st_fr = st_fr.replace("structure du","")
-                #     st_fr = st_fr.replace("structures","")
-                #     st_fr = st_fr.replace("structure","")
-                #     st_fr = st_fr.replace("os de l'os","os")
-
-                # if "alt" in prop and "structure" in st_en and sep=="SEP-S":
-                #
-                # if " part " in st_en and sep=="SEP-P":
-
-        st_fr = bs5_replace(st_fr)
-        st_fr = bs6_replace(st_fr)
-        st_fr = bs8_replace(st_fr, prop)
-
-        st_fr = um2_temperature(st_fr)
-        st_fr = disorder_fix(st_en,st_fr)
-
-        st_fr = ll1_replace(st_fr, ll1_dict)
-        # st_fr = check_for_mg(st_fr)
-
-        st_fr = gr1_replace_greek_letter_with_long(st_fr)
-
-        st_fr = ar7_plural_if_both_or_all(st_en, st_fr, ar7_dict_pref, ar7_dict_alt, ar7_dict_eng, prop)
-
-        st_fr = ar2_remove_article_from_start(st_fr)
-
-        st_fr = custom_replace(st_fr, custom_dict)
-
-        st_fr = detect_acronym(st_en, st_fr)
-
-        st_fr = rule_CS(st_en, st_fr)
-        st_fr = rule_azygos(st_en, st_fr)
-        st_fr = rule_lens(st_en, st_fr)
-        st_fr = rule_male(st_en, st_fr)
-        st_fr = rule_female(st_en, st_fr)
-        st_fr = rule_male_to_female(st_en, st_fr)
-        st_fr = rule_fallopian(st_en, st_fr, prop)
-        st_fr = rule_fluid(st_en, st_fr)
-        st_fr = rule_compatible(st_en, st_fr)
-        st_fr = rule_atrial(st_en,st_fr)
-
-        # if st_fr!=st_fr_orig:
-        #     changed += 1
-        #     fr.write(st_fr_orig+"|"+st_fr+"\n")
-
-        st_fr = st_fr.strip()
-        if st_en[-1]!="." and st_fr[-1]==".":
-            st_fr = st_fr.strip(".")
-
-        # ffr.write(line[0]+"|"+line[1]+"|"+line[2]+"|"+st_fr_orig+"|"+st_fr+"\n")
-        ffr.write(uri+"|"+prop+"|"+st_en+"|"+st_fr_orig+"|"+st_fr+"\n")
-        # ffr.write(st_fr+"\n")
-
-    # fr.close()
-    ffr.close()
-
-    print(str(changed))
-
-
-def environ_stats():
     from nltk.tokenize import word_tokenize
     from Levenshtein import distance
     cc = nltk.translate.bleu_score.SmoothingFunction()
 
-    bs2_dict = {}
-    df_bs = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="bs2")
-    df_bs = df_bs.fillna('')
-    for index, row in df_bs.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        if corr!="":
-            bs2_dict[err] = corr
+    bs2_dict, bs3_dict, hyphen_dict_pref, hyphen_dict_alt, ar7_dict_pref, ar7_dict_alt, ar7_dict_eng, ll1_dict, custom_dict = get_dicts()
 
-    bs3_dict = {}
-    df_bs = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="bs3")
-    df_bs = df_bs.fillna('')
-    for index, row in df_bs.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        if corr!="":
-            bs3_dict[err] = corr
-
-    hyphen_dict_pref = {}
-    hyphen_dict_alt = {}
-    df_hyphen = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="Hyphen")
-    df_hyphen = df_hyphen.fillna('')
-    for index, row in df_hyphen.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        corr_alt = str(row['correct_translation_altLabel'])
-
-        if "[" not in corr:
-            if corr!="":
-                hyphen_dict_pref[err] = corr
-        else:
-            if corr=="[TO REMOVE]":
-                hyphen_dict_pref[err] = ""
-
-        if err!="" and corr_alt!="":
-            hyphen_dict_alt[err] = corr_alt
-
-    ar7_dict_pref = {}
-    ar7_dict_alt = {}
-    ar7_dict_eng = {}
-    df_ar = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="ar7")
-    df_ar = df_ar.fillna('')
-    for index, row in df_ar.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation_prefLabel'])
-        corr_alt = str(row['correct_translation_altLabel'])
-        eng = str(row['english_term'])
-
-        if err!="" and corr!="":
-            ar7_dict_pref[err] = corr
-        if err!="" and corr_alt!="":
-            ar7_dict_alt[err] = corr_alt
-        if err!="" and eng!="":
-            ar7_dict_eng[err] = eng
-
-    ll1_dict = {}
-    df_ll1 = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="ll1")
-    df_ll1 = df_ll1.fillna('')
-    for index, row in df_ll1.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation'])
-        if corr!="":
-            ll1_dict[err] = corr
-
-    custom_dict = {}
-    df_custom = pd.read_excel("../../../snomed-2022/Avancement_traduction_anatomie-1.xlsx", sheet_name="custom")
-    df_custom = df_custom.fillna('')
-    for index, row in df_custom.iterrows():
-        err = str(row['erroneous_translation'])
-        corr = str(row['correct_translation'])
-        if corr!="":
-            custom_dict[err] = corr
 
     # model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2', device='cpu', cache_folder='./')
     model = SentenceTransformer('sentence-transformers/stsb-xlm-r-multilingual')
 
-    df = pd.read_excel("/Users/konstantinosskianis/Documents/icd11-translation/extension-2021/data/feedback_environment (1).xlsx")
+    df = pd.read_excel("../resources/feedback_environment_6-4-2023.xlsx")
     df = df.fillna('')
 
     counter_ok = 0
     counter_l = 0
 
-    fr_to_tran = open("../../results_snomed_2022_after_rules/multiple_results_scores.txt","r")
+    fr_to_tran = open("../resources/multiple_results_scores.txt","r")
     lines_fr_upper = fr_to_tran.readlines()
     fr_to_tran.close()
 
-    fr_to_tran = open("../../results_snomed_2022_after_rules/multiple_results_lower_scores.txt","r")
+    fr_to_tran = open("../resources/multiple_results_lower_scores.txt","r")
     lines_fr_lower = fr_to_tran.readlines()
     fr_to_tran.close()
 
-    df_sep = pd.read_csv("../../../snomed-2022/SEP.csv",sep="|")
+    df_sep = pd.read_csv("../resources/SEP.csv",sep="|")
 
+    ## load both models to match ner entities
     nlp_en_trf = spacy.load("en_core_web_trf")
     nlp_en = spacy.load("en_core_web_lg")
 
-    # f = open("environ_multiple_results.txt","r")
-    # lines = f.readlines()
-    # f.close()
-
-    ffr = open("../../results_snomed_2022_after_rules/environ_translated_RULES_31-3-2023.csv","w")
+    ffr = open("../resources/environ_translated_RULES_9-5-2023.csv","w")
     ffr.write("URI|PROPERTY|ENGLISH LABEL|TRANSLATION|POSTPROCESSING (RULES)|FEEDBACK|BLEU|FR SIMILARITY (tran vs feedback)|EN SIMILARITY (tran vs en)|Lev|Multiple\n")
-
-    # f = open("environ_bleu.txt","w")
-    # fe = open("environ_sim_eng.txt","w")
-    # fr = open("environ_sim_fr.txt","w")
-    # fl = open("environ_mult_scores.txt","w")
-    # flev = open("environ_lev.txt","w")
 
     for index, row in tqdm(df.iterrows(), total=df.shape[0]):
 
@@ -2327,10 +1917,6 @@ def environ_stats():
                 if doc_en_trf.ents[0].label_=="ORG" or doc_en_trf.ents[0].label_=="GPE":
                     st_fr = st_fr_upper
                     multiple = st_fr_upper_all
-                    # print(st_fr+" "+doc_en.ents[0].label_)
-        # import ipdb; ipdb.set_trace()
-        # line = lines[index].strip()
-        # line = line.split("|")
 
         st_fr_orig = st_fr
 
@@ -2462,14 +2048,6 @@ def environ_stats():
 
         ffr.write(uri+"|"+prop+"|"+st_en+"|"+st_fr_orig+"|"+st_fr+"|"+feedback+"|"+bleu_score_str+"|"+str(sim_fr)+"|"+str(sim)+"|"+str(dist)+"|"+str(multiple)+"\n")
 
-    #     fe.write(str(sim)+'\n')
-    #     fr.write(str(sim_fr)+'\n')
-    #     f.write(bleu_score_str+"\n")
-    #     flev.write(str(dist)+"\n")
-    # fl.close()
-    # fe.close()
-    # fr.close()
-    # f.close()
     ffr.close()
     print("Ok: "+str(counter_ok))
     print("Lower: "+str(counter_l))
@@ -2485,5 +2063,4 @@ if __name__=="__main__":
     # fix_editorial_snomed_rules()
     # check_upper()
     # fix_ncit_labelsyn_rules_2023()
-    # fix_environ_snomed_rules()
-    environ_stats()
+    fix_environ_snomed_rules()

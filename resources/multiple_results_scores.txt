@@ -1,0 +1,897 @@
+hôpital et / ou institution L:0.25 M:0.99|hôpital et / ou établissement L:0.20 M:0.99|hôpital ET / ou institution L:0.01 M:0.99|hôpital ou établissement L:0.01 M:0.98|hôpital ou institution L:0.01 M:0.99
+Marais L:0.16 M:0.32|marais L:0.03 M:0.69|Peau L:0.02 M:0.32|Martin L:0.01 M:0.22|Marche L:0.01 M:0.17
+Domiciliaire L:0.13 M:0.95|domiciliaire L:0.02 M:0.73|Domicilien L:0.01 M:0.93|domiculiaire L:0.01 M:0.83
+préscolaire L:0.10 M:0.76|pré-scolaire L:0.10 M:0.95|Préscolaire L:0.02 M:0.86|maternelle L:0.01 M:0.49
+école primaire L:0.67 M:0.99|école principale L:0.01 M:0.91|école maternelle L:0.01 M:0.91|École primaire L:0.01 M:0.93|école de primaire L:0.00 M:0.98
+école secondaire L:0.67 M:0.91|secondaire L:0.03 M:0.67|collège L:0.01 M:0.57|secondaire scolaire L:0.01 M:0.89|scolarité secondaire L:0.01 M:0.94
+école de perfectionnement L:0.02 M:0.51|école d'encadrement L:0.01 M:0.71|école de formation continue L:0.00 M:0.45|école d'enseignement L:0.00 M:0.72|école de boare L:0.00 M:0.64
+environnement sans antigène L:0.18 M:0.75|environnement exempt d'antigène L:0.14 M:0.87|environnement exempt d'antigènes L:0.10 M:0.89|environnement sans antigènes L:0.04 M:0.76|environnement exempt d'antigene L:0.00 M:0.84
+centre de traitement de la toxicomanie L:0.11 M:0.94|centre de désintoxication L:0.07 M:0.73|centre de toxicomanie L:0.04 M:0.91|centre de traitement de toxicomanie L:0.04 M:0.93|centre de lutte contre la toxicomanie L:0.02 M:0.90
+lieu de l'accident ou de l'intoxication L:0.42 M:0.93|lieu de l'accident ou de l'empoisonnement L:0.00 M:0.97|lieu de l'accident ou l'intoxication L:0.00 M:0.93|endroit de l'accident ou de l'intoxication L:0.00 M:0.93|lieu de l'accident ou de l'intoxications L:0.00 M:0.93
+hôpital L:0.64 M:0.99|Hôpital L:0.14 M:0.97|hospitalier L:0.00 M:0.98|hôpitaux L:0.00 M:0.97
+Alderney L:0.16 M:1.00|alderney L:0.16 M:0.77|Aurigny L:0.04 M:0.66|Aderney L:0.01 M:0.72|Aurney L:0.01 M:0.69
+Anegada L:0.60 M:1.00|Aeviada L:0.02 M:0.86|Anégada L:0.01 M:0.98|Aincurada L:0.00 M:0.88|anegada L:0.00 M:0.95
+Anguilla L:0.28 M:1.00|anguilla L:0.11 M:0.81|Australie L:0.01 M:0.32|Islande L:0.01 M:0.58|Allemagne L:0.01 M:0.14
+aruba L:0.04 M:0.99|Aruba L:0.00 M:1.00|Aruban L:0.00 M:0.70|Arua L:0.00 M:0.62
+Bermudes L:0.34 M:0.98|Bermuda L:0.14 M:1.00|Bermude L:0.01 M:0.99|Martinda L:0.01 M:0.36|Chiens L:0.00 M:0.26
+Bonaire L:0.36 M:1.00|bonaire L:0.28 M:0.83|bonaïre L:0.00 M:0.82|Bonaïre L:0.00 M:0.90|bonaïne L:0.00 M:0.87
+Bora-Bora L:0.44 M:1.00|Bora-bora L:0.07 M:0.97|bora-bora L:0.06 M:0.97|bora-Bora L:0.04 M:0.99|Bora Bora L:0.01 M:0.98
+immeuble à logements multiples L:0.08 M:0.90|Bâtiment à logements multiples L:0.05 M:0.90|Bâtiment avec des logements multiples L:0.03 M:0.90|bâtiment à logements multiples L:0.02 M:0.92|Bâtiment avec logements multiples L:0.01 M:0.89
+îles Canaries L:0.23 M:0.92|îles canaries L:0.05 M:0.93|Canaries L:0.05 M:0.83|îles Canary L:0.02 M:0.98|île Canary L:0.02 M:0.98
+îles Channel L:0.19 M:0.96|îles Canal L:0.06 M:0.73|île Channel L:0.03 M:0.95|îles canaux L:0.03 M:0.82|îles de canaux L:0.01 M:0.79
+pays L:0.78 M:0.84|Pays L:0.02 M:0.45|Monde L:0.00 M:0.62|Brésil L:0.00 M:0.34|République L:0.00 M:0.33
+Curacao L:0.45 M:1.00|curacao L:0.13 M:0.52|Curaçao L:0.06 M:0.99|Curaca L:0.00 M:0.87|Curaao L:0.00 M:0.86
+Polynésie française L:0.12 M:1.00|polynésie française L:0.05 M:0.99|Polynésie francaise L:0.01 M:0.99|Polynésie Française L:0.00 M:0.99
+fuerteventura L:0.65 M:0.85|Fuerteventura L:0.11 M:1.00|fuertéventura L:0.00 M:0.83|fusiteventura L:0.00 M:0.82|fuertevenura L:0.00 M:0.70
+Géorgie L:0.40 M:0.99|Georgia L:0.12 M:1.00|Égypte L:0.02 M:0.17|Allemagne L:0.02 M:0.02|Australie L:0.01 M:0.36
+Gomera L:0.24 M:1.00|gomera L:0.17 M:0.98|gomère L:0.01 M:0.89|goméra L:0.01 M:0.89|Gomère L:0.01 M:0.95
+Gran Canaria L:0.21 M:1.00|Gran canaria L:0.07 M:0.78|Gran cannaria L:0.01 M:0.72|Grand Canaria L:0.01 M:0.85|Grande Canarie L:0.01 M:0.73
+Guernesey L:0.37 M:0.91|guernesey L:0.04 M:0.69|Guernsey L:0.03 M:1.00|Guerney L:0.01 M:0.46|guernsey L:0.01 M:0.97
+hierro L:0.33 M:0.99|Hierro L:0.28 M:1.00|hierros L:0.01 M:0.99|Hierros L:0.00 M:0.99|hierroro L:0.00 M:0.99
+Hong Kong L:0.82 M:1.00|Hong Lanka L:0.01 M:0.64|Guam Kong L:0.00 M:0.64|Hong Hong L:0.00 M:0.94|Royaume Kong L:0.00 M:0.75
+île de Wight L:0.17 M:0.97|île de Wright L:0.03 M:0.49|Isle de Wight L:0.02 M:0.99|île de wight L:0.02 M:0.95|Isle de Wright L:0.00 M:0.53
+Jersey L:0.54 M:1.00|Panama L:0.02 M:0.44|Hong L:0.02 M:0.36|Australie L:0.01 M:0.15|Royaume L:0.01 M:0.25
+La Palma L:0.29 M:1.00|la Palma L:0.13 M:1.00|La palma L:0.02 M:0.78|la palma L:0.02 M:0.79|Palma L:0.01 M:0.98
+lanzarote L:0.33 M:0.61|Lanzarote L:0.24 M:1.00|lanzarotes L:0.01 M:0.64|Lanzarotes L:0.00 M:0.98|lanozarote L:0.00 M:0.80
+île des petites Antilles L:0.04 M:0.93|Petite île des Antilles L:0.03 M:0.92|Petites Antilles L:0.02 M:0.92|île des Petites Antilles L:0.01 M:0.89|île des Antilles mineures L:0.01 M:0.89
+Martinique L:0.77 M:1.00|martinique L:0.00 M:0.49|Martinie L:0.00 M:0.47|Martiniique L:0.00 M:0.76|Martiniaque L:0.00 M:0.61
+Montserrat L:0.23 M:1.00|Islande L:0.01 M:0.45|Nauru L:0.01 M:0.30|Vanuatu L:0.00 M:0.27|Allemagne L:0.00 M:0.09
+Moorea L:0.52 M:1.00|moorea L:0.07 M:0.73|moorée L:0.01 M:0.75|Moorée L:0.01 M:0.66|moorrea L:0.00 M:0.50
+Nouvelle-Calédonie L:0.28 M:0.97|nouvelle-Calédonie L:0.02 M:0.89|New Caledonia L:0.02 M:1.00|Calédonie L:0.02 M:0.42|Nouvelle-Calédoine L:0.00 M:0.96
+Raiatea L:0.53 M:1.00|raiatea L:0.12 M:0.71|Raïatea L:0.01 M:0.80|raïatea L:0.00 M:0.83|rhaiatea L:0.00 M:0.80
+Reunion L:0.39 M:1.00|Réunion L:0.06 M:0.92|Reconsolidation L:0.03 M:0.60|consolidation L:0.02 M:0.60
+sombre L:0.12 M:0.89|requin L:0.08 M:0.68|noir L:0.04 M:0.42|Sercq L:0.01 M:0.66|sommier L:0.01 M:0.81
+Saint-Barthélémy L:0.06 M:0.93|Saint Barthélémy L:0.06 M:0.96|Saint-Barthélemy L:0.04 M:0.92|Saint Barthelemy L:0.04 M:1.00|Saint-barthélémy L:0.04 M:0.86
+St. Eustatius L:0.22 M:1.00|St. Eustache L:0.17 M:0.84|Saint-Eustache L:0.02 M:0.70|Saint-Eustatius L:0.01 M:0.95|St-Eustatius L:0.00 M:0.98
+St. Maarten L:0.39 M:1.00|Saint-Maarten L:0.03 M:0.80|Saint Maarten L:0.01 M:0.92|St-Maarten L:0.01 M:0.91|st-Maarten L:0.00 M:0.90
+St. Martin L:0.39 M:1.00|Saint-Martin L:0.02 M:0.96|Saint Martin L:0.02 M:0.98|St. Marin L:0.01 M:0.52|Saint-Marin L:0.00 M:0.58
+Tahiti L:0.39 M:1.00|tahiti L:0.06 M:0.99|tahoiti L:0.01 M:0.77|tahariti L:0.00 M:0.31
+Tenerife L:0.42 M:1.00|tenerife L:0.03 M:0.54|Ténerife L:0.02 M:0.65|tonife L:0.01 M:0.36|Ténérife L:0.01 M:0.60
+Tortola L:0.47 M:1.00|Tortole L:0.02 M:0.95|Tortose L:0.01 M:0.85|tortola L:0.01 M:0.67|Tortila L:0.01 M:0.74
+Virgin Gorda L:0.30 M:1.00|Virgin-Gorda L:0.01 M:0.91|Vierge Gorda L:0.00 M:0.74|Virginie Gorda L:0.00 M:0.86|Virgin Gorda. L:0.00 M:0.99
+Wallis et Futuna L:0.26 M:0.97|Wallis-et-Futuna L:0.04 M:0.90|îles Wallis et Futuna L:0.01 M:0.99|Ilots Wallis et Futuna L:0.01 M:0.93|île de Wallis et Futuna L:0.01 M:0.99
+région géographique et / ou politique du monde L:0.23 M:0.98|Région géographique et / ou politique du monde L:0.07 M:0.98|region géographique et / ou politique du monde L:0.01 M:0.98|géographie et / ou région politique du monde L:0.01 M:0.92|région géographique et / ou politique de la planète L:0.00 M:0.97
+continent géographique L:0.73 M:0.99|continents géographiques L:0.01 M:0.91|continent régional L:0.01 M:0.90|continence géographique L:0.01 M:0.73|continent rural L:0.00 M:0.68
+Afrique L:0.79 M:0.99|Africa L:0.01 M:1.00|Australie L:0.01 M:0.26|Allemagne L:0.00 M:0.18|Brésil L:0.00 M:0.36
+Antarctica L:0.44 M:1.00|antarctica L:0.07 M:1.00|Antarctique L:0.01 M:0.99|Antarque L:0.00 M:0.95
+Asie L:0.84 M:0.99|Australie L:0.01 M:0.33|Afrique L:0.01 M:0.32|Europe L:0.00 M:0.35|Allemagne L:0.00 M:0.14
+Australasie L:0.52 M:0.99|Australasia L:0.02 M:1.00|Australie L:0.02 M:0.98|australasie L:0.01 M:0.99|Hawalasie L:0.00 M:0.34
+Europe L:0.80 M:1.00|Allemagne L:0.03 M:0.43|Australie L:0.01 M:0.26|Afrique L:0.01 M:0.41|Islande L:0.00 M:0.44
+Amérique du Nord L:0.55 M:0.99|Amérique du nord L:0.02 M:0.99|Amérique du Sud L:0.01 M:0.22|Australie du Nord L:0.01 M:0.66|Allemagne du Nord L:0.01 M:0.49
+Amérique du Sud L:0.46 M:0.99|Amérique du sud L:0.04 M:1.00|Allemagne du Sud L:0.02 M:0.37|Australie du Sud L:0.01 M:0.59|Amérique du Nord L:0.01 M:0.21
+sous-continent L:0.44 M:0.80|subcontinent L:0.13 M:1.00|souscontinent L:0.01 M:0.81|Subcontinent L:0.01 M:1.00|Sous-continent L:0.01 M:0.53
+sous-continent indien L:0.23 M:0.95|souscontinent indien L:0.06 M:0.96|subcontinent indien L:0.05 M:0.98|sous-continent africain L:0.03 M:0.42|sous-continent Indien L:0.03 M:0.96
+Asie mineure L:0.43 M:0.86|Asie mineur L:0.03 M:0.74|Asie Mineure L:0.02 M:0.79|Asie secondaire L:0.02 M:0.79|Asie mineures L:0.01 M:0.83
+pays africain L:0.45 M:0.98|pays d'Afrique L:0.21 M:0.96|pays Africain L:0.07 M:0.87|pays Afrique L:0.01 M:0.97|pays africian L:0.01 M:0.86
+pays nord-africain L:0.22 M:0.98|pays d'Afrique du Nord L:0.22 M:0.97|pays nord africain L:0.09 M:0.98|pays du Nord L:0.01 M:0.57|pays du Nord africain L:0.00 M:0.98
+Algérie L:0.32 M:1.00|Allemagne L:0.11 M:0.16|Algeria L:0.10 M:1.00|Australie L:0.04 M:0.36|Égypte L:0.01 M:0.47
+Égypte L:0.64 M:0.99|Australie L:0.03 M:0.31|Egypt L:0.03 M:1.00|Allemagne L:0.02 M:0.13|Egypte L:0.01 M:1.00
+Libye L:0.36 M:1.00|Libyan L:0.06 M:0.94|Islande L:0.02 M:0.34|Égypte L:0.02 M:0.36|Panama L:0.01 M:0.40
+Maroc L:0.39 M:1.00|Morocco L:0.12 M:1.00|Brésil L:0.11 M:0.15|Panama L:0.02 M:0.10|Royaume L:0.01 M:0.27
+Tunisie L:0.42 M:1.00|Tunisia L:0.03 M:1.00|Australie L:0.02 M:0.29|Allemagne L:0.02 M:0.20|Égypte L:0.02 M:0.39
+pays nord-est africain L:0.06 M:0.92|pays d'Afrique du Nord-Est L:0.05 M:0.95|pays du nord-est africain L:0.01 M:0.92|pays d'Afrique du Nord L:0.01 M:0.87|pays d'Afrique du Nord Est L:0.01 M:0.97
+Djibouti L:0.55 M:1.00|Panama L:0.03 M:0.34|Brésil L:0.02 M:0.28|Égypte L:0.01 M:0.43|Australie L:0.01 M:0.22
+Éthiopie L:0.47 M:0.98|Australie L:0.07 M:0.15|Ethiopie L:0.06 M:0.99|Allemagne L:0.04 M:0.22|Afrique L:0.02 M:0.52
+Soudan L:0.48 M:0.99|Sudan L:0.19 M:1.00|Brésil L:0.02 M:0.34|Zimbabwe L:0.01 M:0.36|Afrique L:0.00 M:0.52
+pays d'Afrique centrale L:0.27 M:0.98|pays d'Afrique Centrale L:0.15 M:0.98|pays centrafricain L:0.04 M:0.97|pays africain central L:0.01 M:0.99|pays d'Asie centrale L:0.01 M:0.53
+Burundi L:0.56 M:1.00|Brésil L:0.08 M:0.17|Panama L:0.02 M:0.34|Pérou L:0.01 M:0.26|Congo L:0.01 M:0.66
+Cameroun L:0.57 M:0.99|Brésil L:0.09 M:0.28|Panama L:0.05 M:0.26|Australie L:0.01 M:0.22|Égypte L:0.01 M:0.28
+République centrafricaine L:0.02 M:0.98|République Centrale L:0.01 M:0.72|République d'Afrique centrale L:0.01 M:0.98|République Centrale africaine L:0.00 M:0.99
+Tchad L:0.56 M:0.98|Brésil L:0.06 M:0.29|Panama L:0.04 M:0.32|Congo L:0.02 M:0.41|Pérou L:0.01 M:0.13
+République du Congo L:0.42 M:0.99|république du Congo L:0.23 M:1.00|république du congo L:0.00 M:0.99|Republic of the Congo L:0.00 M:1.00|république du Brésil L:0.00 M:0.48
+Gabon L:0.49 M:1.00|Brésil L:0.09 M:0.28|Panama L:0.03 M:0.37|Congo L:0.01 M:0.67|Pérou L:0.01 M:0.18
+Niger L:0.56 M:1.00|Brésil L:0.06 M:0.37|Panama L:0.03 M:0.17|Pérou L:0.01 M:0.15|Congo L:0.01 M:0.41
+Rwanda L:0.52 M:1.00|Brésil L:0.07 M:0.26|Panama L:0.02 M:0.24|Pérou L:0.01 M:0.45|rwanda L:0.00 M:0.92
+Somalie L:0.49 M:0.99|Australie L:0.02 M:0.09|Philippines L:0.01 M:0.30|Guinée L:0.01 M:0.40|République Somalie L:0.00 M:0.94
+République démocratique du Congo L:0.49 M:0.99|République Démocratique du Congo L:0.04 M:1.00|république démocratique du Congo L:0.01 M:0.99|République démocratique du congo L:0.00 M:0.99|Congo démocratique du Congo L:0.00 M:0.96
+Zambie L:0.54 M:0.99|Panama L:0.02 M:0.36|Égypte L:0.02 M:0.21|Australie L:0.01 M:0.05|Guinée L:0.01 M:0.26
+pays d'Afrique orientale L:0.29 M:0.98|pays de l'Afrique orientale L:0.02 M:0.97|pays est africain L:0.01 M:0.81|pays africain de l'Est L:0.01 M:0.98|pays de l'Est L:0.00 M:0.69
+Comores L:0.52 M:0.98|Philippines L:0.05 M:0.40|Panama L:0.01 M:0.44|Brésil L:0.01 M:0.29|Australie L:0.01 M:0.27
+Kenya L:0.58 M:1.00|Brésil L:0.06 M:0.22|Panama L:0.04 M:0.20|Pérou L:0.02 M:0.28|Venezuela L:0.01 M:0.30
+Madagascar L:0.53 M:1.00|Panama L:0.02 M:0.45|Islande L:0.01 M:0.44|Brésil L:0.01 M:0.32|Philippines L:0.01 M:0.34
+Seychelles L:0.54 M:1.00|Philippines L:0.03 M:0.42|Islande L:0.01 M:0.53|Venezuela L:0.01 M:0.27|Australie L:0.01 M:0.26
+Tanzanie L:0.42 M:0.99|Tanzania L:0.07 M:1.00|Égypte L:0.02 M:0.20|Australie L:0.02 M:0.06|République L:0.01 M:0.25
+Ouganda L:0.27 M:0.99|Uganda L:0.24 M:1.00|Allemagne L:0.04 M:0.14|Australie L:0.04 M:0.11|Afrique L:0.03 M:0.52
+pays d'Afrique du Sud-Est L:0.06 M:0.95|pays sud-est africain L:0.04 M:0.92|pays d'Afrique du sud-est L:0.02 M:0.93|pays du sud-est africain L:0.02 M:0.92|pays africain du sud-est L:0.01 M:0.89
+Malawi L:0.56 M:1.00|Brésil L:0.07 M:0.35|Panama L:0.03 M:0.39|Égypte L:0.01 M:0.25|Pérou L:0.01 M:0.49
+Maurice L:0.47 M:0.39|Égypte L:0.02 M:0.35|Islande L:0.02 M:0.49|Australie L:0.01 M:0.26|Philippines L:0.01 M:0.27
+Mozambique L:0.55 M:1.00|Brésil L:0.05 M:0.36|Panama L:0.03 M:0.28|Mexique L:0.01 M:0.05|Afrique L:0.00 M:0.68
+pays du sud-ouest africain L:0.08 M:0.91|pays sud-ouest africain L:0.07 M:0.90|pays du sud ouest africain L:0.02 M:0.93|pays d'Afrique du Sud L:0.01 M:0.75|pays d'Afrique du Sud Ouest L:0.01 M:0.95
+Angola L:0.55 M:1.00|Allemagne L:0.05 M:0.17|Afrique L:0.04 M:0.82|Australie L:0.04 M:0.22|Islande L:0.02 M:0.33
+Namibie L:0.47 M:0.28|Namibia L:0.03 M:1.00|Australie L:0.02 M:0.25|Philippines L:0.01 M:0.15|Guinée L:0.01 M:0.43
+pays sud-africain L:0.10 M:0.99|pays sudafricain L:0.07 M:0.99|pays sud africain L:0.07 M:0.99|pays africain du Sud L:0.02 M:0.99|pays d'Afrique australe L:0.01 M:0.95
+Botswana L:0.52 M:1.00|Brésil L:0.06 M:0.43|Panama L:0.05 M:0.31|Zimbabwe L:0.01 M:0.68|Égypte L:0.01 M:0.30
+Lesotho L:0.50 M:1.00|Brésil L:0.01 M:0.34|Pérou L:0.01 M:0.31|Mexique L:0.01 M:0.11|Panama L:0.01 M:0.37
+Afrique du Sud L:0.58 M:1.00|Afrique du sud L:0.06 M:1.00|Afrique australe L:0.03 M:0.97|Afrique du Nord L:0.01 M:0.65|Allemagne du Sud L:0.00 M:0.39
+Eswatini L:0.45 M:1.00|Éswatini L:0.06 M:0.90|eswatini L:0.01 M:0.95|éswatini L:0.01 M:0.87|Eswatin L:0.00 M:0.88
+Zimbabwe L:0.58 M:1.00|Brésil L:0.07 M:0.24|Panama L:0.03 M:0.30|Venezuela L:0.01 M:0.19|Australie L:0.01 M:0.16
+pays d'Afrique occidentale L:0.12 M:0.98|pays ouest africain L:0.04 M:0.98|pays de l'Afrique occidentale L:0.01 M:0.98|pays d'Afrique du Sud L:0.01 M:0.54|pays africain de l'Ouest L:0.01 M:0.97
+Bénin L:0.53 M:0.97|Brésil L:0.10 M:0.45|Pérou L:0.04 M:0.08|Benin L:0.02 M:1.00|Panama L:0.01 M:0.25
+Burkina Faso L:0.33 M:1.00|Burkina Brésil L:0.02 M:0.87|Burkina Lanka L:0.01 M:0.75|Burkina Congo L:0.01 M:0.79|Burkina-Faso L:0.00 M:0.98
+Guinée équatoriale L:0.58 M:0.99|République équatoriale L:0.01 M:0.92|Congo équatoriale L:0.01 M:0.81|Chine équatoriale L:0.01 M:0.77|Guinée Equlandaise L:0.00 M:0.85
+Ghana L:0.55 M:1.00|Panama L:0.08 M:0.29|Brésil L:0.05 M:0.34|Venezuela L:0.01 M:0.19|Égypte L:0.01 M:0.47
+Guinée L:0.73 M:0.99|Égypte L:0.01 M:0.34|Chine L:0.01 M:0.28|Panama L:0.01 M:0.40|République L:0.01 M:0.38
+Guinée-Bissau L:0.44 M:1.00|Guinée-Guinée L:0.01 M:0.89|Guinée-Lanka L:0.01 M:0.82|Guinée-Congo L:0.01 M:0.75|Guinée Bissau L:0.00 M:0.99
+Côte d'Ivoire L:0.33 M:0.99|côte d'Ivoire L:0.05 M:0.98|Côte-d'Ivoire L:0.02 M:0.99|Côte d'or L:0.00 M:0.35|cote d'Ivoire L:0.00 M:1.00
+Liberia L:0.45 M:1.00|Brésil L:0.10 M:0.44|Libéria L:0.05 M:0.99|Panama L:0.03 M:0.42|Venezuela L:0.01 M:0.32
+Mali L:0.54 M:1.00|Brésil L:0.05 M:0.51|Panama L:0.03 M:0.31|Pérou L:0.02 M:0.34|Égypte L:0.01 M:0.45
+Mauritanie L:0.51 M:0.99|Allemagne L:0.03 M:0.19|Australie L:0.02 M:0.28|Égypte L:0.01 M:0.47|République Mauritanie L:0.01 M:0.96
+Nigeria L:0.54 M:1.00|Brésil L:0.08 M:0.44|Panama L:0.04 M:0.16|Pérou L:0.01 M:0.08|Niger L:0.01 M:0.81
+Sao Tomé-et-Principe L:0.09 M:0.90|Sao Tomé et Principe L:0.04 M:0.96|Sao tomé et Principe L:0.00 M:0.84|Sao tomé-et-Principe L:0.00 M:0.77|Sao Tomé et Pré L:0.00 M:0.78
+Sénégal L:0.48 M:0.98|Brésil L:0.09 M:0.40|Panama L:0.04 M:0.17|Senegal L:0.02 M:1.00|Royaume Brésil L:0.00 M:0.34
+Sierra Leone L:0.48 M:1.00|Sierra Lanka L:0.06 M:0.60|Sierra Kong L:0.01 M:0.59|Sierra Congo L:0.00 M:0.67|Sierra Zélande L:0.00 M:0.56
+Gambie L:0.23 M:0.95|France L:0.01 M:0.19|La Gambie L:0.01 M:0.97|the Gambie L:0.00 M:0.87|Gambie. L:0.00 M:0.81
+Togo L:0.51 M:1.00|Brésil L:0.06 M:0.41|Panama L:0.05 M:0.35|Pérou L:0.01 M:0.19|Venezuela L:0.01 M:0.11
+pays d'Asie L:0.46 M:0.94|pays asiatique L:0.16 M:0.97|pays Asie L:0.03 M:0.92|pays africain L:0.02 M:0.39|pays d'asie L:0.01 M:0.81
+pays d'Asie du Nord et central L:0.07 M:0.97|pays d'Asie du Nord et du centre L:0.02 M:0.94|pays d'Asie centrale et du Nord L:0.02 M:0.97|pays d'Asie du Nord et du Centre L:0.01 M:0.94|pays d'Asie du Nord L:0.01 M:0.81
+Kazakhstan L:0.45 M:1.00|Brésil L:0.05 M:0.18|Panama L:0.04 M:0.26|Venezuela L:0.02 M:-0.05|Mexique L:0.01 M:0.36
+Kyrgyzstan L:0.15 M:1.00|Kirghizistan L:0.10 M:1.00|Brésil L:0.05 M:0.16|Panama L:0.03 M:0.21|Kirstan L:0.00 M:0.45
+Mongolie L:0.37 M:0.99|Mongolia L:0.09 M:1.00|Égypte L:0.02 M:0.27|Philippines L:0.02 M:0.13|Islande L:0.01 M:0.39
+Tadjikistan L:0.54 M:1.00|Brésil L:0.04 M:0.12|Panama L:0.03 M:0.26|Pérou L:0.01 M:0.21|Venezuela L:0.01 M:-0.00
+Turkménistan L:0.51 M:1.00|Brésil L:0.04 M:-0.07|Égypte L:0.02 M:0.30|Royaume L:0.02 M:0.33|Australie L:0.01 M:0.24
+Ouzbékistan L:0.24 M:0.98|Uzbekistan L:0.17 M:1.00|Australie L:0.05 M:0.20|Allemagne L:0.05 M:0.12|République Ouzbékistan L:0.00 M:0.96
+pays d'Extrême Orient L:0.04 M:0.90|pays extrême-orient L:0.04 M:0.91|pays d'extrême-orient L:0.04 M:0.92|pays d'arrière-orient L:0.02 M:0.84|pays de l'extrême-Orient L:0.00 M:0.88
+Chine L:0.62 M:1.00|China L:0.10 M:1.00|Allemagne L:0.01 M:0.10|Brésil L:0.01 M:0.11|République L:0.00 M:0.25
+République démocratique populaire de Corée L:0.37 M:0.98|République démocratique de Corée L:0.03 M:0.98|République démocratique démocratique de Corée L:0.02 M:0.96|République démocratique de la Corée L:0.01 M:0.98|République démocratique populaire de Chine L:0.01 M:0.53
+Japon L:0.52 M:1.00|Brésil L:0.12 M:0.20|Japan L:0.08 M:1.00|Panama L:0.01 M:0.23|Pérou L:0.01 M:0.08
+Corée du Sud L:0.52 M:0.99|Corée du sud L:0.04 M:0.99|République du Sud L:0.03 M:0.45|Corée du Nord L:0.01 M:0.81|Allemagne du Sud L:0.01 M:0.28
+pays d'Asie du Sud-Est L:0.11 M:0.82|pays d'Asie du sud-est L:0.04 M:0.86|Asie du Sud-Est L:0.03 M:0.81|Asie du sud-est L:0.02 M:0.85|pays sud-est asiatique L:0.01 M:0.86
+Brunei Darussalam L:0.27 M:1.00|Brunei Brunei L:0.00 M:0.94|Brunei-Darussalam L:0.00 M:0.99|Hong Darussalam L:0.00 M:0.68|Hawaï L:0.00 M:0.20
+Myanmar L:0.53 M:1.00|Panama L:0.02 M:0.26|Brésil L:0.02 M:0.15|Philippines L:0.01 M:0.36|Royaume L:0.00 M:0.38
+Cambodge L:0.51 M:0.99|Panama L:0.07 M:0.36|Brésil L:0.06 M:0.20|Venezuela L:0.01 M:0.32|Philippines L:0.01 M:0.29
+Indonésie L:0.41 M:1.00|Australie L:0.09 M:0.29|Indonesia L:0.08 M:1.00|Allemagne L:0.05 M:0.22|Islande L:0.03 M:0.40
+Laos L:0.77 M:1.00|laos L:0.06 M:0.99|laxus L:0.00 M:0.25|Lévis L:0.00 M:0.34|laxos L:0.00 M:0.40
+Malaisie L:0.31 M:0.99|Malaysia L:0.15 M:1.00|Égypte L:0.02 M:0.37|Australie L:0.02 M:0.23|Islande L:0.02 M:0.36
+République des Philippines L:0.34 M:0.99|république des Philippines L:0.12 M:1.00|République du Philippines L:0.02 M:0.99|république du Philippines L:0.01 M:1.00|Republic des Philippines L:0.01 M:1.00
+Singapour L:0.41 M:0.99|Singapore L:0.11 M:1.00|Australie L:0.03 M:0.22|Hong L:0.01 M:0.54|Royaume Singapour L:0.00 M:0.95
+Thaïlande L:0.41 M:0.99|Thailand L:0.11 M:1.00|Australie L:0.04 M:0.03|Brésil L:0.02 M:0.09|Thailande L:0.02 M:0.99
+Viet Nam L:0.22 M:1.00|Vietnam L:0.07 M:0.92|Viet nam L:0.02 M:0.43|VietNam L:0.01 M:0.96|Viêt Nam L:0.00 M:0.95
+pays du sous-continent indien L:0.11 M:0.95|pays sous-continent indien L:0.06 M:0.95|pays du sous-continent Indien L:0.02 M:0.95|pays sub-continent indien L:0.01 M:0.94|pays incontinent indien L:0.01 M:0.67
+Afghanistan L:0.54 M:1.00|Australie L:0.08 M:0.27|Allemagne L:0.05 M:0.19|Afrique L:0.03 M:0.48|Islande L:0.02 M:0.31
+Bangladesh L:0.55 M:1.00|Brésil L:0.08 M:0.33|Panama L:0.03 M:0.43|Pérou L:0.01 M:0.23|Royaume L:0.01 M:0.29
+Bhoutan L:0.44 M:0.99|Brésil L:0.08 M:0.19|Panama L:0.02 M:0.25|Pérou L:0.01 M:0.27|Égypte L:0.01 M:0.21
+Inde L:0.52 M:0.97|Australie L:0.04 M:0.31|Allemagne L:0.04 M:0.13|India L:0.04 M:1.00|Brésil L:0.02 M:0.29
+Maldives L:0.38 M:1.00|Philippines L:0.03 M:0.29|Islande L:0.02 M:0.57|Guinée L:0.01 M:0.30|Bahamas L:0.01 M:0.61
+Népal L:0.38 M:0.98|Brésil L:0.07 M:0.13|Nepal L:0.07 M:1.00|Panama L:0.02 M:0.20|Pérou L:0.02 M:0.20
+Pakistan L:0.53 M:1.00|Brésil L:0.10 M:0.27|Panama L:0.04 M:0.23|Pérou L:0.01 M:0.29|Royaume L:0.01 M:0.29
+Sri Lanka L:0.51 M:1.00|Soudan L:0.01 M:0.19|Hong Lanka L:0.01 M:0.87|Panama L:0.00 M:0.53|Royaume Lanka L:0.00 M:0.95
+pays du Moyen Orient L:0.21 M:0.96|pays du Moyen-Orient L:0.20 M:0.96|pays du Moyen Est L:0.01 M:0.97|pays du Moyen-Est L:0.01 M:0.97|pays du Moyen orient L:0.00 M:0.96
+Bahreïn L:0.45 M:1.00|Panama L:0.07 M:0.57|Bahrain L:0.06 M:1.00|Brésil L:0.04 M:0.17|Royaume Brésil L:0.01 M:0.21
+République islamique d'Iran L:0.24 M:0.99|République islamique d'Irlande L:0.01 M:0.60|république islamique d'Iran L:0.01 M:0.99|République islamique de l'Iran L:0.00 M:0.99|Iran (République islamique) L:0.00 M:0.99
+Iraq L:0.47 M:1.00|Allemagne L:0.07 M:0.28|Australie L:0.04 M:0.25|Irak L:0.03 M:1.00|Islande L:0.02 M:0.33
+Israël L:0.35 M:1.00|Israel L:0.16 M:1.00|Australie L:0.07 M:0.23|Islande L:0.04 M:0.35|Allemagne L:0.04 M:0.28
+Jordan L:0.20 M:1.00|Jordanie L:0.19 M:0.99|Panama L:0.02 M:0.25|Australie L:0.02 M:0.35|Égypte L:0.02 M:0.50
+Koweït L:0.34 M:0.99|Kuwait L:0.14 M:1.00|Brésil L:0.05 M:0.13|Panama L:0.05 M:0.32|Pérou L:0.01 M:0.01
+Liban L:0.34 M:0.99|Brésil L:0.11 M:0.30|Lebanon L:0.09 M:1.00|Panama L:0.02 M:0.30|Pérou L:0.02 M:0.21
+Oman L:0.57 M:1.00|Australie L:0.03 M:0.24|Islande L:0.02 M:0.43|Allemagne L:0.02 M:0.10|Espagne L:0.01 M:0.39
+Qatar L:0.56 M:1.00|Panama L:0.05 M:0.27|Brésil L:0.03 M:0.25|Pérou L:0.02 M:0.18|Égypte L:0.01 M:0.34
+Arabie saoudite L:0.29 M:0.99|Arabie Saoudite L:0.05 M:1.00|Saudi Arabia L:0.03 M:1.00|Arabie Saan L:0.02 M:0.72|Allemagne saoudite L:0.01 M:0.54
+République arabe syrienne L:0.28 M:0.99|République arabe turque L:0.02 M:0.63|République arabe syrien L:0.01 M:0.99|République arabe yougoslave L:0.01 M:0.50|République arabe démocratique syrienne L:0.00 M:0.94
+Émirats arabes unis L:0.24 M:0.83|United Arab Emirates L:0.09 M:1.00|United Arab States L:0.01 M:0.79|Émirats arabes arabes L:0.01 M:0.80|Emirats arabes unis L:0.00 M:0.98
+pays d'Australasie L:0.15 M:0.95|pays d'Australie L:0.08 M:0.92|pays d'Océanie L:0.07 M:0.45|pays australasien L:0.02 M:0.95|pays Australasien L:0.01 M:0.98
+Australia L:0.16 M:1.00|Allemagne L:0.02 M:0.14|Australie L:0.00 M:1.00|Brésil L:0.00 M:0.21
+Fidji L:0.51 M:0.97|Philippines L:0.03 M:0.24|Panama L:0.02 M:0.44|Australie L:0.02 M:0.25|Islande L:0.01 M:0.35
+Kiribati L:0.56 M:1.00|kiribati L:0.06 M:0.92|Kiribâi L:0.00 M:0.36|Kiribates L:0.00 M:0.80|KiribatI L:0.00 M:0.59
+Nauru L:0.47 M:1.00|Panama L:0.02 M:0.09|Australie L:0.01 M:0.28|Égypte L:0.01 M:0.36|1,4Nauru L:0.00 M:0.39
+Nouvelle-Zélande L:0.33 M:0.99|Nouvelle Zélande L:0.21 M:0.99|New Zealand L:0.05 M:1.00|New England L:0.01 M:0.32|Nouvelle République L:0.01 M:0.32
+Papouasie-Nouvelle-Guinée L:0.08 M:0.88|Papouasie-Nouvelle Guinée L:0.01 M:0.95|Papouasie-nouvelle-Guinée L:0.00 M:0.96|Papouasie-Nouvelle-Bretagne L:0.00 M:0.70|Papouasie-Nouvelle-Zélande L:0.00 M:0.81
+Iles Salomon L:0.13 M:0.61|îles Salomon L:0.05 M:0.90|Îles Salomon L:0.04 M:0.98|Ilots Salomon L:0.03 M:0.59|Ilots Solomon L:0.02 M:0.68
+Tonga L:0.52 M:1.00|Philippines L:0.02 M:0.26|Panama L:0.01 M:0.43|Australie L:0.01 M:0.24|Hong L:0.00 M:0.33
+Tonga L:0.03 M:0.81|Vanuatu L:0.03 M:0.69|Panama L:0.03 M:0.42|Tuvalu L:0.02 M:1.00|Guyana L:0.02 M:0.26
+Vanuatu L:0.55 M:1.00|Panama L:0.04 M:0.55|Brésil L:0.01 M:0.18|Venezuela L:0.01 M:0.29|Égypte L:0.01 M:0.17
+Samoa L:0.57 M:1.00|Panama L:0.05 M:0.39|Brésil L:0.02 M:0.25|Pérou L:0.01 M:0.08|Royaume Samoa L:0.00 M:0.96
+pays européen L:0.29 M:0.99|pays Européen L:0.27 M:0.98|pays d'Europe L:0.07 M:0.95|pays Europe L:0.01 M:0.93|pays européens L:0.01 M:0.98
+pays d'Europe centrale L:0.28 M:0.97|pays d'Europe Centrale L:0.14 M:0.97|pays d'Amérique centrale L:0.01 M:0.62|pays centro-européen L:0.01 M:0.96|pays de l'Europe centrale L:0.00 M:0.97
+Autriche L:0.40 M:0.99|Australie L:0.13 M:0.17|Austria L:0.11 M:1.00|Allemagne L:0.11 M:0.41|Espagne L:0.01 M:0.30
+république tchèque L:0.29 M:1.00|République tchèque L:0.08 M:0.99|République Tchèque L:0.04 M:0.99|république Tchèque L:0.02 M:1.00|république démocratique L:0.02 M:0.40
+Allemagne L:0.81 M:1.00|Germany L:0.04 M:1.00|allemagne L:0.01 M:0.33|Australie L:0.00 M:0.13|German L:0.00 M:0.89
+Hongrie L:0.41 M:1.00|Hungary L:0.10 M:1.00|Allemagne L:0.02 M:0.24|Australie L:0.02 M:0.13|République L:0.01 M:0.16
+Liechtenstein L:0.54 M:1.00|Brésil L:0.09 M:0.20|Panama L:0.04 M:0.16|Venezuela L:0.01 M:0.01|Royaume L:0.01 M:0.32
+Pologne L:0.35 M:0.99|Poland L:0.22 M:1.00|Philippines L:0.02 M:0.10|Allemagne L:0.01 M:0.33|Panama L:0.01 M:0.14
+Slovaquie L:0.26 M:0.99|Slovakia L:0.16 M:1.00|Allemagne L:0.03 M:0.32|Australie L:0.02 M:0.12|République slovaque L:0.01 M:0.94
+Suisse L:0.49 M:0.99|Switzerland L:0.04 M:1.00|Allemagne L:0.03 M:0.20|Australie L:0.02 M:0.03|Islande L:0.02 M:0.34
+pays d'Europe orientale L:0.28 M:0.97|pays d'Europe de l'Est L:0.05 M:0.97|pays de l'Est L:0.02 M:0.82|pays de l'Europe orientale L:0.01 M:0.97|pays d'europe orientale L:0.01 M:0.97
+Albanie L:0.30 M:1.00|Albania L:0.16 M:1.00|Allemagne L:0.09 M:0.26|Australie L:0.04 M:0.20|Islande L:0.03 M:0.31
+Arménie L:0.30 M:0.99|Armenia L:0.15 M:1.00|Allemagne L:0.08 M:0.12|Australie L:0.07 M:0.31|Islande L:0.02 M:0.46
+Azerbaïdjan L:0.41 M:0.99|Azerbaijan L:0.10 M:1.00|Allemagne L:0.07 M:0.10|Australie L:0.06 M:0.21|Islande L:0.01 M:0.44
+Belorussie L:0.17 M:0.92|belorussie L:0.09 M:0.93|Belorusse L:0.04 M:0.75|bélorussie L:0.04 M:0.44|belorussia L:0.02 M:0.92
+Bulgarie L:0.41 M:1.00|Bulgaria L:0.05 M:1.00|Allemagne L:0.03 M:0.22|Islande L:0.02 M:0.36|Brésil L:0.02 M:0.14
+Chypre L:0.41 M:0.35|Cyprus L:0.08 M:1.00|République L:0.02 M:0.35|Islande L:0.01 M:0.48|île L:0.01 M:0.59
+Estonie L:0.30 M:1.00|Estonia L:0.20 M:1.00|Allemagne L:0.08 M:0.28|Australie L:0.04 M:0.24|Islande L:0.03 M:0.45
+Grèce L:0.52 M:0.99|Greece L:0.04 M:1.00|Allemagne L:0.03 M:0.21|République L:0.01 M:0.17|Égypte L:0.01 M:0.35
+Lettonie L:0.40 M:0.97|Latvia L:0.07 M:1.00|Islande L:0.01 M:0.40|Brésil L:0.01 M:0.03|République L:0.00 M:0.28
+Lituanie L:0.37 M:0.99|Lithuania L:0.06 M:1.00|Islande L:0.03 M:0.29|Lettonie L:0.02 M:0.55|Liechtenstein L:0.01 M:0.26
+République de Moldova L:0.17 M:1.00|république de Moldova L:0.05 M:1.00|République de Moldavie L:0.04 M:0.99|République de Molonie L:0.01 M:0.36|république de Molande L:0.00 M:0.33
+Roumanie L:0.44 M:0.99|Romania L:0.07 M:1.00|Allemagne L:0.03 M:0.31|République L:0.01 M:0.30|Turquie L:0.01 M:0.22
+Ukraine L:0.53 M:1.00|Australie L:0.07 M:0.17|Allemagne L:0.05 M:0.20|Islande L:0.03 M:0.24|Égypte L:0.01 M:0.33
+pays d'Europe occidentale L:0.16 M:0.93|pays de l'Ouest L:0.02 M:0.84|pays de l'Europe occidentale L:0.02 M:0.93|pays d'Europe du Sud L:0.00 M:0.46|pays de l'Ouest européen L:0.00 M:0.97
+Andorre L:0.49 M:0.63|Allemagne L:0.09 M:0.16|Australie L:0.03 M:0.35|Islande L:0.02 M:0.63|Espagne L:0.01 M:0.47
+Belgique L:0.45 M:0.99|Belgium L:0.09 M:1.00|Allemagne L:0.04 M:0.34|Australie L:0.02 M:0.18|France L:0.02 M:0.17
+Bosnie-Herzégovine L:0.21 M:0.99|Bosnia - Herzegovina L:0.00 M:1.00|Bosnie - Herzégovine L:0.00 M:0.99|Bosnie-Herzégovine. L:0.00 M:0.99|Bosnia - Garcnia L:0.00 M:0.96
+Croatie L:0.40 M:0.99|Croatia L:0.04 M:1.00|Allemagne L:0.02 M:0.21|République L:0.02 M:0.35|Turquie L:0.01 M:0.26
+Danemark L:0.46 M:1.00|Brésil L:0.07 M:0.12|Denmark L:0.05 M:1.00|Royaume L:0.02 M:0.48|Allemagne L:0.01 M:0.31
+Angleterre L:0.47 M:0.97|England L:0.07 M:1.00|Australie L:0.07 M:0.26|Allemagne L:0.06 M:0.38|Royaume L:0.02 M:0.55
+Finlande L:0.35 M:1.00|Finland L:0.09 M:1.00|Allemagne L:0.03 M:0.36|Australie L:0.02 M:0.12|Espagne L:0.01 M:0.18
+France L:0.74 M:1.00|Allemagne L:0.03 M:0.29|Australie L:0.01 M:0.22|Islande L:0.01 M:0.29|République L:0.01 M:0.39
+Islande L:0.57 M:0.85|Iceland L:0.14 M:1.00|Australie L:0.01 M:0.16|Allemagne L:0.01 M:0.33|Irlande L:0.01 M:0.40
+Italie L:0.32 M:1.00|Italy L:0.13 M:1.00|Allemagne L:0.10 M:0.27|Australie L:0.05 M:0.14|Islande L:0.03 M:0.24
+Luxembourg L:0.58 M:1.00|Brésil L:0.05 M:0.20|Panama L:0.05 M:0.25|Venezuela L:0.01 M:0.27|Royaume L:0.00 M:0.42
+Malte L:0.34 M:0.99|Malta L:0.16 M:1.00|Islande L:0.02 M:0.59|Panama L:0.01 M:0.34|Hong L:0.01 M:0.41
+Monaco L:0.50 M:1.00|Panama L:0.01 M:0.20|Islande L:0.01 M:0.48|Australie L:0.01 M:0.21|Royaume Monaco L:0.00 M:0.97
+Netherlands L:0.20 M:1.00|Pays Bas L:0.15 M:0.15|Pays L:0.06 M:0.17|Brésil L:0.02 M:0.24|Pays Brésil L:0.01 M:0.23
+Norvège L:0.35 M:0.99|Norway L:0.08 M:1.00|Brésil L:0.02 M:0.25|Égypte L:0.02 M:0.30|Allemagne L:0.01 M:0.37
+Irlande du Nord L:0.54 M:0.99|Allemagne du Nord L:0.04 M:0.44|Irlande du nord L:0.02 M:0.99|Australie du Nord L:0.01 M:0.54|Ireland du Nord L:0.01 M:0.97
+Portugal L:0.49 M:1.00|Brésil L:0.10 M:0.56|Panama L:0.05 M:0.29|Venezuela L:0.01 M:0.25|Australie L:0.01 M:0.10
+Irlande L:0.48 M:1.00|Ireland L:0.10 M:1.00|Allemagne L:0.08 M:0.18|Australie L:0.04 M:0.26|Islande L:0.03 M:0.50
+Saint Marin L:0.54 M:0.76|San Marin L:0.04 M:0.81|Saint-Marin L:0.02 M:0.62|san Marin L:0.00 M:0.79|Saint Saint Marin L:0.00 M:0.74
+Écosse L:0.39 M:0.98|Australie L:0.07 M:0.22|Allemagne L:0.03 M:0.19|Ecosse L:0.02 M:0.98|Irlande L:0.02 M:0.43
+Slovénie L:0.41 M:0.99|Slovenia L:0.04 M:1.00|Brésil L:0.02 M:0.22|Australie L:0.01 M:0.17|République L:0.01 M:0.26
+Espagne L:0.63 M:0.99|Spain L:0.08 M:1.00|Allemagne L:0.04 M:0.10|Australie L:0.04 M:0.23|Islande L:0.01 M:0.41
+Suède L:0.31 M:0.99|Sweden L:0.18 M:1.00|Allemagne L:0.03 M:0.07|Australie L:0.03 M:0.24|Royaume Suède L:0.00 M:0.90
+Galles L:0.12 M:0.98|Pays L:0.04 M:0.22|Panama L:0.02 M:0.24|Brésil L:0.02 M:0.21|Pays Pays L:0.01 M:0.15
+Yougoslavie L:0.54 M:0.32|Australie L:0.01 M:0.13|Allemagne L:0.01 M:0.27|Islande L:0.01 M:0.26|République L:0.01 M:0.32
+pays nord-américain L:0.41 M:0.98|pays d'Amérique du Nord L:0.07 M:0.97|pays nord-africain L:0.03 M:0.56|pays nord américain L:0.02 M:0.98|pays nord-américaine L:0.00 M:0.97
+Canada L:0.68 M:1.00|Brésil L:0.05 M:0.25|canada L:0.02 M:0.99|Australie L:0.01 M:0.10|Allemagne L:0.01 M:0.23
+Mexique L:0.55 M:0.99|Brésil L:0.10 M:0.18|Mexico L:0.07 M:1.00|Panama L:0.03 M:0.23|Venezuela L:0.02 M:0.21
+États-Unis d'Amérique L:0.22 M:0.99|États-unis d'Amérique L:0.07 M:0.99|États-Unis L:0.02 M:0.97|Etats-Unis d'Amérique L:0.02 M:0.98|United States of States L:0.00 M:0.97
+pays d'Amérique Centrale L:0.16 M:0.98|pays d'Amérique centrale L:0.14 M:0.98|pays d'Amérique central L:0.04 M:0.98|pays centrafricain L:0.02 M:0.67|pays d'Amérique du Centre L:0.01 M:0.92
+Belize L:0.53 M:1.00|Brésil L:0.08 M:0.26|Panama L:0.05 M:0.55|Pérou L:0.01 M:0.33|Royaume L:0.01 M:0.43
+Costa Rica L:0.40 M:1.00|Costa Lanka L:0.03 M:0.66|Costa Congo L:0.02 M:0.40|Costa Panama L:0.02 M:0.68|Costa Brésil L:0.02 M:0.49
+El Salvador L:0.30 M:1.00|El Congo L:0.03 M:0.33|El Lanka L:0.01 M:0.33|El Panama L:0.01 M:0.52|El Brésil L:0.01 M:0.51
+Guatemala L:0.51 M:1.00|Brésil L:0.09 M:0.28|Panama L:0.07 M:0.43|Pérou L:0.01 M:0.37|Venezuela L:0.01 M:0.15
+Honduras L:0.55 M:1.00|Brésil L:0.09 M:0.29|Panama L:0.05 M:0.63|Venezuela L:0.02 M:0.29|Pérou L:0.01 M:0.27
+Nicaragua L:0.56 M:1.00|Brésil L:0.09 M:0.21|Panama L:0.06 M:0.63|Venezuela L:0.01 M:0.37|Égypte L:0.01 M:0.15
+Panama L:0.81 M:1.00|Brésil L:0.01 M:0.29|Nicaragua L:0.00 M:0.63|Pérou L:0.00 M:0.37|Australie L:0.00 M:0.13
+pays des Caraïbes L:0.31 M:0.98|pays caribéen L:0.02 M:0.99|pays antillais L:0.01 M:0.56|pays des Antilles L:0.01 M:0.89|pays caraïbe L:0.00 M:0.98
+Allemagne et Barbade L:0.00 M:0.48|Antilles et Antilles L:0.00 M:0.77|Allemagne et Antilles L:0.00 M:0.44|Antigua-et-Barbuda L:0.00 M:0.97|Australie et Barbade L:0.00 M:0.65
+Bahamas L:0.22 M:0.99|Les Bahamas L:0.07 M:1.00|Philippines L:0.01 M:0.35|the Bahamas L:0.01 M:1.00|Pays Bahamas L:0.00 M:0.89
+Barbade L:0.47 M:0.99|Panama L:0.01 M:0.39|Guinée L:0.01 M:0.31|Philippines L:0.01 M:0.29|Brésil L:0.01 M:0.23
+Cuba L:0.56 M:1.00|Australie L:0.02 M:0.28|Panama L:0.02 M:0.43|Brésil L:0.01 M:0.12|République Cuba L:0.00 M:0.97
+Commonwealth de la Dominique L:0.06 M:0.65|Commonwealth de dominica L:0.02 M:0.92|Commonwealth de la Dominica L:0.01 M:0.99|Commonwealth de Dominica L:0.01 M:0.99|Commonwealth de la dominica L:0.00 M:0.91
+République dominicaine L:0.25 M:0.99|Dominican Republic L:0.13 M:1.00|République Dominicaine L:0.08 M:0.99|République démocratique dominicaine L:0.01 M:0.95|République démocratique L:0.01 M:0.49
+Grenade L:0.50 M:0.25|Panama L:0.02 M:0.52|Philippines L:0.02 M:0.30|Guinée L:0.01 M:0.38|Égypte L:0.01 M:0.25
+Haïti L:0.42 M:0.99|Haiti L:0.09 M:1.00|Islande L:0.03 M:0.28|Australie L:0.02 M:0.20|Allemagne L:0.02 M:0.06
+Jamaïque L:0.39 M:1.00|Jamaica L:0.05 M:1.00|Australie L:0.04 M:0.19|Panama L:0.03 M:0.50|Islande L:0.02 M:0.30
+Porto Rico L:0.35 M:1.00|Puerto Rico L:0.06 M:1.00|Porto Lanka L:0.01 M:0.64|Queens L:0.00 M:0.19|Portois L:0.00 M:0.44
+Saint-Marin L:0.00 M:0.62|Saint-Marin et Nevis L:0.00 M:0.75|Saint-Antoine-et-Saint L:0.00 M:0.45|Saint-Marin et NPDH L:0.00 M:0.64|Saint-Antoine-et-Congo L:0.00 M:0.35
+Saint Marin L:0.03 M:0.48|Sainte-Lucie L:0.03 M:0.71|Saint Lucia L:0.02 M:1.00|St. Lucia L:0.02 M:0.99|Saint-Lucie L:0.01 M:0.70
+Saint-Vincent et les Grenadines L:0.00 M:0.96|Saint-Marin et Saint-Vincent L:0.00 M:0.70|Saint-Vincent-et-Grenadines L:0.00 M:0.70|Saint-Vincent-et-Sud L:0.00 M:0.50|Saint-Vincent-et-les Grenadines L:0.00 M:0.92
+Trinité-et-Tobago L:0.03 M:0.99|Trinité et Tobago L:0.01 M:1.00|Trinité-et-Saint L:0.00 M:0.78|Trinité-et-Monténégro L:0.00 M:0.69|Trinidad et Tobago L:0.00 M:1.00
+pays sud-américain L:0.21 M:0.98|pays sud américain L:0.03 M:0.98|pays sudaméricain L:0.02 M:0.98|pays sud-africain L:0.02 M:0.60|pays sudorien L:0.01 M:0.28
+Argentine L:0.40 M:0.96|Argentina L:0.13 M:1.00|Allemagne L:0.08 M:0.17|Australie L:0.06 M:0.27|Brésil L:0.02 M:0.44
+Bolivie L:0.31 M:0.99|Bolivia L:0.14 M:1.00|Brésil L:0.04 M:0.39|Philippines L:0.02 M:0.12|Panama L:0.02 M:0.19
+Brésil L:0.65 M:0.99|Brazil L:0.11 M:1.00|Chile L:0.00 M:0.37|Belize L:0.00 M:0.22|Botswana L:0.00 M:0.43
+Chili L:0.31 M:0.85|Chile L:0.21 M:1.00|Brésil L:0.18 M:0.39|Panama L:0.03 M:0.26|Venezuela L:0.02 M:0.14
+Colombie L:0.36 M:0.99|Colombia L:0.08 M:1.00|Égypte L:0.02 M:0.13|Brésil L:0.02 M:0.31|Chine L:0.02 M:0.21
+Équateur L:0.37 M:0.95|Equateur L:0.05 M:0.82|Égypte L:0.04 M:0.10|Australie L:0.04 M:0.13|Ecuador L:0.04 M:1.00
+Guyana L:0.52 M:1.00|Panama L:0.03 M:0.48|Guinée L:0.03 M:0.29|Guyane L:0.03 M:0.94|Philippines L:0.02 M:0.22
+Paraguay L:0.54 M:1.00|Brésil L:0.10 M:0.46|Panama L:0.06 M:0.39|Pérou L:0.02 M:0.40|Venezuela L:0.01 M:0.21
+Pérou L:0.60 M:0.99|Peru L:0.08 M:1.00|Brésil L:0.02 M:0.31|Panama L:0.02 M:0.34|Paraguay L:0.01 M:0.38
+Suriname L:0.37 M:1.00|Brésil L:0.05 M:0.47|Panama L:0.04 M:0.41|Venezuela L:0.01 M:0.48|Pérou L:0.01 M:0.45
+Uruguay L:0.57 M:1.00|Australie L:0.10 M:0.27|Allemagne L:0.03 M:0.27|Islande L:0.02 M:0.35|Égypte L:0.02 M:0.23
+République démocratique du Venezuela L:0.03 M:0.93|République yougoslave du Venezuela L:0.01 M:0.80|république démocratique du Venezuela L:0.01 M:0.93|République démocratique du Brésil L:0.00 M:0.31|république démocratique du Brésil L:0.00 M:0.32
+partie d'un pays L:0.39 M:0.87|partie du pays L:0.21 M:0.96|partie de pays L:0.02 M:0.87|partie de la campagne L:0.01 M:0.85|région d'un pays L:0.00 M:0.88
+partie d'un pays d'Afrique L:0.19 M:0.97|partie d'un pays africain L:0.16 M:0.98|partie du pays d'Afrique L:0.05 M:0.96|partie du pays africain L:0.03 M:0.98|partie de pays d'Afrique L:0.01 M:0.97
+île en région d'Afrique L:0.07 M:0.99|île en Afrique L:0.06 M:0.98|île dans une région d'Afrique L:0.02 M:0.99|île dans la région africaine L:0.02 M:0.98|île dans la région d'Afrique L:0.02 M:0.99
+région sud-africaine L:0.09 M:0.99|région d'Afrique du Sud L:0.07 M:0.99|Afrique du Sud L:0.04 M:0.97|région du sud-africain L:0.01 M:0.99|région d'Afrique du sud L:0.01 M:0.99
+Province du Cap L:0.21 M:0.81|province du Cap L:0.14 M:0.79|Cape Province L:0.01 M:1.00|Cap Province L:0.01 M:0.86|province du Cape L:0.00 M:0.98
+Natal L:0.19 M:1.00|natal L:0.03 M:0.49|Natale L:0.02 M:1.00|natale L:0.02 M:0.44
+État libre d'Orange L:0.30 M:0.97|Etat libre d'Orange L:0.03 M:0.97|État libre d'orange L:0.02 M:0.93|État libre orange L:0.02 M:0.98
+transvaal L:0.41 M:0.94|transvagal L:0.01 M:0.30|Transvaal L:0.01 M:1.00|transvulal L:0.00 M:0.06|transvagale L:0.00 M:0.20
+partie d'un pays d'Asie L:0.31 M:0.96|partie du pays d'Asie L:0.05 M:0.95|partie d'un pays asiatique L:0.04 M:0.97|partie d'un pays d'asie L:0.02 M:0.82|partie de pays d'Asie L:0.01 M:0.95
+îles dans la région de l'Inde L:0.03 M:0.99|île dans la région de l'Inde L:0.02 M:0.97|Ilots dans la région de l'Inde L:0.02 M:0.73|île en région de l'Inde L:0.02 M:0.96|îles dans la région de l'Asie L:0.00 M:0.63
+îles Andaman L:0.07 M:0.99|îles andaman L:0.02 M:0.81|îles andamanes L:0.02 M:0.77|Ilots Andaman L:0.01 M:0.89|Ilots Andamans L:0.00 M:0.88
+îles laccadives L:0.06 M:0.92|îles Laccadive L:0.03 M:0.98|îles laquadives L:0.01 M:0.87|îles laïques L:0.01 M:0.45|îles Laccadives L:0.01 M:0.98
+îles Nicobar L:0.30 M:0.98|îles nicobar L:0.11 M:0.87|île Nicobar L:0.02 M:0.97|Ilots Nicobar L:0.01 M:0.85|île nicobar L:0.01 M:0.88
+Indonésie et alentours L:0.17 M:0.91|Indonésie et ses alentours L:0.05 M:0.93|régions d'Indonésie L:0.02 M:0.99|Régions d'Indonésie L:0.02 M:0.98|pays d'Indonésie L:0.02 M:0.96
+Bali L:0.02 M:1.00|Panama L:0.01 M:0.39|Brésil L:0.01 M:0.21|Californie L:0.01 M:0.32|Australie L:0.01 M:0.37
+Borneo L:0.25 M:1.00|borneo L:0.11 M:0.89|Bornéo L:0.06 M:0.97|bornéo L:0.05 M:0.58
+Irian Jaya L:0.22 M:1.00|Irian jaya L:0.11 M:0.67|Irian-Jaya L:0.02 M:0.69|Irian-jaya L:0.01 M:0.55|irian jaya L:0.01 M:0.66
+Java L:0.56 M:1.00|Panama L:0.01 M:0.15|Australie L:0.01 M:0.15|Brésil L:0.00 M:0.22|Allemagne L:0.00 M:0.20
+Petite île du soleil L:0.00 M:0.83|Petite île de Sunda L:0.00 M:0.89|Petite île de la Sonde L:0.00 M:0.80|île de la petite Tête L:0.00 M:0.71|île de la petite-soleil L:0.00 M:0.74
+Timor L:0.49 M:1.00|Brésil L:0.05 M:0.50|Panama L:0.03 M:0.53|Philippines L:0.01 M:0.28|Venezuela L:0.01 M:0.26
+florès L:0.22 M:0.59|Flores L:0.05 M:1.00|fleurs L:0.03 M:0.99|flores L:0.02 M:1.00
+Sumba L:0.37 M:1.00|sumba L:0.17 M:0.87|sumaa L:0.04 M:0.82|Sumbe L:0.02 M:0.83|sumac L:0.01 M:0.83
+sulawesi L:0.47 M:0.31|Sulawesi L:0.20 M:1.00|sulawési L:0.00 M:0.57|sulawésine L:0.00 M:0.43|sulawesci L:0.00 M:0.30
+Sumatera L:0.39 M:1.00|sumatra L:0.13 M:0.95|sumatera L:0.06 M:0.94|sumaera L:0.04 M:0.78|Somatera L:0.01 M:0.63
+Japon et alentours L:0.20 M:0.87|régions du Japon L:0.12 M:0.99|Régions du Japon L:0.04 M:0.99|Japon et ses alentours L:0.03 M:0.90|Japon L:0.02 M:0.90
+honshu L:0.52 M:0.93|Honshu L:0.05 M:1.00|hérshu L:0.01 M:0.55|honorshu L:0.00 M:0.60|mishu L:0.00 M:0.61
+hokkaido L:0.43 M:0.99|Hokkaido L:0.19 M:1.00|hokkaïdo L:0.01 M:0.93|Hokkaïdo L:0.01 M:0.99|houkkaido L:0.00 M:0.37
+shikoku L:0.30 M:1.00|Shikoku L:0.28 M:1.00|Chikoku L:0.01 M:0.44|chiokoku L:0.00 M:0.41|shikokus L:0.00 M:0.63
+kyushu L:0.38 M:0.50|Kyushu L:0.15 M:1.00|cyushu L:0.02 M:0.67|Cyushu L:0.01 M:0.64|kyushus L:0.00 M:0.56
+Okinawa L:0.38 M:1.00|okinawa L:0.02 M:1.00|ocinawa L:0.01 M:0.53|oskinawa L:0.00 M:0.44
+Malaisie et alentours L:0.16 M:0.91|régions de Malaisie L:0.02 M:0.99|Malaisie et ses alentours L:0.02 M:0.91|pays de Malaisie L:0.02 M:0.95|Malaisie et sa région L:0.01 M:0.97
+Peninsular Malaysia L:0.01 M:1.00|péninsule malaisienne L:0.01 M:0.97|péninsule malaise L:0.01 M:0.40|Peninsular Malaisie L:0.00 M:0.99|Malaisie du péninsular L:0.00 M:0.98
+sabah L:0.44 M:0.39|Sabah L:0.20 M:1.00|saban L:0.01 M:0.48|Saban L:0.01 M:0.49|sabou L:0.00 M:0.40
+sarawak L:0.57 M:0.54|Sarawak L:0.11 M:1.00|saralak L:0.00 M:0.40|sarrawak L:0.00 M:0.61|sangawak L:0.00 M:0.33
+Philippines et alentours L:0.24 M:0.94|régions des Philippines L:0.04 M:1.00|Philippines, Philippines L:0.02 M:0.96|Régions des Philippines L:0.02 M:0.99|Philippines et sa région L:0.01 M:0.97
+bohol L:0.37 M:0.89|Bohol L:0.17 M:1.00|bouillon L:0.00 M:0.81|bouclier L:0.00 M:0.76|boholon L:0.00 M:0.86
+cebu L:0.35 M:0.91|Cebu L:0.18 M:1.00|cébu L:0.02 M:0.58|Cébu L:0.01 M:0.73
+Leyte L:0.10 M:1.00|leyte L:0.08 M:0.50|léyte L:0.03 M:0.43|Lyte L:0.01 M:0.28
+Luzon L:0.45 M:1.00|luzon L:0.29 M:0.44|Luçon L:0.00 M:0.45|lutzé L:0.00 M:0.33|luzona L:0.00 M:0.45
+masbate L:0.47 M:0.97|Masbate L:0.19 M:1.00|masbates L:0.00 M:0.88|Masbates L:0.00 M:0.92|masbat L:0.00 M:0.76
+mindanao L:0.28 M:0.67|mindano L:0.01 M:0.51|minantao L:0.01 M:0.41|minganao L:0.00 M:0.49|mindanaao L:0.00 M:0.56
+mindoro L:0.32 M:0.91|mineroro L:0.01 M:0.46|minuscule L:0.01 M:0.49|minoro L:0.01 M:0.80|mingooro L:0.01 M:0.87
+Negros L:0.10 M:1.00|negros L:0.06 M:0.95|négros L:0.04 M:0.84|Négros L:0.01 M:0.84|Négon L:0.00 M:0.35
+palawan L:0.34 M:0.55|Palawan L:0.32 M:1.00|palawane L:0.00 M:0.62|Palawane L:0.00 M:0.85|palan L:0.00 M:0.94
+panay L:0.49 M:0.84|Panay L:0.12 M:1.00|panais L:0.03 M:0.94|panade L:0.01 M:0.86|Panais L:0.01 M:0.95
+samar L:0.38 M:0.85|Samar L:0.15 M:1.00|samre L:0.01 M:0.85|échantillonneur L:0.01 M:0.45|échantillonnaire L:0.00 M:0.48
+partie d'un pays d'Océanie L:0.07 M:0.52|partie d'un pays d'Australasie L:0.04 M:0.95|partie d'un pays d'Australie L:0.03 M:0.92|partie du pays d'Australasie L:0.02 M:0.95|partie du pays d'Océanie L:0.01 M:0.52
+Australie et ses alentours L:0.11 M:0.94|Australie et alentours L:0.09 M:0.93|régions d'Australie L:0.09 M:0.99|Régions d'Australie L:0.03 M:0.99|régions de l'Australie L:0.02 M:0.99
+Australian Capital Territory L:0.04 M:1.00|Australia Capital Territory L:0.00 M:1.00|Territoire de capitale australien L:0.00 M:0.99|Population d'Australie L:0.00 M:0.87|Territoire de la capitale L:0.00 M:0.60
+Nouvelle Galles du Sud L:0.32 M:0.96|Nouvelle-Galles du Sud L:0.05 M:0.95|Nouvelle Galles du sud L:0.01 M:0.95|Nouvelle Zélande du Sud L:0.01 M:0.49|Nouvelle-Galles Sud L:0.00 M:0.94
+Territoire du Nord L:0.40 M:0.93|Territoire Nord L:0.02 M:0.91|territoire du Nord L:0.01 M:0.88|Territoire du nord L:0.01 M:0.93|Pays du Nord L:0.01 M:0.86
+Queensland L:0.76 M:1.00|Queenslande L:0.00 M:0.96|queensland L:0.00 M:0.80|Queenslands L:0.00 M:0.96|quéensland L:0.00 M:0.65
+Australie du Sud L:0.35 M:0.99|Australie méridionale L:0.08 M:0.92|Australie Sud L:0.06 M:0.99|Australie-Sud L:0.05 M:0.92|Australie du sud L:0.04 M:0.96
+Tasmania L:0.13 M:1.00|tasmania L:0.04 M:1.00|Tasmanie L:0.02 M:0.99|tasmanie L:0.01 M:0.97
+Victoria L:0.75 M:1.00|Australie L:0.01 M:0.47|Panama L:0.01 M:0.23|Californie L:0.00 M:0.22|Hong L:0.00 M:0.26
+Australie Ouest L:0.03 M:0.98|Australie occidental L:0.02 M:0.99|Australie occidentale L:0.01 M:0.99|Australie occidente L:0.00 M:0.98
+îles dans la région de l'Australie L:0.03 M:0.99|île dans la région de l'Australie L:0.03 M:0.98|île en région d'Australie L:0.01 M:0.98|île en région de l'Australie L:0.01 M:0.98|Ilots dans la région d'Australie L:0.00 M:0.81
+Nouvelle-Zélande L:0.05 M:0.95|Nouvelle-Zélande et alentours L:0.04 M:0.94|Régions de la Nouvelle-Zélande L:0.03 M:0.99|Régions de la Nouvelle Zélande L:0.02 M:0.99|Régions de Nouvelle-Zélande L:0.02 M:0.99
+Île du Nord L:0.23 M:0.99|île du Nord L:0.21 M:0.99|Ile du Nord L:0.06 M:0.87|île du nord L:0.01 M:0.99|île Nord L:0.01 M:0.98
+Île du Sud L:0.22 M:0.97|île du Sud L:0.19 M:0.98|Ile du Sud L:0.05 M:0.86|île du sud L:0.02 M:0.97|Île Sud L:0.02 M:0.98
+partie d'un pays européen L:0.18 M:0.98|partie d'un pays Européen L:0.10 M:0.98|partie du pays européen L:0.06 M:0.99|partie du pays Européen L:0.02 M:0.98|partie du pays d'Europe L:0.01 M:0.96
+comtés de la république d'Irlande L:0.09 M:0.98|comtés de la République d'Irlande L:0.05 M:0.98|Comtés de la République d'Irlande L:0.04 M:0.98|Comtés de la république d'Irlande L:0.02 M:0.97|comtés de république d'Irlande L:0.02 M:0.97
+Carlow L:0.41 M:1.00|carlow L:0.03 M:0.79|souffle L:0.00 M:0.67|Carlown L:0.00 M:0.88|Carence L:0.00 M:0.52
+cavan L:0.41 M:0.72|Cavan L:0.22 M:1.00|cavane L:0.02 M:0.73|cavus L:0.01 M:0.78|cavum L:0.00 M:0.80
+Clare L:0.50 M:1.00|clare L:0.13 M:0.50|clonus L:0.00 M:0.42|clade L:0.00 M:0.47|clour L:0.00 M:0.41
+comté de Connacht L:0.25 M:0.69|comté de Connaught L:0.06 M:0.78|comté de connexion L:0.02 M:0.72|département de Connacht L:0.01 M:0.63|département Connacht L:0.01 M:0.63
+Cork - comté L:0.30 M:0.98|cork - comté L:0.03 M:0.94|Cork-comté L:0.01 M:0.97|Cork - département L:0.01 M:0.96|Cork : comté L:0.01 M:0.98
+Donegal L:0.34 M:1.00|donegal L:0.14 M:0.46|Donégal L:0.06 M:0.90|donégal L:0.03 M:0.68|donneur L:0.01 M:0.26
+Dublin L:0.35 M:1.00|Panama L:0.02 M:0.22|Australie L:0.01 M:0.28|Hong L:0.01 M:0.41|Royaume Dublin L:0.00 M:0.97
+Galway L:0.33 M:1.00|galway L:0.15 M:0.75|galvoie L:0.01 M:0.44|Galvoie L:0.00 M:0.48|Gaine L:0.00 M:0.50
+Kerry L:0.45 M:1.00|kerry L:0.03 M:0.56|cerise L:0.03 M:0.41|Kérry L:0.03 M:0.46|kérry L:0.02 M:0.50
+Kildare L:0.50 M:1.00|kildare L:0.08 M:0.79|kilogramme L:0.03 M:0.64|Four dare L:0.00 M:0.35|Kildon L:0.00 M:0.85
+Kilkenny L:0.48 M:1.00|kilkenny L:0.05 M:0.88|Four kenny L:0.01 M:0.38|kilogramme L:0.01 M:0.48|Kilkenney L:0.00 M:0.97
+Laois L:0.56 M:1.00|laois L:0.20 M:0.95|laxois L:0.01 M:0.45|laois. L:0.00 M:0.92|Lévis L:0.00 M:0.33
+Leinster L:0.26 M:1.00|leinster L:0.07 M:0.97|Léinster L:0.02 M:0.89|léinster L:0.02 M:0.78|Leinstantaner L:0.01 M:0.46
+Leitrim L:0.55 M:1.00|leitrim L:0.06 M:0.96|léitrim L:0.02 M:0.93|Leitrime L:0.00 M:0.99|Litrim L:0.00 M:0.94
+Limerick L:0.26 M:1.00|limerick L:0.11 M:0.93|Limérick L:0.06 M:0.94|limitérick L:0.03 M:0.43|limonier L:0.01 M:0.37
+Longford L:0.38 M:1.00|longford L:0.19 M:0.99|Lonford L:0.02 M:0.68|lonford L:0.01 M:0.78|longfort L:0.00 M:0.84
+Bouche L:0.38 M:0.54|bouche L:0.07 M:0.65|Louth L:0.04 M:1.00|Bouchon L:0.03 M:0.63|Bougie L:0.02 M:0.66
+Mayo L:0.65 M:1.00|mayo L:0.07 M:0.63|Mayos L:0.01 M:0.94|mayas L:0.00 M:0.38|Maïon L:0.00 M:0.57
+Meath L:0.36 M:1.00|meath L:0.03 M:0.96|Serment L:0.00 M:0.58|Méme L:0.00 M:0.80|Ménus L:0.00 M:0.60
+Monaghan L:0.32 M:1.00|monaghan L:0.24 M:0.89|monohan L:0.00 M:0.60|monoaghan L:0.00 M:0.69|Monagha L:0.00 M:0.85
+Munster L:0.28 M:1.00|monstre L:0.03 M:0.03|munster L:0.02 M:0.43|monteur L:0.01 M:0.31|munisseur L:0.00 M:0.42
+Offaly L:0.19 M:1.00|offaly L:0.05 M:0.96|abats L:0.02 M:0.66|officine L:0.01 M:0.53|offalie L:0.00 M:0.80
+Roscommon L:0.33 M:1.00|roscommon L:0.05 M:0.97|Roscommun L:0.01 M:0.97|rosacée L:0.00 M:0.58|rosetque L:0.00 M:0.53
+Sligo L:0.36 M:1.00|sligo L:0.09 M:0.60|ligo L:0.03 M:0.58|Ligo L:0.01 M:0.59|Sligos L:0.00 M:0.96
+Tipperary L:0.19 M:1.00|Tipperaire L:0.05 M:0.50|Tippéraire L:0.01 M:0.52|tipperary L:0.01 M:0.34|Tippére L:0.00 M:0.42
+Waterford L:0.47 M:1.00|waterford L:0.05 M:0.89|Aquford L:0.00 M:0.41|Watershire L:0.00 M:0.46|Waterston L:0.00 M:0.47
+Westmeath L:0.53 M:1.00|Westméath L:0.02 M:0.98|westmeath L:0.01 M:0.99|wesmeath L:0.00 M:0.54|Westmeserment L:0.00 M:0.93
+Wexford L:0.41 M:1.00|wexford L:0.20 M:0.99|wexford. L:0.00 M:0.97|von Wexford L:0.00 M:0.95|Wexfort L:0.00 M:0.37
+Wicklow L:0.08 M:1.00|wicklow L:0.03 M:0.87|guillemot L:0.01 M:0.72|guérisson L:0.00 M:0.58|ébouillantage L:0.00 M:0.58
+île grecque L:0.18 M:0.96|île de Grèce L:0.09 M:0.98|îles grecques L:0.06 M:0.97|Iles grecques L:0.04 M:0.89|Ilots grecs L:0.04 M:0.78
+Chios L:0.59 M:1.00|chios L:0.24 M:0.92|chien chios L:0.00 M:0.59|chevalier L:0.00 M:0.38|chien Chios L:0.00 M:0.72
+Cos L:0.33 M:1.00|cos L:0.05 M:0.96|COs L:0.02 M:0.80|Kos L:0.01 M:0.86|Cor L:0.00 M:0.92
+Crète L:0.40 M:0.93|Crème L:0.17 M:0.33|crème L:0.03 M:0.32|Crête L:0.02 M:0.45|Crete L:0.01 M:1.00
+Euboea L:0.41 M:1.00|euboea L:0.34 M:0.96|Eubée L:0.00 M:0.95|euboès L:0.00 M:0.96|Euboès L:0.00 M:0.95
+île Ionien L:0.05 M:0.97|île ionienne L:0.03 M:0.92|île onienne L:0.03 M:0.66|île d'Ionien L:0.03 M:0.79|île Ionienne L:0.03 M:0.92
+Céphalonie L:0.26 M:0.94|céphalonie L:0.09 M:0.96|Cephalonie L:0.08 M:0.94|Cephalonia L:0.05 M:1.00|Céphalopathie L:0.02 M:0.83
+Corfu L:0.23 M:1.00|corfu L:0.23 M:0.88|Corfou L:0.08 M:0.74|corfou L:0.06 M:0.64|corfus L:0.00 M:0.62
+Paxos L:0.55 M:1.00|paxos L:0.00 M:0.97|phaxos L:0.00 M:0.80|Paxus L:0.00 M:0.79
+Lefkada L:0.45 M:1.00|lefkada L:0.07 M:0.99|léfkada L:0.01 M:0.98|Léfkada L:0.01 M:0.99|Lfkada L:0.00 M:0.90
+Zante L:0.32 M:1.00|zante L:0.23 M:0.98|zanté L:0.01 M:0.95|zantan L:0.01 M:0.89|Zanté L:0.00 M:0.96
+lemnos L:0.28 M:0.48|Lemnos L:0.25 M:1.00|Citron L:0.01 M:0.35|Citrons L:0.00 M:0.42|Citrus L:0.00 M:0.29
+lesbos L:0.39 M:0.95|Lesbos L:0.12 M:1.00|lébos L:0.05 M:0.73|Lébos L:0.03 M:0.78|Lebos L:0.01 M:0.83
+Rhodes L:0.73 M:1.00|rhodes L:0.05 M:0.61|Rhode L:0.00 M:0.48|rholes L:0.00 M:0.21|rhoes L:0.00 M:0.40
+Skiathos L:0.50 M:1.00|skiathos L:0.09 M:0.99|Skianthos L:0.00 M:0.79|Skiatho L:0.00 M:0.89|Skiantos L:0.00 M:0.90
+Skiros L:0.63 M:1.00|skiros L:0.10 M:0.91|squelette L:0.00 M:0.49|Skïros L:0.00 M:0.83|Skios L:0.00 M:0.86
+Thasos L:0.60 M:1.00|thasos L:0.16 M:0.91|thalasos L:0.00 M:0.79|thalos L:0.00 M:0.94|Thasques L:0.00 M:0.86
+île en région d'Italie L:0.01 M:0.98|île dans la région de l'Italie L:0.01 M:0.98|îles dans la région de l'Italie L:0.01 M:0.99|Ilots dans la région italienne L:0.01 M:0.85|île en région de l'Italie L:0.01 M:0.98
+île d'Elba L:0.30 M:1.00|isle d'elba L:0.05 M:0.97|isle d'Elba L:0.05 M:1.00|Isle d'Elba L:0.02 M:1.00|île de Elba L:0.01 M:0.99
+Sardaigne L:0.19 M:0.73|Sardinia L:0.11 M:1.00|sardaigne L:0.09 M:0.36|Sardaiia L:0.07 M:0.94|sardinia L:0.06 M:0.56
+île des Pays Bas L:0.16 M:0.82|île des Pays-Bas L:0.06 M:0.97|Ilots des Pays Bas L:0.02 M:0.75|île néerlandaise L:0.02 M:0.97|îles des Pays Bas L:0.01 M:0.62
+îles dans la région du Portugal L:0.02 M:0.99|île dans la région du Portugal L:0.02 M:0.99|Ilots dans la région du Portugal L:0.01 M:0.88|île au niveau du Portugal L:0.01 M:0.96|Ilots dans la région portugaise L:0.00 M:0.84
+Azores L:0.66 M:1.00|azores L:0.03 M:0.92|Açores L:0.02 M:0.97|Azor L:0.01 M:0.68|Aazores L:0.00 M:0.77
+Madère L:0.27 M:0.37|madère L:0.06 M:0.41|Madeira L:0.01 M:1.00|madéria L:0.01 M:0.48|madeira L:0.00 M:0.36
+île dans la région de l'Espagne L:0.02 M:0.98|îles dans la région de l'Espagne L:0.02 M:0.99|île en région espagnole L:0.01 M:0.95|Ilots dans la région espagnole L:0.01 M:0.82|îles dans la région espagnole L:0.01 M:0.98
+îles Baléares L:0.08 M:0.85|îles Baléariques L:0.05 M:0.81|Baléares L:0.05 M:0.58|îles Baléariennes L:0.03 M:0.82|iles Baléariques L:0.02 M:0.77
+Formentera L:0.60 M:1.00|formentera L:0.03 M:0.93|Formentéra L:0.02 M:0.97|Formentère L:0.01 M:0.97|formmentera L:0.00 M:0.94
+Ibiza L:0.47 M:1.00|ibiza L:0.09 M:0.77|imbiza L:0.00 M:0.55|ilza L:0.00 M:0.40|Ibizas L:0.00 M:0.99
+Mallorca L:0.30 M:1.00|mallorca L:0.05 M:0.66|Majorque L:0.02 M:0.64|maallorca L:0.02 M:0.59|Mallorque L:0.01 M:0.62
+Menorca L:0.13 M:1.00|menorca L:0.12 M:0.79|ménorque L:0.08 M:0.84|Ménorque L:0.08 M:0.87|menorque L:0.06 M:0.77
+île espagnole L:0.23 M:0.96|île d'Espagne L:0.07 M:0.98|Ilots d'Espagne L:0.06 M:0.88|îles d'Espagne L:0.04 M:0.99|Iles Espagne L:0.01 M:0.95
+France et alentours L:0.15 M:0.93|France et ses alentours L:0.07 M:0.93|Régions de France L:0.04 M:0.99|régions de France L:0.03 M:1.00|France et ses environs L:0.01 M:0.93
+départements d'outre-mer L:0.08 M:0.64|Département d'outre-mer L:0.03 M:0.58|départements français d'outre-mer L:0.01 M:0.84|département d'outre-mer L:0.01 M:0.61|Services d'outre-mer L:0.01 M:0.42
+Guyane française L:0.32 M:0.94|Guiane française L:0.05 M:0.98|Guiana française L:0.03 M:0.99|Guyane francaise L:0.03 M:0.93|Guyane Française L:0.02 M:0.94
+île dans la région de la France L:0.01 M:0.98|île en région de France L:0.01 M:0.97|Ilots dans la région française L:0.00 M:0.77|île dans la région de France L:0.00 M:0.98|île située dans la région de France L:0.00 M:0.98
+Corsica L:0.26 M:1.00|Corse L:0.11 M:0.33|corse L:0.07 M:0.20|corsica L:0.03 M:0.53|Torasica L:0.00 M:0.31
+île de France L:0.17 M:0.97|île française L:0.09 M:0.95|îles françaises L:0.06 M:0.94|îles de France L:0.05 M:0.99|Ilots France L:0.01 M:0.80
+île de Devil L:0.32 M:0.96|îlot de Devil L:0.03 M:0.91|ile de Devil L:0.01 M:0.75|île de devil L:0.01 M:0.94|îlot de devil L:0.00 M:0.82
+isles du salut L:0.08 M:0.99|îles du Salut L:0.05 M:0.97|île du Salut L:0.04 M:0.95|Isles du Salut L:0.03 M:1.00|îles du salut L:0.02 M:0.97
+Royaume Uni (Grande Bretagne et Irlande du Nord) et alentours L:0.01 M:0.93|Régions du Royaume Uni (Grande Bretagne et Irlande du Nord) L:0.01 M:0.95|Royaume-Uni (Grande Bretagne et Irlande du Nord) L:0.01 M:0.94|Royaume Uni (Grande Bretagne et Irlande du Nord) L:0.01 M:0.93|régions du Royaume Uni (Grande Bretagne et Irlande du Nord) L:0.01 M:0.95
+Royaume-Uni (Grande Bretagne et Irlande du Nord) L:0.05 M:0.95|Royaume Uni (Grande Bretagne et Irlande du Nord) L:0.04 M:0.95|Royaume-Uni de Grande Bretagne et d'Irlande du Nord L:0.03 M:0.98|Royaume-Uni de Grande Bretagne et Irlande du Nord L:0.02 M:0.99|Royaume-Uni de Grande Bretagne et d'Irlande du nord L:0.00 M:0.98
+Grande Bretagne L:0.61 M:0.95|Grande-Bretagne L:0.02 M:0.95|Grande Zélande L:0.01 M:0.47|Royaume-Uni L:0.01 M:0.83|Royaume Uni L:0.01 M:0.82
+régions d'Angleterre L:0.13 M:0.98|Angleterre et alentours L:0.06 M:0.82|Régions d'Angleterre L:0.03 M:0.97|régions de l'Angleterre L:0.02 M:0.98|Angleterre et ses alentours L:0.01 M:0.84
+comtés anglais L:0.17 M:0.93|comtés Anglais L:0.10 M:0.91|comtés anglophones L:0.03 M:0.81|comtés arabes L:0.02 M:0.38|comtés d'anglais L:0.01 M:0.86
+avon L:0.39 M:0.34|Avon L:0.31 M:1.00|avanon L:0.01 M:0.36|AVon L:0.01 M:0.52|avone L:0.00 M:0.49
+Bedfordshire L:0.43 M:1.00|bedfordshire L:0.05 M:0.96|Bédfordshire L:0.00 M:0.85|Bedfodshire L:0.00 M:0.54|Bedfordford L:0.00 M:0.84
+berkshire L:0.04 M:0.96|Berkshire L:0.00 M:1.00|Bérkshire L:0.00 M:0.45|bérkshire L:0.00 M:0.48
+Buckinghamshire L:0.46 M:1.00|buckinghamshire L:0.01 M:1.00|bukinghamshire L:0.01 M:0.88|buckkinghamshire L:0.00 M:0.46|buckghamshire L:0.00 M:0.44
+Cambridgeshire L:0.50 M:1.00|cambridgeshire L:0.10 M:0.90|Campondgeshire L:0.00 M:0.37|campbridgeshire L:0.00 M:0.39|Cambridgesembauche L:0.00 M:0.76
+Cheshire L:0.41 M:1.00|cheshire L:0.12 M:0.97|chevalier L:0.01 M:0.32|Chéshire L:0.00 M:0.92|Chesaillon L:0.00 M:0.21
+Cleveland L:0.28 M:1.00|Clevelet L:0.02 M:0.49|cleveland L:0.01 M:0.81|Clevelor L:0.01 M:0.54
+Cornwall L:0.01 M:1.00|Panama L:0.00 M:0.30|Philippines L:0.00 M:0.10|Port L:0.00 M:0.44|Cornes L:0.00 M:0.12
+Cumbria L:0.51 M:1.00|cumbria L:0.13 M:0.74|cumulbria L:0.02 M:0.48|Cumbrias L:0.01 M:0.95|cumbrias L:0.00 M:0.66
+Derbyshire L:0.50 M:1.00|derbyshire L:0.18 M:0.80|dérbyshire L:0.01 M:0.53|Derby shire L:0.00 M:0.89|dérocshire L:0.00 M:0.32
+Devonshire L:0.47 M:1.00|devonshire L:0.03 M:0.99|désonshire L:0.01 M:0.54|démonshire L:0.01 M:0.58|détonshire L:0.00 M:0.52
+Dorsetshire L:0.61 M:1.00|dorsetshire L:0.03 M:0.91|Dorsétshire L:0.01 M:0.96|drorsetshire L:0.00 M:0.54|dorsétshire L:0.00 M:0.60
+durham L:0.40 M:0.42|Durham L:0.22 M:1.00|Dure L:0.00 M:0.42|dure-mère L:0.00 M:0.37|Dindon L:0.00 M:0.48
+Sussex Est L:0.00 M:0.95|Ouest du Congo L:0.00 M:0.13|Yorkais L:0.00 M:0.35|Ouest du Brésil L:0.00 M:0.05|Yorif oriental L:0.00 M:0.36
+Essex L:0.62 M:1.00|essex L:0.04 M:0.57|Essexe L:0.02 M:0.99|Essexualité L:0.00 M:0.34
+Gloucestershire L:0.46 M:1.00|gloucestershire L:0.13 M:0.99|Gloucétershire L:0.02 M:0.61|gloucétershire L:0.01 M:0.56|Glo-cestershire L:0.00 M:0.59
+Grand Londres L:0.41 M:0.89|Grande Londres L:0.04 M:0.91|Grand London L:0.03 M:0.81|Grande Bretagne L:0.01 M:0.57|Grand-Londres L:0.01 M:0.81
+Grand Manchester L:0.39 M:0.90|Grand-Manchester L:0.04 M:0.85|grand manchester L:0.04 M:0.65|Grande Manchester L:0.03 M:0.92|Grand manchester L:0.01 M:0.61
+Hampshire L:0.33 M:1.00|hampshire L:0.00 M:0.98|Hong shire L:0.00 M:0.34|Hawaï L:0.00 M:0.32|Hawshire L:0.00 M:0.60
+Hereford and Worcester L:0.23 M:1.00|Hereford et Worcester L:0.15 M:1.00|Hereford and worcester L:0.00 M:0.78|Héréford et Worcester L:0.00 M:0.86|Hereford et worcester L:0.00 M:0.77
+Hertfordshire L:0.49 M:1.00|hertfordshire L:0.05 M:0.97|hértfordshire L:0.01 M:0.89|Herttrodshire L:0.00 M:0.65|Hertfodshire L:0.00 M:0.64
+Humberside L:0.44 M:1.00|humberside L:0.27 M:0.71|Humbérside L:0.00 M:0.57|humbérside L:0.00 M:0.74|huméroside L:0.00 M:0.57
+Kent L:0.40 M:1.00|Royaume L:0.00 M:0.43|Congo L:0.00 M:0.14|Panama L:0.00 M:0.24|Canada L:0.00 M:0.16
+Lancashire L:0.56 M:1.00|lancashire L:0.01 M:0.99|Lancasinage L:0.01 M:0.47|Lancasonnage L:0.00 M:0.43|Lanashire L:0.00 M:0.61
+Leicestershire L:0.49 M:1.00|leicestershire L:0.08 M:0.71|Leicestérshire L:0.01 M:0.67|léicestershire L:0.01 M:0.73|Leicestérishire L:0.00 M:0.58
+Lincolnshire L:0.41 M:1.00|Lincolnshire. L:0.00 M:0.99|Columnshire L:0.00 M:0.36|chantinshire L:0.00 M:0.40|Lincolnisshire L:0.00 M:0.86
+Merseyside L:0.25 M:1.00|merseyside L:0.22 M:0.92|merséyside L:0.08 M:0.77|Merséyside L:0.03 M:0.84|méryside L:0.01 M:0.39
+Norfolk L:0.33 M:1.00|norfolk L:0.14 M:0.97|Nornois L:0.00 M:0.43|Noremark L:0.00 M:0.41|de Norfolk L:0.00 M:0.93
+Yorkshire du Nord L:0.39 M:1.00|Yorkshire du nord L:0.06 M:1.00|Yorkshire Nord L:0.02 M:0.99|Yorkshire nord L:0.02 M:1.00|Caroline du Nord L:0.00 M:0.63
+Northamptonshire L:0.50 M:1.00|Nordamptonshire L:0.01 M:0.91|Noramptonshire L:0.00 M:0.75|Kingamptonshire L:0.00 M:0.85|Norvamptonshire L:0.00 M:0.68
+Northumberland L:0.33 M:1.00|Nordumberland L:0.01 M:0.81|Northchester L:0.00 M:0.71|Northonéon L:0.00 M:0.73|Nord-umberland L:0.00 M:0.82
+Nottinghamshire L:0.38 M:1.00|nottinghamshire L:0.11 M:0.73|Nottinogamshire L:0.00 M:0.52|Nottinfantamshire L:0.00 M:0.39|Nottinghamchester L:0.00 M:0.95
+Oxfordshire L:0.46 M:1.00|oxfordshire L:0.16 M:0.92|oxyfordshire L:0.00 M:0.70|Oxyfordshire L:0.00 M:0.89|Oxtrodshire L:0.00 M:0.68
+Shropshire L:0.51 M:1.00|shropshire L:0.08 M:0.62|Chropshire L:0.00 M:0.77|Shropston L:0.00 M:0.54|Shropford L:0.00 M:0.82
+Somerset L:0.49 M:1.00|somerset L:0.24 M:0.55|somérset L:0.00 M:0.42|Somérset L:0.00 M:0.45|Soméroset L:0.00 M:0.39
+Yorkshire du Sud L:0.33 M:0.99|Yorkshire du sud L:0.09 M:0.99|Yorkshire Sud L:0.03 M:0.99|Yorkshire sud L:0.03 M:0.99|Yorkshire méridional L:0.01 M:0.94
+Staffordshire L:0.67 M:1.00|staffordshire L:0.01 M:0.73|Stordshire L:0.00 M:0.65|Staffordchester L:0.00 M:0.85|Staffordmont L:0.00 M:0.82
+Suffolk L:0.44 M:1.00|suffolk L:0.12 M:0.40|étourneau L:0.00 M:0.46|Suffolkk L:0.00 M:0.99|Suffolk. L:0.00 M:0.99
+Surrey L:0.52 M:1.00|Victoria L:0.00 M:0.29|Londres L:0.00 M:0.58|Saint Surrey L:0.00 M:0.95|Saint Marin L:0.00 M:0.27
+West Lanka L:0.00 M:0.64|comté de West L:0.00 M:0.71|Ouest du Congo L:0.00 M:0.39|Yorkais L:0.00 M:0.20|Ouest du Brésil L:0.00 M:0.36
+Yorkshire occidental L:0.13 M:0.94|Yorkshire Ouest L:0.04 M:0.98|Yorkshire-Ouest L:0.01 M:0.98|Yorkshire du Sud L:0.00 M:0.66|Yorkshire du Ouest L:0.00 M:0.98
+Tyne and Wear L:0.15 M:1.00|Tyne et Wear L:0.09 M:0.99|Tyne and wear L:0.04 M:0.99|Tyne et wear L:0.01 M:0.97|Tyne et ouïe L:0.00 M:0.84
+Warwickshire L:0.67 M:1.00|warwickshire L:0.02 M:0.99|WarWickshire L:0.00 M:0.66|Warwick L:0.00 M:0.86|Warwickchester L:0.00 M:0.86
+Midlands Ouest L:0.02 M:0.98|Midlands West L:0.02 M:0.98|Midlands occidentaux L:0.02 M:0.93|Midlands-Ouest L:0.01 M:0.98|Midlands de West L:0.01 M:0.98
+Wiltshire L:0.45 M:1.00|wiltshire L:0.07 M:0.50|Wilson L:0.01 M:0.32|sautshire L:0.00 M:0.50|Sautshire L:0.00 M:0.45
+îles Anglais L:0.13 M:0.86|île anglaise L:0.04 M:0.95|île Anglais L:0.02 M:0.94|îles Anglaise L:0.01 M:0.82|îles anglo L:0.00 M:0.89
+île de Man L:0.26 M:0.96|île de l'homme L:0.10 M:0.95|Isle de Man L:0.03 M:0.97|île de man L:0.01 M:0.91|Isle de man L:0.00 M:0.96
+îles Scilly L:0.07 M:0.97|Ilots de scilly L:0.03 M:0.66|îles de scilly L:0.03 M:0.92|île de Scilly L:0.03 M:0.96|îles de Scilly L:0.03 M:0.98
+St. Marys L:0.47 M:1.00|St. L:0.06 M:0.66|Saint-Marys L:0.00 M:0.94|St. marys L:0.00 M:0.98|St-Marys L:0.00 M:0.97
+Tresco L:0.53 M:1.00|tresco L:0.02 M:0.88|Tréco L:0.01 M:0.83|taresco L:0.00 M:0.76|Trescoco L:0.00 M:0.95
+Sheppey L:0.13 M:1.00|sheppey L:0.06 M:0.99|Sheppe L:0.02 M:0.94|Sheppède L:0.00 M:0.92|sheppède L:0.00 M:0.89
+Régions d'Irlande du Nord L:0.09 M:0.99|régions d'Irlande du Nord L:0.08 M:0.99|Irlande du Nord L:0.02 M:0.97|régions de l'Irlande du Nord L:0.01 M:0.99|régions d'Irlande du nord L:0.00 M:0.99
+Comtés d'Irlande du Nord L:0.19 M:0.97|comtés d'Irlande du Nord L:0.08 M:0.98|Comtés de l'Irlande du Nord L:0.01 M:0.97|Comtés d'Irlande du nord L:0.01 M:0.97|comtés d'Irlande du nord L:0.01 M:0.97
+comté d'Antrim L:0.35 M:0.69|comté antrim L:0.03 M:0.60|comté d'antrim L:0.02 M:0.57|comté de Antrim L:0.02 M:0.96|comté Antrim L:0.01 M:0.96
+comté d'Armagh L:0.36 M:0.94|comté de Armagh L:0.03 M:0.98|comté d'armagh L:0.02 M:0.88|comté armagh L:0.02 M:0.90|comté Armagh L:0.01 M:0.97
+comté de Belfast L:0.47 M:0.98|comté Belfast L:0.05 M:0.99|comté belge L:0.01 M:0.45|comté brifast L:0.00 M:0.41|comté de Belcoast L:0.00 M:0.37
+comté de Down L:0.37 M:0.87|comté de down L:0.02 M:0.82|comté Down L:0.00 M:0.78|comté de Ddown L:0.00 M:0.68
+comté de Fermanagh L:0.28 M:0.98|comté de fermanagh L:0.07 M:0.84|comté fermanagh L:0.01 M:0.83|comté de Fermanagement L:0.01 M:0.51|comté Fermanagh L:0.00 M:0.97
+comté de Londonderry L:0.35 M:0.95|comté de londonderry L:0.08 M:0.93|comté londonderry L:0.04 M:0.92|comté Londonderry L:0.01 M:0.95|comte londonderry L:0.01 M:0.88
+comté de Tyrone L:0.36 M:0.97|comté de tyrone L:0.07 M:0.55|comté Tyrone L:0.02 M:0.95|comté tyrone L:0.02 M:0.47|comte tyrone L:0.01 M:0.44
+régions d'Ecosse L:0.15 M:0.99|Régions d'Ecosse L:0.06 M:0.99|régions d'Écosse L:0.05 M:0.99|Ecosse L:0.04 M:0.93|Écosse et ses alentours L:0.02 M:0.94
+région frontalière L:0.13 M:0.98|région frontière L:0.12 M:0.98|Région frontalière L:0.11 M:0.98|Région frontière L:0.08 M:0.97|zone frontalière L:0.01 M:0.96
+Région centrale L:0.41 M:0.97|région centrale L:0.41 M:0.99|zone centrale L:0.01 M:0.96|région centre L:0.01 M:0.86|Région centre L:0.00 M:0.74
+Dumfries et Galloway L:0.18 M:0.99|Dumfries and Galloway L:0.09 M:1.00|Dumfries et galloway L:0.01 M:0.76|Dumfries and galloway L:0.00 M:0.81|Dumfries et glalloway L:0.00 M:0.76
+Fife L:0.36 M:1.00|fife L:0.13 M:0.90|fidfe L:0.00 M:0.49|Fièvre L:0.00 M:0.35|Frafe L:0.00 M:0.52
+Grampian L:0.26 M:1.00|grampian L:0.04 M:0.92|grampiane L:0.01 M:0.95|Grampiane L:0.00 M:0.60
+Highland L:0.54 M:1.00|Highlande L:0.05 M:0.99|Highlands L:0.01 M:0.93|highland L:0.01 M:0.93|Highlandis L:0.00 M:0.98
+lothian L:0.40 M:0.95|Lothian L:0.24 M:1.00|lothiane L:0.03 M:0.92|lothien L:0.02 M:0.70|Lothiane L:0.01 M:0.98
+Strathclyde L:0.31 M:1.00|stramclyde L:0.00 M:0.91|strabisme L:0.00 M:0.76|Strathclylde L:0.00 M:0.89|Strathclyl L:0.00 M:0.87
+Tayside L:0.45 M:1.00|tayside L:0.02 M:0.73|tangside L:0.00 M:0.59|tayon L:0.00 M:0.76|tayotte L:0.00 M:0.80
+Les îles occidentales L:0.02 M:0.96|îles occidentales L:0.02 M:0.97|Ilots occidentaux L:0.02 M:0.83|Isles occidentales L:0.01 M:0.99|Iles occidentales L:0.01 M:0.96
+île écossaise L:0.39 M:0.99|île d'Ecosse L:0.01 M:0.97|île d'Australie L:0.00 M:0.34|Île écossaise L:0.00 M:0.99|île Ecosse L:0.00 M:0.97
+Arran L:0.47 M:1.00|arran L:0.04 M:0.88|Arian L:0.00 M:0.67|ardéa L:0.00 M:0.67|aragan L:0.00 M:0.76
+Islay L:0.21 M:1.00|islay L:0.15 M:0.63|incrustation L:0.01 M:0.37|incisure L:0.00 M:0.26|isocèle L:0.00 M:0.42
+kintyre L:0.42 M:0.86|Kintyre L:0.30 M:1.00|cintyre L:0.00 M:0.54|kintyres L:0.00 M:0.89|Cintyre L:0.00 M:0.49
+Mull L:0.32 M:1.00|mull L:0.25 M:0.97|Môle L:0.01 M:0.87|Lame L:0.00 M:0.55|Müller L:0.00 M:0.41
+Orkney L:0.44 M:1.00|orkney L:0.05 M:0.97|Orcney L:0.00 M:0.65|Orcarney L:0.00 M:0.41|Orcalis L:0.00 M:0.39
+Shetland L:0.35 M:1.00|shetland L:0.15 M:0.99|Shétland L:0.08 M:0.76|shétland L:0.04 M:0.79|Shétlande L:0.02 M:0.72
+Peau L:0.22 M:0.64|Skye L:0.07 M:1.00|Seigle L:0.04 M:0.67|Seye L:0.03 M:0.54|skye L:0.01 M:0.54
+Pays de Galles L:0.04 M:0.91|Régions du Pays de Galles L:0.01 M:0.97|Régions du pays de Galles L:0.01 M:0.99|régions du pays de Galles L:0.01 M:0.98|Pays du Pays de Galles L:0.01 M:0.81
+comtés Gallois L:0.16 M:0.32|comtés gallois L:0.13 M:0.50|comtés de Welsh L:0.03 M:0.98|pays Gallois L:0.01 M:0.47|comtés de Gallois L:0.01 M:0.34
+Clwyd L:0.54 M:1.00|clwyd L:0.13 M:0.99|Clwyde L:0.00 M:0.96|Clwyl L:0.00 M:0.90|Clwyld L:0.00 M:0.89
+Dyfed L:0.16 M:1.00|dyfed L:0.04 M:0.98|insufflé L:0.01 M:0.77|insuffisamment L:0.00 M:0.37|Dysé L:0.00 M:0.91
+Gwent L:0.23 M:1.00|Gait L:0.01 M:0.50|gwent L:0.01 M:0.76|glacé L:0.00 M:0.50|glabre L:0.00 M:0.61
+Gwynedd L:0.21 M:1.00|gwynedd L:0.16 M:0.83|wynedd L:0.01 M:0.58|ganynedd L:0.01 M:0.52|Gwyneddd L:0.00 M:0.98
+Mid Glamorgan L:0.20 M:1.00|Mid-Glamorgan L:0.02 M:0.96|Mid Glamorgane L:0.02 M:0.97|Mid-Glamorgane L:0.00 M:0.93|Glamorgan moyen L:0.00 M:0.88
+Poudre L:0.11 M:0.60|Poudres L:0.10 M:0.59|poudre L:0.10 M:0.55|Powys L:0.09 M:1.00|Pouls L:0.05 M:0.65
+Glamorgan du sud L:0.06 M:0.78|Glamorgan du Sud L:0.06 M:0.83|Glamorgane du sud L:0.01 M:0.73|Glamorgane du Sud L:0.01 M:0.79|Glamorgan sud L:0.01 M:0.88
+Glamorgan occidental L:0.04 M:0.90|Glamorgan West L:0.02 M:0.98|Glamorgan de l'Ouest L:0.02 M:0.88|Glamorgan de West L:0.01 M:0.94|Glamorgane de West L:0.00 M:0.94
+île galloise L:0.30 M:0.67|île Gallois L:0.06 M:0.60|île de Welsh L:0.06 M:0.99|île gallois L:0.03 M:0.97|île Galloise L:0.02 M:0.48
+Anglesey L:0.25 M:1.00|angleey L:0.07 M:0.59|angesey L:0.01 M:0.60|angleys L:0.00 M:0.54|angéieux L:0.00 M:0.50
+îles du Royaume Uni (Grande Bretagne et Irlande du Nord) L:0.02 M:0.94|Ilots du Royaume Uni (Grande Bretagne et Irlande du Nord) L:0.02 M:0.86|Iles du Royaume Uni (Grande Bretagne et Irlande du Nord) L:0.01 M:0.96|îles du Royaume-Uni (Grande Bretagne et Irlande du Nord) L:0.01 M:0.96|îles du Royaume-Uni de Grande Bretagne et d'Irlande du Nord L:0.00 M:0.98
+îles Falkland L:0.20 M:0.99|île Falkland L:0.05 M:0.99|Iles Falkland L:0.02 M:0.95|îles de Falkland L:0.01 M:0.99|île de Falkland L:0.01 M:0.99
+Falkland Est L:0.01 M:0.86|Guyane orientale L:0.00 M:0.49|Guam orientale L:0.00 M:0.38|île de Californie L:0.00 M:0.26|Guyane oriental L:0.00 M:0.48
+Falkland occidental L:0.01 M:0.96|Falkland West L:0.00 M:0.99|Falkland Ouest L:0.00 M:0.99|Guyane occidentale L:0.00 M:0.52|Caroline du Sud L:0.00 M:0.27
+île Caicos L:0.32 M:0.98|île de Caicos L:0.10 M:0.98|île Caïcos L:0.07 M:0.94|île caicos L:0.03 M:0.93|île de Caïcos L:0.00 M:0.94
+Géorgie du Sud L:0.34 M:0.98|Géorgie du sud L:0.03 M:0.97|Georgia Sud L:0.02 M:0.98|Georgia du Sud L:0.01 M:0.99|Géorgie du Nord L:0.01 M:0.72
+partie d'un pays nord-américain L:0.21 M:0.97|partie du pays nord-américain L:0.03 M:0.98|partie du pays d'Amérique du Nord L:0.02 M:0.97|pays nord-américain L:0.02 M:0.94|pays d'Amérique du Nord L:0.01 M:0.94
+île dans la région de l'Amérique du Nord L:0.04 M:0.99|île aux environs de l'Amérique du Nord L:0.02 M:0.97|île dans une région de l'Amérique du Nord L:0.01 M:0.99|île en région d'Amérique du Nord L:0.01 M:0.99|île dans la région de l'Amérique du nord L:0.00 M:0.99
+Tutuila L:0.41 M:1.00|tutuila L:0.08 M:0.98|Tutulia L:0.01 M:0.84|Tutule L:0.01 M:0.94|Tutula L:0.01 M:0.84
+île Manua L:0.35 M:0.99|île de Manua L:0.12 M:0.98|île manua L:0.03 M:0.92|île de manua L:0.02 M:0.89|île manuelle L:0.01 M:0.69
+St. Croix L:0.17 M:1.00|St. L:0.01 M:0.77|St. Marin L:0.00 M:0.62|St. Sainte L:0.00 M:0.86|St. forestier L:0.00 M:0.60
+St. John L:0.30 M:1.00|St. Jean L:0.05 M:0.76|Saint-Jean L:0.02 M:0.64|Saint John L:0.01 M:0.96|St. Joseph L:0.01 M:0.52
+St. Thomas L:0.40 M:1.00|Saint-Thomas L:0.03 M:0.97|Saint Thomas L:0.02 M:0.98|St. Charles L:0.00 M:0.55|St. Thompson L:0.00 M:0.48
+île d'Amérique du Nord L:0.21 M:0.99|île nord-américaine L:0.08 M:0.99|Île d'Amérique du Nord L:0.02 M:0.98|île d'Amérique du nord L:0.01 M:0.98|île du nord-américain L:0.01 M:0.98
+Guam L:0.63 M:1.00|Panama L:0.02 M:0.32|Hong L:0.01 M:0.42|Islande L:0.01 M:0.65|Australie L:0.01 M:0.43
+île de Wake L:0.26 M:0.98|île Wake L:0.06 M:0.98|île de wake L:0.03 M:0.91|île de Wâteau L:0.01 M:0.62|île wake L:0.01 M:0.97
+partie du Canada L:0.17 M:0.98|région du Canada L:0.05 M:0.97|Partie du Canada L:0.04 M:0.90|partie du canada L:0.02 M:0.98|Région du Canada L:0.02 M:0.96
+région du Canada L:0.39 M:0.99|Région du Canada L:0.09 M:0.99|région du canada L:0.04 M:0.99|région du Brésil L:0.01 M:0.28|Région du canada L:0.01 M:0.99
+Alberta L:0.48 M:1.00|Australie L:0.07 M:0.19|Allemagne L:0.04 M:0.17|Espagne L:0.01 M:0.26|Afrique L:0.01 M:0.19
+Colombie-Britannique L:0.22 M:0.86|Columbia Britannique L:0.02 M:0.79|Colombie Britannique L:0.02 M:0.88|United Columbia L:0.02 M:0.63|Colombie-Uni L:0.01 M:0.35
+Manitoba L:0.57 M:1.00|Panama L:0.01 M:0.18|Canada L:0.01 M:0.69|Australie L:0.01 M:0.17|Royaume L:0.01 M:0.26
+Nouveau-Brunswick L:0.31 M:0.72|Nouveau Brunswick L:0.04 M:0.89|Nouveau-Monde L:0.02 M:0.52|New Brunswick L:0.01 M:1.00|Nouveau-Orient L:0.01 M:0.42
+Terre Neuve L:0.05 M:0.45|Terre-Neuve L:0.02 M:0.43|Panama L:0.01 M:0.32|Terre Terre L:0.01 M:0.34|Terre de Terre L:0.00 M:0.36
+Territoires du Nord L:0.08 M:0.73|Territoire du Nord L:0.02 M:0.74|territoires du Nord L:0.01 M:0.70|Pays du Nord L:0.01 M:0.66|Pays-Nord L:0.00 M:0.70
+Nouvelle-Écosse L:0.22 M:0.90|Nouvelle-Zélande L:0.03 M:0.38|Nouvelle-Bretagne L:0.02 M:0.78|Nouvelle Écosse L:0.01 M:0.90|Nouvelle-Australie L:0.00 M:0.37
+Ontario L:0.54 M:1.00|Australie L:0.05 M:0.10|Allemagne L:0.03 M:0.23|Afrique L:0.02 M:0.20|Islande L:0.01 M:0.27
+île du Prince Édouard L:0.01 M:0.66|île du Prince Edwards L:0.01 M:0.80|île du Prince Ecosse L:0.00 M:0.75|île-du-Prince L:0.00 M:0.81|île du Prince-Édouard L:0.00 M:0.68
+Québec L:0.53 M:0.99|Brésil L:0.05 M:0.31|Panama L:0.02 M:0.28|Pérou L:0.01 M:0.22|Royaume L:0.00 M:0.34
+Saskatchewan L:0.53 M:1.00|Australie L:0.01 M:0.13|Californie L:0.00 M:0.18|Allemagne L:0.00 M:0.27|République L:0.00 M:0.11
+Territoire du Yukon L:0.14 M:0.99|territoire du Yukon L:0.02 M:0.99|Yukon Territory L:0.01 M:1.00|Territoire du Canada L:0.01 M:0.73|pays du Yukon L:0.01 M:0.98
+district d'une province canadienne L:0.09 M:0.97|district de la province canadienne L:0.07 M:0.98|district de province canadienne L:0.04 M:0.98|District de la province canadienne L:0.03 M:0.99|District d'une province canadienne L:0.03 M:0.98
+district de Terre-Neuve L:0.02 M:0.36|district de la province de Terre Neuve L:0.02 M:0.48|district de la province de Terre L:0.02 M:0.45|District de la province de Terre Neuve L:0.01 M:0.51|District de Terre-Neuve L:0.01 M:0.37
+île de Terre Neuve L:0.12 M:0.53|île de Terre L:0.09 M:0.53|île de Californie L:0.04 M:0.23|île de Terre-Neuve L:0.02 M:0.58|île de Terre Terre L:0.01 M:0.51
+Labrador L:0.56 M:1.00|Panama L:0.04 M:0.42|Brésil L:0.03 M:0.16|Pérou L:0.01 M:0.11|Canada L:0.01 M:0.46
+District des Territoires du Nord L:0.04 M:0.75|District des territoires du Nord L:0.03 M:0.73|district des territoires du Nord L:0.01 M:0.72|district des Territoires du Nord L:0.01 M:0.74|District des territoires du nord L:0.01 M:0.71
+île de Baffin L:0.19 M:0.99|île de Californie L:0.06 M:0.31|île Baffin L:0.01 M:0.99|île de Panama L:0.01 M:0.45|île de Caroline L:0.01 M:0.51
+île Banks L:0.42 M:0.97|île de Banks L:0.05 M:0.96|île banks L:0.03 M:0.92|île de banks L:0.00 M:0.92|île Banques L:0.00 M:0.86
+île d'Ellesmere L:0.46 M:0.84|île d'Ellesmère L:0.04 M:0.79|île Ellesmere L:0.03 M:0.99|Ellesmere L:0.02 M:0.93|île de Ellesmere L:0.01 M:0.99
+région de fort Smith L:0.16 M:0.98|région de Fort Smith L:0.11 M:0.99|Région de Fort Smith L:0.04 M:0.99|Région de fort Smith L:0.03 M:0.98|région de fort-Smith L:0.02 M:0.95
+keewatine L:0.12 M:0.92|Keewatine L:0.04 M:0.94|keewatin L:0.02 M:0.99|kéewatine L:0.01 M:0.92|Kémastine L:0.00 M:0.77
+Kitikmeot L:0.50 M:1.00|kitikmeot L:0.14 M:0.88|Kitikméot L:0.01 M:0.96|kitikméot L:0.00 M:0.94|Kitikmeots L:0.00 M:0.95
+île Victoria L:0.66 M:0.99|île de Victoria L:0.07 M:0.99|Île Victoria L:0.01 M:0.98|Victoria island L:0.01 M:1.00|îles Victoria L:0.00 M:0.98
+région des États-Unis d'Amérique L:0.08 M:0.97|région des Etats-Unis d'Amérique L:0.03 M:0.96|région des États-Unis L:0.03 M:0.97|Région des États-Unis d'Amérique L:0.02 M:0.97|région des États-unis d'Amérique L:0.01 M:0.98
+Alabama L:0.42 M:1.00|alabama L:0.33 M:0.88|albama L:0.00 M:0.43|alloama L:0.00 M:0.37|allabama L:0.00 M:0.56
+Alaska L:0.71 M:1.00|Australie L:0.03 M:0.36|Allemagne L:0.01 M:0.28|Islande L:0.01 M:0.57|Espagne L:0.00 M:0.15
+Arizona - état américain L:0.12 M:1.00|Arizona - État américain L:0.04 M:1.00|arizona - état américain L:0.03 M:0.98|Arizona - État-US L:0.00 M:0.99|Arizona - état des lieux L:0.00 M:0.97
+Arkansas L:0.47 M:1.00|arkansas L:0.08 M:0.80|Arkans L:0.01 M:0.51|Arkancas L:0.00 M:0.54|Arkansa L:0.00 M:0.99
+Californie L:0.73 M:0.99|California L:0.03 M:1.00|Australie L:0.02 M:0.27|Brésil L:0.01 M:0.21|Panama L:0.01 M:0.29
+Colorado L:0.58 M:1.00|Brésil L:0.02 M:0.26|Panama L:0.02 M:-0.03|Venezuela L:0.01 M:0.02|Pérou L:0.01 M:0.26
+Connecticut L:0.63 M:1.00|connecticut L:0.01 M:0.43|Connécticut L:0.01 M:0.42|Connectique L:0.00 M:0.44|Connectite L:0.00 M:0.18
+Delaware L:0.42 M:1.00|déconscient L:0.01 M:0.31|Délire L:0.01 M:0.20|désert L:0.01 M:0.29|Délconscient L:0.00 M:0.30
+district de Columbia L:0.26 M:0.98|District de Columbia L:0.19 M:0.99|district de Colombie L:0.02 M:0.75|District de Colombie L:0.01 M:0.79|département de Columbia L:0.01 M:0.93
+Floride L:0.16 M:1.00|Californie L:0.03 M:0.35|Panama L:0.02 M:0.60|Australie L:0.02 M:0.24|Flda L:0.01 M:0.42
+état d'Hawaii L:0.10 M:0.98|état d'Hawaï L:0.10 M:0.98|État d'Hawaï L:0.09 M:0.98|État d'Hawaii L:0.09 M:0.98|état de Hawaï L:0.02 M:0.99
+région de l'état d'Hawaï L:0.06 M:0.98|région de l'état d'Hawaii L:0.06 M:0.99|région de l'état de Hawaï L:0.04 M:0.99|région de l'état de Hawaii L:0.02 M:0.99|région d'état d'Hawaï L:0.01 M:0.98
+île Hawaï L:0.18 M:0.99|île d'Hawaii L:0.15 M:0.98|île d'Hawaï L:0.13 M:0.98|île Hawaii L:0.09 M:0.99|île d'Hawi L:0.03 M:0.90
+Kauai L:0.25 M:1.00|kauaï L:0.04 M:0.37|Kauaï L:0.03 M:0.93|kauai L:0.01 M:0.33|koraï L:0.01 M:0.73
+Lanai L:0.54 M:1.00|lanai L:0.14 M:0.90|Lanaï L:0.05 M:0.95|lanaï L:0.01 M:0.83|landai L:0.01 M:0.59
+Maui L:0.40 M:1.00|maui L:0.24 M:0.46|aui L:0.00 M:0.37|mani L:0.00 M:0.20|Mausi L:0.00 M:0.34
+Molokai L:0.50 M:1.00|molokai L:0.06 M:0.98|Molokaï L:0.01 M:0.93|manolokai L:0.00 M:0.85|molokaï L:0.00 M:0.94
+Oahu L:0.32 M:1.00|oahu L:0.10 M:0.96|ouahu L:0.01 M:0.47|ouhu L:0.00 M:0.49|Oahus L:0.00 M:0.64
+Idaho L:0.46 M:1.00|idaho L:0.03 M:0.93|itaho L:0.00 M:0.30|Idahos L:0.00 M:0.98
+Illinois L:0.59 M:1.00|Australie L:0.04 M:0.36|Islande L:0.02 M:0.35|Allemagne L:0.01 M:0.31|Brésil L:0.01 M:0.43
+Indiana L:0.56 M:1.00|indiana L:0.23 M:0.30|Indiane L:0.02 M:0.27|indiane L:0.00 M:0.26|Indian L:0.00 M:0.25
+Iowa L:0.58 M:1.00|iowa L:0.05 M:0.99|ilowa L:0.00 M:0.53|Iowas L:0.00 M:0.99|ilea L:0.00 M:0.39
+Kansas L:0.55 M:1.00|kansas L:0.20 M:0.92|Kans L:0.00 M:0.46|Kansa L:0.00 M:0.46|kansa L:0.00 M:0.28
+Kentucky L:0.33 M:1.00|kentucky L:0.26 M:0.43|kentucki L:0.00 M:0.33|Kentuckky L:0.00 M:0.28|kentuckky L:0.00 M:0.32
+Louisiane L:0.24 M:0.87|Louisiana L:0.21 M:1.00|louisiana L:0.02 M:0.81|louisiane L:0.01 M:0.40|Louisienne L:0.00 M:0.63
+Maine L:0.47 M:1.00|Panama L:0.04 M:0.36|Brésil L:0.01 M:0.17|Australie L:0.01 M:0.15|Royaume L:0.01 M:0.29
+Maryland L:0.65 M:1.00|Martinland L:0.01 M:0.30|Marylande L:0.00 M:0.99|maryland L:0.00 M:0.93|Caroline du Nord L:0.00 M:0.46
+Massachusetts L:0.52 M:1.00|Panama L:0.02 M:0.21|Brésil L:0.01 M:0.24|Australie L:0.01 M:0.16|Royaume L:0.00 M:0.30
+Michigan L:0.49 M:1.00|Panama L:0.04 M:0.27|Brésil L:0.02 M:0.38|Australie L:0.01 M:0.13|Royaume L:0.01 M:0.23
+Minnesota L:0.63 M:1.00|Panama L:0.02 M:0.09|Brésil L:0.02 M:0.27|Royaume Minnesota L:0.00 M:0.94|Royaume Brésil L:0.00 M:0.23
+Mississippi L:0.75 M:1.00|mississippi L:0.00 M:0.95|Missisippi L:0.00 M:0.94|Mississipi L:0.00 M:0.95|Misssissippi L:0.00 M:0.78
+Missouri L:0.76 M:1.00|misouri L:0.00 M:0.90|Missuri L:0.00 M:0.50|Missouri. L:0.00 M:0.99|Missoustan L:0.00 M:0.28
+Montana L:0.42 M:1.00|montana L:0.32 M:0.86|monotana L:0.00 M:0.18|Monoc L:0.00 M:0.20|montan L:0.00 M:0.58
+Nébraska L:0.50 M:0.99|Nebraska L:0.09 M:1.00|nebraska L:0.03 M:0.99|nébraska L:0.02 M:0.98|Nébrège L:0.00 M:0.52
+Nevada L:0.33 M:1.00|NAEVI L:0.04 M:0.43|Névada L:0.03 M:0.39|Naevada L:0.02 M:0.84|Naevus L:0.01 M:0.39
+château L:0.31 M:0.93|castle L:0.01 M:1.00|comté L:0.01 M:0.53|jardin L:0.01 M:0.34|Casaque L:0.00 M:0.53
+Mansion L:0.22 M:1.00|mansion L:0.09 M:0.99|manipulation L:0.04 M:0.27|Mansie L:0.01 M:0.47|manoir L:0.00 M:0.60
+cottage L:0.38 M:0.98|Cottage L:0.24 M:1.00|Cotage L:0.06 M:0.52|cotage L:0.03 M:0.54|coton L:0.01 M:0.38
+bungalow L:0.56 M:0.86|Bungalow L:0.11 M:1.00|bungaley L:0.00 M:0.57|bungalovie L:0.00 M:0.80|bungalow. L:0.00 M:0.86
+Prefab L:0.26 M:1.00|prefab L:0.06 M:0.98|préfab L:0.03 M:0.97|Préfab L:0.03 M:0.97|Pré-impression L:0.00 M:0.72
+Maisonette L:0.22 M:1.00|maisonnette L:0.09 M:0.94|marguerite L:0.02 M:0.66|maisonette L:0.01 M:0.97
+habitation aquatique L:0.04 M:0.93|Logement aquatique L:0.04 M:0.91|habitation sur l'eau L:0.02 M:0.90|habitat aquatique L:0.02 M:0.88|habitation nautique L:0.02 M:0.63
+bateau domestique L:0.02 M:0.79|Navire L:0.01 M:0.58|embarcation domestique L:0.01 M:0.82|Navire domestique L:0.01 M:0.78|embarcation L:0.00 M:0.63
+foyer pour sans-abri L:0.08 M:0.84|foyer pour itinérants L:0.06 M:0.54|foyer pour les sans-abri L:0.03 M:0.85|foyer pour personnes sans abri L:0.02 M:0.85|foyer pour personnes itinérantes L:0.01 M:0.54
+foyer de femmes battues L:0.04 M:0.75|foyer pour femmes battues L:0.01 M:0.76|refuge pour conjointes battues L:0.01 M:0.53|refuge pour femmes battues L:0.00 M:0.67
+auberge de jeunesse L:0.08 M:0.71|foyer d'étudiants L:0.04 M:0.78|foyer pour étudiants L:0.01 M:0.76|foyer d'élèves L:0.01 M:0.73|auberge d'étudiants L:0.01 M:0.89
+logement militaire L:0.28 M:0.94|accommodation militaire L:0.22 M:0.99|hébergement militaire L:0.10 M:0.97|Logement militaire L:0.03 M:0.94|accomodation L:0.01 M:0.58
+centre pour jeunes délinquants L:0.23 M:0.96|centre de jeunes délinquants L:0.12 M:0.96|centre des jeunes délinquants L:0.08 M:0.96|centre pour jeunes contrevenants L:0.04 M:0.91|centre de jeunes contrevenants L:0.02 M:0.87
+salle de réception L:0.32 M:0.93|chambre de réception L:0.08 M:0.93|salle d'accueil L:0.02 M:0.84|Chambre de réception L:0.01 M:0.91|salle de réceptions L:0.00 M:0.90
+cuisine L:0.11 M:0.84|Cupule L:0.04 M:0.44|Cuve L:0.03 M:0.47|Cuisie L:0.02 M:0.79|Cuir L:0.01 M:0.47
+annexe de maison L:0.45 M:0.93|annexe domestique L:0.06 M:0.88|annexe maison L:0.05 M:0.95|annexe de logement L:0.03 M:0.86|annexe du logement L:0.01 M:0.87
+environnement physique L:0.70 M:0.94|milieu physique L:0.04 M:0.94|environment physique L:0.03 M:0.96|Environnement physique L:0.01 M:0.99|environnement physiologique L:0.00 M:0.81
+environnement le moins restrictif L:0.06 M:0.98|environnement restrictif minimum L:0.05 M:0.86|environnement moins restrictif L:0.04 M:0.85|environnement restrictif minimal L:0.02 M:0.93|environnement restrictif mineur L:0.02 M:0.63
+environnement à risque élevé L:0.46 M:0.97|environnement à haut risque L:0.22 M:0.94|environnement à risques élevés L:0.02 M:0.98|environnement à hauts risques L:0.01 M:0.97|milieu à risque élevé L:0.01 M:0.95
+environnement stérile L:0.67 M:0.79|environment stérile L:0.03 M:0.82|milieu stérile L:0.02 M:0.72|ambiance stérile L:0.01 M:0.81|environnement stérilisé L:0.00 M:0.57
+environnement aérien ouvert L:0.12 M:0.93|environnement à air ouvert L:0.04 M:0.97|environnement en plein air L:0.04 M:0.90|environnement d'air ouvert L:0.02 M:0.94|environnement en air libre L:0.01 M:0.91
+environnement naturel L:0.72 M:0.95|milieu naturel L:0.06 M:0.94|environment naturel L:0.03 M:0.98|Environnement naturel L:0.01 M:0.99|ambiance naturelle L:0.00 M:0.94
+environnement rural L:0.51 M:0.99|milieu rural L:0.10 M:0.97|environment rural L:0.02 M:1.00|environnement agricole L:0.02 M:0.85|environnement urbain L:0.02 M:0.33
+environnement urbain L:0.54 M:0.98|milieu urbain L:0.15 M:0.97|environment urbain L:0.03 M:1.00|Environnement urbain L:0.01 M:0.99|environnement urbaine L:0.01 M:0.98
+environnement industriel L:0.76 M:0.99|milieu industriel L:0.05 M:0.99|environment industriel L:0.01 M:1.00|environnement industrielle L:0.00 M:0.99|ambiance industrielle L:0.00 M:0.98
+environnement agricole L:0.40 M:0.97|milieu agricole L:0.06 M:0.97|environnement de production L:0.03 M:0.54|environnement de culture L:0.02 M:0.57|milieu de culture L:0.01 M:0.47
+école maternelle L:0.14 M:0.83|Crèche L:0.06 M:0.75|crèche L:0.03 M:0.85|Crèche scolaire L:0.00 M:0.85|école de crèche L:0.00 M:0.84
+école spécialisée L:0.48 M:0.88|école de spécialistes L:0.03 M:0.79|école spécialisé L:0.01 M:0.88|collège spécialisé L:0.01 M:0.75|école spécialiste L:0.01 M:0.86
+localisation dans les locaux hospitaliers L:0.08 M:0.92|lieu dans les locaux hospitaliers L:0.03 M:0.91|lieu au sein des locaux hospitaliers L:0.03 M:0.93|localisation au sein des locaux hospitaliers L:0.02 M:0.93|lieu au sein d'un hôpital L:0.00 M:0.88
+cabinet de consultation hospitalier L:0.10 M:0.90|salle de consultation hospitalière L:0.09 M:0.92|cabinet hospitalier L:0.03 M:0.88|consultation hospitalière L:0.02 M:0.91|cabinet hospitalier de consultation L:0.01 M:0.91
+salle de traitement L:0.33 M:0.90|salle de soins L:0.11 M:0.85|chambre de traitement L:0.05 M:0.87|chambre de soins L:0.01 M:0.84|salle de traitements L:0.01 M:0.91
+salle d'attente hospitalière L:0.20 M:0.88|salle d'attente d'hôpital L:0.08 M:0.96|salle d'attente d'un hôpital L:0.06 M:0.97|salle d'attente de l'hôpital L:0.02 M:0.97|chambre d'attente hospitalière L:0.01 M:0.83
+salle d'éducation sanitaire L:0.28 M:0.91|chambre d'éducation sanitaire L:0.05 M:0.94|salle d'enseignement sanitaire L:0.02 M:0.89|salle d'éducation médicale L:0.01 M:0.84|salle d'enseignement de santé L:0.01 M:0.95
+toilettes dans les locaux hospitaliers L:0.03 M:0.97|toilettes au sein des locaux hospitaliers L:0.03 M:0.97|toilettes au sein de l'hôpital L:0.02 M:0.97|toilettes au sein d'un hôpital L:0.01 M:0.97|toilettes au sein d'un établissement hospitalier L:0.01 M:0.97
+zone de réception L:0.03 M:0.55|zone d'accueil L:0.02 M:0.53|zone de réception hospitalière L:0.02 M:0.76|zone d'accueil hospitalier L:0.02 M:0.94|aire de réception hospitalière L:0.01 M:0.74
+premier étage L:0.67 M:0.96|premier plancher L:0.08 M:0.84|1er étage L:0.04 M:0.95|premier sol L:0.01 M:0.77|premier etage L:0.01 M:0.95
+second étage L:0.35 M:0.98|deuxième étage L:0.35 M:0.97|second plancher L:0.05 M:0.69|deuxième plancher L:0.02 M:0.93|2e étage L:0.01 M:0.95
+troisième étage L:0.73 M:0.99|troisième plancher L:0.03 M:0.97|3e étage L:0.01 M:0.98|Troisième étage L:0.00 M:0.99|troisième etage L:0.00 M:0.99
+quatrième étage L:0.74 M:0.99|Quatrième étage L:0.03 M:0.99|quatrième plancher L:0.03 M:0.95|4e étage L:0.01 M:0.94|quatrième etage L:0.00 M:0.99
+cinquième étage L:0.69 M:0.99|5e étage L:0.02 M:0.92|cinquième plancher L:0.01 M:0.96|cinquieme étage L:0.01 M:0.99|premier étage L:0.01 M:0.40
+sixième étage L:0.63 M:0.99|sixième plancher L:0.03 M:0.96|6e étage L:0.01 M:0.94|quatrième étage L:0.01 M:0.55|premier étage L:0.01 M:0.47
+septième étage L:0.70 M:0.99|septième plancher L:0.04 M:0.97|7e étage L:0.02 M:0.98|dixième étage L:0.00 M:0.41|septième sol L:0.00 M:0.89
+huitième étage L:0.56 M:0.99|huitième plancher L:0.03 M:0.97|8e étage L:0.02 M:0.97|8ème étage L:0.01 M:0.97|huitième sol L:0.01 M:0.91
+neuvième étage L:0.54 M:0.97|neuvième plancher L:0.04 M:0.81|9e étage L:0.01 M:0.93|dixième étage L:0.01 M:0.78|quatrième étage L:0.01 M:0.38
+dixième étage L:0.51 M:0.98|dixième plancher L:0.07 M:0.95|dixième sol L:0.01 M:0.88|onzième étage L:0.01 M:0.77|10e étage L:0.01 M:0.90
+onzième étage et au-dessus du bâtiment L:0.10 M:0.96|onzième étage et plus du bâtiment L:0.03 M:0.94|onzième étage et plus d'un bâtiment L:0.01 M:0.91|onzième étage et au-dessus d'un bâtiment L:0.01 M:0.90|onzième étage et au-delà du bâtiment L:0.00 M:0.92
+plancher basal L:0.16 M:0.36|Plancher basal L:0.05 M:0.32|Plancher L:0.02 M:0.38|plancher du fond L:0.02 M:0.58|Étage basal L:0.01 M:0.53
+département des accidents et des urgences L:0.21 M:0.86|département des accidents et urgences L:0.05 M:0.86|département des urgences et des accidents L:0.03 M:0.86|département d'urgence et d'accident L:0.01 M:0.77|département d'urgence et d'accidents L:0.00 M:0.79
+Morgue L:0.52 M:1.00|morgue L:0.18 M:0.99|Mortie L:0.00 M:0.53|Morgues L:0.00 M:0.98|Morction L:0.00 M:0.66
+salle d'opération L:0.50 M:0.91|salle de travail L:0.03 M:0.78|salle d'hôpital L:0.03 M:0.72|bloc opératoire L:0.01 M:0.74|salle d'opératoire L:0.00 M:0.89
+chambre du client L:0.29 M:0.95|salle du client L:0.04 M:0.90|chambre du patient L:0.03 M:0.66|chambre de client L:0.02 M:0.92|chambre de la clientèle L:0.01 M:0.83
+salle de réanimation L:0.53 M:0.77|chambre de réanimation L:0.11 M:0.79|Chambre de réanimation L:0.01 M:0.80|salle de ressuscitation L:0.01 M:0.96|salle de consultation L:0.00 M:0.45
+Mer L:0.59 M:0.57|mer L:0.26 M:0.42|sea L:0.03 M:1.00|MER L:0.00 M:0.55|mers L:0.00 M:0.35
+salle de contention L:0.08 M:0.36|chambre de contention L:0.04 M:0.36|salle d'isolement L:0.02 M:0.75|salle de décompression L:0.00 M:0.59|chambre de décompression L:0.00 M:0.60
+unité de vie assistée L:0.03 M:0.68|Établissement vivant assisté L:0.02 M:0.63|Établissement de vie assisté L:0.02 M:0.81|établissement de vie assisté L:0.01 M:0.89|Établissement vivant avec assistance L:0.01 M:0.79
+refuge d'urgence L:0.15 M:0.97|abri d'urgence L:0.09 M:0.93|abris d'urgence L:0.06 M:0.97|asile d'urgence L:0.04 M:0.73|refuge en urgence L:0.03 M:0.96
+environnement de soins aigus hospitalier L:0.03 M:0.86|milieu de soins aigus hospitalier L:0.02 M:0.87|environnement hospitalier de soins aigus L:0.02 M:0.80|environnement de soins aigus pour patients hospitalisés L:0.00 M:0.85|environnement de soins aigus pour le patient L:0.00 M:0.82
+environnement de santé mentale hospitalier L:0.11 M:0.92|environnement de santé mentale patient L:0.04 M:0.96|environnement de santé mentale d'un patient L:0.01 M:0.89|environnement de santé mentale patient hospitalisé L:0.01 M:0.96|environnement de santé mentale du patient L:0.00 M:0.94
+lieu L:0.29 M:0.92|Place L:0.09 M:1.00|Lieu L:0.05 M:0.82|place L:0.04 M:0.96|site L:0.02 M:0.80
+appartement L:0.04 M:0.97|compartiment L:0.03 M:0.49|Acompartiment L:0.01 M:0.43|Apartment L:0.01 M:1.00|Loge L:0.01 M:0.46
+maison de retraite L:0.03 M:0.65|maison d'arrêt L:0.02 M:0.58|maison de boire L:0.01 M:0.48|maison de boare L:0.00 M:0.58|maison de caravaning L:0.00 M:0.66
+Canal L:0.58 M:1.00|canal L:0.04 M:0.98|nan L:0.00 M:0.43|tunnel L:0.00 M:0.54|pont L:0.00 M:0.44
+foyer pour enfants L:0.11 M:0.96|Maison de retraite L:0.07 M:0.41|maison de retraite L:0.04 M:0.46|Maison de soins L:0.03 M:0.55|Maison de l'enfant L:0.03 M:0.97
+Clinique L:0.54 M:0.88|clinique L:0.08 M:0.97|clinicien L:0.00 M:0.95|clinico L:0.00 M:0.97
+eau côtière L:0.30 M:0.95|eaux côtières L:0.01 M:0.96|eau de mer L:0.01 M:0.86|eau de côte L:0.01 M:0.93|eau de littoral L:0.01 M:0.88
+dock ou harbor L:0.07 M:0.90|dock or harbor L:0.03 M:0.99|Dock ou harbor L:0.03 M:0.99|dock ou port L:0.01 M:0.94|dock ou hélix L:0.00 M:0.63
+établissement scolaire L:0.19 M:0.86|établissement d'enseignement L:0.19 M:0.94|établissement d'éducation L:0.08 M:0.95|établissement éducatif L:0.04 M:0.97|Établissement scolaire L:0.02 M:0.84
+ferme L:0.53 M:0.34|agricole L:0.02 M:0.94|Ferme L:0.02 M:0.29|agriculture L:0.02 M:0.87|exploitation agricole L:0.01 M:0.91
+milieu de soins palliatifs hospitalier L:0.02 M:0.94|environnement de soins palliatifs hospitalier L:0.01 M:0.96|environnement de soins palliatifs pour un patient hospitalisé L:0.01 M:0.97|milieu de soins palliatifs pour un patient hospitalisé L:0.01 M:0.96|environnement de soins palliatifs d'un patient L:0.01 M:0.97
+maison agricole L:0.41 M:0.98|maison de ferme L:0.14 M:0.98|maison ferme L:0.02 M:0.61|maison de retraite L:0.02 M:0.56|ferme L:0.02 M:0.32
+eau de crue L:0.14 M:0.81|eau flottante L:0.06 M:0.67|eau de pluie L:0.03 M:0.76|eau de flottation L:0.02 M:0.72|eau de flottement L:0.01 M:0.70
+auberge L:0.17 M:0.77|foyer L:0.03 M:0.63|auberge de jeunesse L:0.01 M:0.66|Foyer L:0.01 M:0.47|Autour L:0.01 M:0.36
+maison L:0.52 M:0.96|Maison L:0.16 M:0.98|logement L:0.02 M:0.78|Chambre L:0.01 M:0.79|Logement L:0.01 M:0.67
+eau intérieure L:0.12 M:0.82|eau interne L:0.03 M:0.85|eau intérieur L:0.03 M:0.77|eaux continentales L:0.02 M:0.63|eau de surface L:0.01 M:0.74
+station de vacances L:0.06 M:0.86|centre de vacances L:0.03 M:0.91|club de vacances L:0.01 M:0.85|maison de vacances L:0.01 M:0.83|Station de vacances L:0.01 M:0.90
+maison mobile L:0.65 M:0.89|home mobile L:0.03 M:0.97|foyer mobile L:0.03 M:0.93|domicile mobile L:0.02 M:0.96|Maison mobile L:0.02 M:0.94
+parking L:0.04 M:0.98|lieu de stationnement L:0.02 M:0.97|place de parking L:0.02 M:0.99|Statif L:0.02 M:0.50|espace de stationnement L:0.01 M:0.96
+établissement pénitentiaire L:0.20 M:0.77|institution pénitentiaire L:0.12 M:0.78|institution pénale L:0.10 M:0.92|institut pénitentiaire L:0.04 M:0.70|Établissement pénitentiaire L:0.03 M:0.74
+cellule de police L:0.41 M:0.98|cellule policière L:0.24 M:0.99|cellule police L:0.03 M:0.98|cellule policier L:0.00 M:0.97|Cellule policière L:0.00 M:0.97
+maison privée L:0.71 M:0.97|foyer privé L:0.01 M:0.98|logement privé L:0.01 M:0.92|maison privé L:0.01 M:0.98|Maison privée L:0.01 M:0.99
+Réservoir L:0.12 M:0.97|réserveur L:0.02 M:0.60|réservoir L:0.01 M:0.94|Récipient L:0.01 M:0.43
+maison de retraite L:0.12 M:0.72|foyer résidentiel L:0.06 M:0.95|Maison de retraite L:0.05 M:0.70|maison privée L:0.04 M:0.74|maison de repos L:0.04 M:0.65
+école L:0.53 M:0.99|École L:0.04 M:0.84|Ecole L:0.01 M:0.98|scolaire L:0.01 M:0.98|collège L:0.01 M:0.64
+Stream L:0.11 M:1.00|sillon L:0.02 M:0.56|stream L:0.02 M:0.99|Streame L:0.01 M:0.98|streame L:0.01 M:0.96
+environnement de réadaptation du patient L:0.04 M:0.88|environnement de réadaptation des patients hospitalisés L:0.02 M:0.92|environnement de réadaptation pour patient L:0.01 M:0.90|environnement de réadaptation patient L:0.01 M:0.91|environnement de réadaptation pour patient hospitalier L:0.00 M:0.91
+estuaire tibial L:0.01 M:0.70|estuaire tidal L:0.00 M:0.97|estuaire de la queue L:0.00 M:0.68|estuaire de Tidal L:0.00 M:0.97|estuaire de la marée L:0.00 M:0.86
+Voie tibiale L:0.01 M:0.29|Voie tarsienne L:0.01 M:0.38|Voie de signalisation L:0.00 M:0.34|Voie d'eau L:0.00 M:0.80|Voie d'abord L:0.00 M:0.22
+centre de santé mentale et toxicomanie L:0.08 M:0.92|centre de santé mentale et de toxicomanie L:0.07 M:0.92|centre santé mentale et toxicomanie L:0.03 M:0.92|centre de santé mentale et d'addiction L:0.03 M:0.96|centre de santé mentale et de dépendance L:0.01 M:0.96
+laboratoire L:0.59 M:0.98|nan L:0.02 M:0.26|Laboratoire L:0.00 M:0.99|département L:0.00 M:0.43
+maison L:0.33 M:0.90|Maison L:0.14 M:0.87|domicile L:0.08 M:0.94|home L:0.04 M:1.00|foyer L:0.02 M:0.79
+établissement militaire L:0.49 M:0.97|installation militaire L:0.17 M:0.94|Établissement militaire L:0.02 M:0.94|implantation militaire L:0.01 M:0.85|institution militaire L:0.01 M:0.95
+Pharmacie L:0.51 M:0.94|pharmacie L:0.05 M:0.91|Pharacie L:0.02 M:0.39|Pharmerie L:0.02 M:0.82|Pharmie L:0.01 M:0.70
+environnement résidentiel L:0.45 M:0.98|milieu résidentiel L:0.05 M:0.91|environnement domestique L:0.03 M:0.84|environment résidentiel L:0.01 M:0.98|environnement institutionnel L:0.01 M:0.71
+caractéristique géographique en forme d'eau L:0.05 M:0.95|caractéristique géographique de l'eau L:0.04 M:0.96|caractéristique de l'eau géographique L:0.02 M:0.95|caractéristique géographique d'une eau L:0.01 M:0.96|caractéristique géographique en eau L:0.01 M:0.96
+installation sportive L:0.29 M:0.95|établissement sportif L:0.03 M:0.97|équipement sportif L:0.02 M:0.92|installation de sports L:0.01 M:0.94|établissement de sports L:0.01 M:0.97
+établissement municipal et civique L:0.17 M:0.89|établissement municipal et civil L:0.03 M:0.89|établissement civil et municipal L:0.01 M:0.92|établissement municipal et municipal L:0.01 M:0.90|etablissement municipal et civique L:0.00 M:0.92
+unité de soins spéciaux L:0.23 M:0.96|unité de soins spécialisés L:0.11 M:0.90|unité de soins particuliers L:0.05 M:0.91|Unité de soins spéciaux L:0.05 M:0.96|Unité de soins spécialisés L:0.02 M:0.91
+hôpital de jour L:0.76 M:0.93|hôpital du jour L:0.00 M:0.97|centre hospitalier L:0.00 M:0.84|hôpital ambulatoire L:0.00 M:0.82|hôpital de nuit L:0.00 M:0.59
+Environnement L:0.44 M:0.98|environnement L:0.19 M:0.98|environment L:0.06 M:1.00|ENVIRONNEMENT L:0.01 M:0.97|Contexte L:0.01 M:0.71
+état de Géorgie L:0.09 M:0.98|État de Géorgie L:0.05 M:0.98|Géorgie L:0.05 M:0.98|état Géorgie L:0.01 M:0.99|Géorgie état L:0.01 M:0.99
+Türkiye L:0.10 M:1.00|türkiye L:0.06 M:0.99|teurkiye L:0.00 M:0.43|torokiye L:0.00 M:0.39|Türkirye L:0.00 M:0.78
+lieu dans les locaux domestiques L:0.01 M:0.85|lieu au sein du domicile L:0.01 M:0.91|lieu au sein des locaux L:0.00 M:0.79|lieu au sein de l'habitation L:0.00 M:0.92|localisation dans les locaux d'habitation L:0.00 M:0.89
+locaux de police L:0.51 M:0.93|locaux médicaux L:0.01 M:0.40|locaux sanitaires L:0.01 M:0.37|maison de police L:0.01 M:0.91|locaux de santé L:0.00 M:0.35
+environnement de commerce et de service L:0.09 M:0.93|environnement du commerce et des services L:0.09 M:0.93|environnement de commerce et de services L:0.07 M:0.92|environnement commercial et de service L:0.03 M:0.80|environnement du commerce et du service L:0.02 M:0.95
+camp résidentiel L:0.29 M:0.90|campement résidentiel L:0.07 M:0.92|Camp résidentiel L:0.04 M:0.96|Campement résidentiel L:0.01 M:0.94|campement domestique L:0.00 M:0.90
+site de désintoxication L:0.01 M:0.41|site de Derelict L:0.01 M:0.79|site de désespoir L:0.01 M:0.76|site de désinsertion L:0.01 M:0.52|site de désinclusion L:0.00 M:0.55
+Hospice L:0.26 M:1.00|hospice L:0.09 M:1.00|Foyer L:0.01 M:0.48|hôpital L:0.00 M:0.66|Foyers L:0.00 M:0.45
+département hospitalier L:0.60 M:0.94|département d'hôpital L:0.10 M:0.86|service hospitalier L:0.04 M:0.95|département d'hospitalisation L:0.00 M:0.86|département d'hôpitaux L:0.00 M:0.83
+parc L:0.59 M:0.99|pays L:0.03 M:0.56|park L:0.01 M:1.00|Park L:0.01 M:1.00|Parc L:0.01 M:0.99
+localisation d'un chemin de fer L:0.01 M:0.92|localisation d'une voie ferroviaire L:0.01 M:0.92|localisation d'une ligne ferroviaire L:0.01 M:0.92|localisation de la ligne ferroviaire L:0.01 M:0.92|localisation d'une ligne de chemin L:0.00 M:0.55
+Chute d'eau L:0.07 M:0.73|Chute L:0.05 M:0.48|chute d'eau L:0.03 M:0.82|Choc L:0.03 M:0.40|Chute des eaux L:0.00 M:0.75
+résidence religieuse institutionnelle L:0.10 M:0.97|résidence religieuse L:0.03 M:0.95|résidence en institution religieuse L:0.03 M:0.96|résidence religieuse en institution L:0.02 M:0.95|résidence institutionnelle religieuse L:0.02 M:0.98
+environnement radioactif L:0.69 M:0.99|milieu radioactif L:0.02 M:0.98|environment radioactif L:0.01 M:0.99|environnement radioactive L:0.01 M:0.99|environnement radio actif L:0.00 M:0.95
+environnement toxique L:0.75 M:0.99|milieu toxique L:0.03 M:0.98|environment toxique L:0.01 M:0.99|environnement dangereux L:0.00 M:0.82|ambiance toxique L:0.00 M:0.94
+environnement corrosif L:0.04 M:0.96|environment corrosif L:0.02 M:0.96|milieu corrosif L:0.02 M:0.94|environnement corroïde L:0.00 M:0.91
+environnement pollué L:0.36 M:0.97|environnement polarisé L:0.03 M:0.50|environnement pollinisé L:0.02 M:0.68|environment pollué L:0.02 M:0.96|environnement polarisant L:0.00 M:0.58
+environnement personnel L:0.51 M:0.97|environment personnel L:0.04 M:0.63|environnement individuel L:0.03 M:0.79|milieu personnel L:0.02 M:0.93|Environnement personnel L:0.01 M:0.99
+environnement aquatique L:0.47 M:0.98|milieu aquatique L:0.08 M:0.96|environment aquatique L:0.02 M:0.99|environnement marin L:0.01 M:0.79|environnement aquatiques L:0.01 M:0.98
+environnement à faible risque L:0.25 M:0.97|environnement à risque faible L:0.14 M:0.97|environnement à bas risque L:0.13 M:0.97|environnement de faible risque L:0.02 M:0.98|environnement à risque bas L:0.01 M:0.98
+environnement à risque L:0.33 M:0.95|à risque L:0.05 M:0.93|en milieu à risque L:0.03 M:0.96|en situation de risque L:0.01 M:0.96|environnement à risques L:0.01 M:0.95
+environnement de travail L:0.40 M:0.99|milieu de travail L:0.20 M:0.95|environnement du travail L:0.05 M:0.99|milieu du travail L:0.02 M:0.93|environnement professionnel L:0.01 M:0.78
+environnement hospitalier L:0.49 M:0.95|milieu hospitalier L:0.15 M:0.94|environment hospitalier L:0.01 M:0.95|environnement d'hôpital L:0.01 M:0.99|hôpital L:0.01 M:0.91
+environnement communautaire L:0.36 M:0.99|milieu communautaire L:0.09 M:0.96|environnement social L:0.02 M:0.85|environnement commun L:0.01 M:0.85|environnement de communauté L:0.01 M:0.99
+environnement géographique L:0.56 M:0.98|milieu géographique L:0.14 M:0.91|environment géographique L:0.01 M:0.98|ambiance géographique L:0.01 M:0.96|climat géographique L:0.00 M:0.85
+environnement routier L:0.37 M:0.85|environnement urbain L:0.06 M:0.46|milieu routier L:0.03 M:0.84|environnement industriel L:0.02 M:0.34|environnement de route L:0.01 M:0.86
+ditch de drainage L:0.03 M:0.97|fossette de drainage L:0.01 M:0.84|Drainage ditch L:0.00 M:1.00|Drainage de ditch L:0.00 M:0.95|Drainage de ditation L:0.00 M:0.74
+environnement ou localisation géographique L:0.39 M:0.99|environnement ou lieu géographique L:0.05 M:0.99|environnement ou emplacement géographique L:0.04 M:0.99|environnement ou site géographique L:0.04 M:0.98|environnement ou situation géographique L:0.02 M:0.97
+département d'anesthésie L:0.53 M:0.85|service d'anesthésie L:0.02 M:0.94|département des anesthésiques L:0.02 M:0.88|département de l'anesthésie L:0.01 M:0.85|département des anesthésies L:0.01 M:0.90
+département d'oncologie clinique L:0.51 M:0.90|département de cancérologie clinique L:0.05 M:0.91|service d'oncologie clinique L:0.04 M:0.94|département d'oncologie médicale L:0.01 M:0.85|département de oncologie clinique L:0.00 M:0.95
+service de radiothérapie L:0.05 M:0.96|département de radiothérapie L:0.00 M:0.93|département de la radiothérapie L:0.00 M:0.91|département de radio-thérapie L:0.00 M:0.91
+Unité de soins intensifs L:0.26 M:0.94|unité de soins intensifs L:0.25 M:0.94|Appareil de soins intensifs L:0.04 M:0.93|Unité des soins intensifs L:0.02 M:0.76|unité des soins intensifs L:0.01 M:0.83
+unité de soins intensifs pour adultes L:0.23 M:0.94|Unité de soins intensifs pour adultes L:0.12 M:0.93|unité de soins intensifs adultes L:0.07 M:0.94|Unité de soins intensifs adultes L:0.04 M:0.94|unité de soins intensifs adulte L:0.02 M:0.93
+unité des brûlés L:0.10 M:0.73|unité de brûlés L:0.07 M:0.88|unité de brûlures L:0.07 M:0.88|unité des brûlures L:0.07 M:0.74|Unité de brûlures L:0.03 M:0.86
+unité de soins intensifs cardiaques L:0.23 M:0.95|Unité de soins intensifs cardiaques L:0.21 M:0.95|Unité de réanimation cardiaque L:0.02 M:0.72|unité de réanimation cardiaque L:0.02 M:0.72|Appareil de soins intensifs cardiaques L:0.01 M:0.93
+unité de soins intensifs métaboliques L:0.21 M:0.90|Unité de soins intensifs métaboliques L:0.12 M:0.91|Appareil de soins intensifs métaboliques L:0.01 M:0.90|unité de réanimation métabolique L:0.01 M:0.58|unité de soins intensifs de métabolisme L:0.01 M:0.88
+Unité de soins intensifs neurologiques L:0.19 M:0.96|unité de soins intensifs neurologiques L:0.19 M:0.95|Unité de réanimation neurologique L:0.03 M:0.74|unité de réanimation neurologique L:0.02 M:0.74|Unité neurologique de soins intensifs L:0.02 M:0.94
+Unité de soins intensifs pédiatriques L:0.19 M:0.92|unité de soins intensifs pédiatriques L:0.10 M:0.92|Unité de réanimation pédiatrique L:0.05 M:0.67|unité de réanimation pédiatrique L:0.03 M:0.67|Appareil de réanimation pédiatrique L:0.02 M:0.65
+unité de soins intensifs respiratoires L:0.22 M:0.95|Unité de soins intensifs respiratoires L:0.19 M:0.95|unité de réanimation respiratoire L:0.02 M:0.80|Appareil de réanimation respiratoire L:0.02 M:0.79|unité de soins intensifs respiratoire L:0.00 M:0.95
+département médical L:0.63 M:0.94|département de médecine L:0.05 M:0.87|service médical L:0.01 M:0.91|Service médical L:0.01 M:0.91|département de santé L:0.00 M:0.76
+département des allergies cliniques L:0.21 M:0.78|département d'allergie clinique L:0.15 M:0.76|département d'allergologie clinique L:0.05 M:0.73|service d'allergie clinique L:0.02 M:0.91|département des allergies L:0.01 M:0.61
+département d'audiologie L:0.55 M:0.84|service d'audiologie L:0.03 M:0.89|département de l'audiologie L:0.01 M:0.84|département d'Audiologie L:0.01 M:0.85|département d'audio L:0.01 M:0.85
+département de cardiologie L:0.59 M:0.92|service de cardiologie L:0.03 M:0.93|département cardiologique L:0.01 M:0.90|département de psychologie L:0.00 M:0.47|département de cardiologue L:0.00 M:0.82
+département de médecine pulmonaire L:0.28 M:0.79|département de pneumologie L:0.21 M:0.69|département de médecine respiratoire L:0.03 M:0.75|département de la médecine pulmonaire L:0.01 M:0.82|service de médecine pulmonaire L:0.01 M:0.93
+département d'immunologie clinique L:0.54 M:0.93|service d'immunologie clinique L:0.04 M:0.96|département de l'immunologie clinique L:0.01 M:0.94|département clinique d'immunologie L:0.01 M:0.91|département d'immunologie médicale L:0.00 M:0.89
+département de neurophysiologie clinique L:0.50 M:0.97|service de neurophysiologie clinique L:0.03 M:0.98|département clinique de neurophysiologie L:0.01 M:0.96|département de neurophysiologie médicale L:0.00 M:0.94|département de neurophysiologie médicale clinique L:0.00 M:0.95
+département de pharmacologie clinique L:0.60 M:0.95|service de pharmacologie clinique L:0.03 M:0.98|département de pharmacologie médicale L:0.00 M:0.93|Service de pharmacologie clinique L:0.00 M:0.98|département clinique de pharmacologie L:0.00 M:0.95
+département de physiologie clinique L:0.60 M:0.87|service de physiologie clinique L:0.02 M:0.95|département de physiologie médicale L:0.01 M:0.81|département clinique de physiologie L:0.00 M:0.86|département physiologique clinique L:0.00 M:0.84
+département de dermatologie L:0.50 M:0.93|service de dermatologie L:0.02 M:0.92|département dermatologique L:0.02 M:0.93|département de Dermatologie L:0.01 M:0.97|département de la dermatologie L:0.00 M:0.93
+département du diabète L:0.31 M:0.70|département diabétique L:0.08 M:0.82|département des diabétiques L:0.07 M:0.81|département du diabétique L:0.06 M:0.80|département de diabétique L:0.01 M:0.79
+département d'endocrinologie L:0.03 M:0.95|service d'endocrinologie L:0.03 M:0.96|département de l'endocrinologie L:0.01 M:0.95|département d'endocrinologie, L:0.00 M:0.97
+département de gastroentérologie L:0.33 M:0.91|département de gastro-entérologie L:0.13 M:0.89|service de gastroentérologie L:0.02 M:0.93|service de gastro-entérologie L:0.01 M:0.90|département de la gastroentérologie L:0.00 M:0.90
+département de médecine générale L:0.42 M:0.88|département médical général L:0.07 M:0.91|département général de médecine L:0.02 M:0.85|département général L:0.01 M:0.64|département général médical L:0.01 M:0.91
+département de génétique L:0.61 M:0.83|département génétique L:0.14 M:0.84|service de génétique L:0.01 M:0.91|département genetique L:0.00 M:0.82|département de la génétique L:0.00 M:0.89
+département de génétique clinique L:0.60 M:0.86|service de génétique clinique L:0.02 M:0.95|département de génétique médicale L:0.01 M:0.79|département de biologie clinique L:0.00 M:0.79|département en génétique clinique L:0.00 M:0.88
+département de cytogénétique clinique L:0.55 M:0.93|service de cytogénétique clinique L:0.04 M:0.96|département de la cytogénétique clinique L:0.00 M:0.94|département de cytogénétique médicale L:0.00 M:0.90|département cytogénétique clinique L:0.00 M:0.93
+département des soins aux personnes âgées L:0.16 M:0.91|département de soins aux personnes âgées L:0.03 M:0.92|département des soins aux aînés L:0.01 M:0.80|soins aux personnes âgées L:0.01 M:0.94|département des soins aux vieillards L:0.01 M:0.81
+département des maladies infectieuses L:0.58 M:0.89|département de maladies infectieuses L:0.04 M:0.89|service des maladies infectieuses L:0.02 M:0.94|service de maladies infectieuses L:0.01 M:0.95|Service des maladies infectieuses L:0.00 M:0.94
+département d'ophtalmologie médicale L:0.36 M:0.95|département d'ophthalmologie médicale L:0.02 M:0.96|service d'ophtalmologie médicale L:0.02 M:0.97|département de l'ophtalmologie médicale L:0.01 M:0.95|département d'ophtalmologie médical L:0.01 M:0.95
+département de néphrologie L:0.58 M:0.80|service de néphrologie L:0.02 M:0.75|Service de néphrologie L:0.00 M:0.74|département de nephrologie L:0.00 M:0.93|département de néphrologie. L:0.00 M:0.80
+département de neurologie L:0.60 M:0.93|département neurologique L:0.05 M:0.85|service de neurologie L:0.02 M:0.96|département neurologie L:0.00 M:0.94|Service de neurologie L:0.00 M:0.96
+département de médecine nucléaire L:0.67 M:0.88|service de médecine nucléaire L:0.02 M:0.97|département de la médecine nucléaire L:0.00 M:0.89|département de médicine nucléaire L:0.00 M:0.81|département de biologie médicale L:0.00 M:0.50
+département de soins palliatifs L:0.15 M:0.92|département des soins palliatifs L:0.02 M:0.92|service de soins palliatifs L:0.02 M:0.95|département des soins infirmiers L:0.00 M:0.76
+département de réadaptation L:0.62 M:0.62|département de réhabilitation L:0.05 M:0.78|service de réadaptation L:0.03 M:0.73|Service de réadaptation L:0.00 M:0.74|département de rééducation L:0.00 M:0.79
+département de rhumatologie L:0.53 M:0.90|service de rhumatologie L:0.02 M:0.89|département rhumatologique L:0.01 M:0.88|département de la rhumatologie L:0.00 M:0.89|département de rheumatologie L:0.00 M:0.97
+département d'obstétrique et de gynécologie L:0.21 M:0.84|département d'obstétrique et gynécologie L:0.06 M:0.85|département de gynécologie-obstétrique L:0.04 M:0.86|service d'obstétrique et de gynécologie L:0.04 M:0.90|département de gynécologie et d'obstétrique L:0.02 M:0.84
+département de gynécologie L:0.54 M:0.93|département gynécologique L:0.06 M:0.94|département gynécologie L:0.03 M:0.94|service de gynécologie L:0.03 M:0.92|département de gynéologie L:0.01 M:0.91
+département d'obstétrique L:0.55 M:0.56|service d'obstétrique L:0.03 M:0.66|département de l'obstétrique L:0.02 M:0.53|département de obstétrique L:0.01 M:0.56|département en obstétrique L:0.00 M:0.53
+département de pédiatrie L:0.54 M:0.86|département pédiatrique L:0.05 M:0.86|service de pédiatrie L:0.02 M:0.89|département d'pédiatrie L:0.01 M:0.84|Service de pédiatrie L:0.01 M:0.88
+unité de soins spéciaux pour bébé L:0.02 M:0.97|unité de soins spéciaux pour bébés L:0.01 M:0.96|unité de soins spécialisés pour bébé L:0.01 M:0.95|unité de soins spécialisés pour bébés L:0.01 M:0.95|unité de bébé de soins spéciaux L:0.01 M:0.94
+département de neurologie pédiatrique L:0.44 M:0.88|service de neurologie pédiatrique L:0.05 M:0.92|Service de neurologie pédiatrique L:0.01 M:0.93|département de neuropédiatrie L:0.00 M:0.87|département de neurologie de pédiatrie L:0.00 M:0.88
+département d'oncologie pédiatrique L:0.48 M:0.88|service d'oncologie pédiatrique L:0.06 M:0.92|département de cancérologie pédiatrique L:0.03 M:0.84|département de oncologie pédiatrique L:0.00 M:0.91|département d'oncologie de pédiatrie L:0.00 M:0.89
+département de gestion de la douleur L:0.14 M:0.90|département de traitement de la douleur L:0.04 M:0.93|département de la douleur L:0.01 M:0.87|département de la gestion de la douleur L:0.01 M:0.92|département de prise en charge de douleur L:0.00 M:0.83
+département de pathologie L:0.23 M:0.85|département des pathologies L:0.19 M:0.80|département d'pathologie L:0.05 M:0.73|département d'anatomie L:0.01 M:0.59|département d'anatomologie L:0.00 M:0.55
+département de transfusion sanguine L:0.45 M:0.94|département de transfusion L:0.03 M:0.93|service de transfusion sanguine L:0.02 M:0.97|département de la transfusion L:0.01 M:0.92|Service de transfusion sanguine L:0.00 M:0.97
+département de pathologie chimique L:0.35 M:0.92|département des pathologies chimiques L:0.18 M:0.90|département des maladies chimiques L:0.01 M:0.82|service de pathologie chimique L:0.01 M:0.95|département des pathologie chimiques L:0.01 M:0.92
+département de pathologie générale L:0.27 M:0.88|département des pathologies générales L:0.23 M:0.85|service de pathologie générale L:0.03 M:0.90|département général de pathologie L:0.01 M:0.86|département des pathologie générales L:0.01 M:0.87
+département d'hématologie L:0.52 M:0.78|service d'hématologie L:0.03 M:0.81|Service d'hématologie L:0.02 M:0.81|Département d'hématologie L:0.01 M:0.81|département de l'hématologie L:0.01 M:0.77
+département de microbiologie médicale L:0.57 M:0.95|service de microbiologie médicale L:0.03 M:0.97|département médical de microbiologie L:0.01 M:0.93|Service de microbiologie médicale L:0.01 M:0.98|département de microbiologie médical L:0.00 M:0.95
+département de neuropathologie L:0.49 M:0.97|département de neurologie L:0.03 M:0.89|service de neuropathologie L:0.02 M:0.98|département de neuropathie L:0.01 M:0.94|département de neurophysiologie L:0.00 M:0.94
+département de psychiatrie L:0.41 M:0.90|département psychiatrique L:0.20 M:0.85|service de psychiatrie L:0.03 M:0.97|département psychiatrie L:0.01 M:0.95|département des psychiatries L:0.00 M:0.92
+département de psychiatrie pour enfants et adolescents L:0.05 M:0.96|département de psychiatrie pour enfants et pour adolescents L:0.04 M:0.95|service de psychiatrie pour enfants et adolescents L:0.02 M:0.97|service de psychiatrie pour enfants et pour adolescents L:0.02 M:0.96|département de psychiatrie pour enfants et pour jeunes L:0.00 M:0.95
+département de psychiatrie légale L:0.29 M:0.66|service de psychiatrie légale L:0.03 M:0.83|département de psychiatrie médicolégale L:0.02 M:0.68|département de psychiatrie de médecine légale L:0.00 M:0.66|département de psychiatrie médico légale L:0.00 M:0.69
+département de psychogériatrie L:0.31 M:0.90|département psychogériatrique L:0.04 M:0.93|département de psychiatrie L:0.03 M:0.80|service de psychogériatrie L:0.01 M:0.88|département de psychogérontologie L:0.01 M:0.90
+département de réadaptation psychiatrique L:0.19 M:0.72|département de réhabilitation psychiatrique L:0.07 M:0.78|département de psychiatrie de réadaptation L:0.06 M:0.62|département de réadaptation en psychiatrie L:0.04 M:0.73|service de réadaptation psychiatrique L:0.02 M:0.89
+département de radiologie L:0.61 M:0.95|service de radiologie L:0.03 M:0.96|département radiologique L:0.01 M:0.93|département de radio L:0.01 M:0.77|département de radiographie L:0.00 M:0.89
+département de santé au travail L:0.13 M:0.89|département de médecine du travail L:0.07 M:0.80|service de santé au travail L:0.05 M:0.87|médecine du travail L:0.03 M:0.75|département de santé professionnelle L:0.01 M:0.90
+Unité de Stroke L:0.01 M:0.97|unité de Stroke L:0.01 M:0.96|unité de pontage L:0.00 M:0.44|unité de ponction L:0.00 M:0.57|unité de traitement des traumatismes L:0.00 M:0.47
+département de chirurgie L:0.57 M:0.95|département chirurgical L:0.09 M:0.98|service de chirurgie L:0.02 M:0.95|Service de chirurgie L:0.01 M:0.94|département des chirurgies L:0.00 M:0.92
+département de chirurgie mammaire L:0.50 M:0.86|département de chirurgie du sein L:0.11 M:0.95|service de chirurgie mammaire L:0.03 M:0.94|service de chirurgie du sein L:0.01 M:0.97|département chirurgie mammaire L:0.00 M:0.86
+département de chirurgie cardiothoracique L:0.24 M:0.92|service de chirurgie cardiothoracique L:0.03 M:0.96|département de chirurgie cardiovasculaire L:0.02 M:0.86|département de chirurgie cardiaque et thoracique L:0.01 M:0.82|département de chirurgie cardio thoracique L:0.00 M:0.87
+département de chirurgie thoracique L:0.54 M:0.90|service de chirurgie thoracique L:0.04 M:0.94|département de chirurgie du thorax L:0.01 M:0.87|département de la chirurgie thoracique L:0.00 M:0.89|Service de chirurgie thoracique L:0.00 M:0.94
+service de chirurgie cardiaque L:0.04 M:0.97|département de chirurgie cardiaque L:0.00 M:0.91|département de chirurgie cardiovasculaire L:0.00 M:0.86|département de la chirurgie cardiaque L:0.00 M:0.91
+département de chirurgie dentaire L:0.67 M:0.94|service de chirurgie dentaire L:0.03 M:0.98|département chirurgie dentaire L:0.00 M:0.95|Service de chirurgie dentaire L:0.00 M:0.98|département de chirurgie médicale L:0.00 M:0.65
+département de chirurgie dentaire générale L:0.52 M:0.93|service de chirurgie dentaire générale L:0.06 M:0.97|département de chirurgie dentaire L:0.01 M:0.92|département général de chirurgie dentaire L:0.01 M:0.91|département de chirurgie dentaire général L:0.00 M:0.92
+département de chirurgie orale L:0.46 M:0.93|département de chirurgie buccale L:0.07 M:0.73|service de chirurgie orale L:0.04 M:0.97|service de chirurgie buccale L:0.01 M:0.75|département de chirurgie bucco-dentaire L:0.01 M:0.74
+département d'orthopédie L:0.03 M:0.67|département d'orthodontie L:0.02 M:0.81|service d'orthodontie L:0.02 M:0.90|département d'orthodontologie L:0.00 M:0.80
+département de dentisterie pédiatrique L:0.34 M:0.87|service de dentisterie pédiatrique L:0.04 M:0.95|département de médecine dentaire pédiatrique L:0.04 M:0.82|département de stomatologie pédiatrique L:0.01 M:0.72|département de chirurgie dentaire pédiatrique L:0.01 M:0.90
+département d'oto-rhino-laryngologie L:0.19 M:0.44|département des oreilles, du nez et de la gorge L:0.03 M:0.93|département d'otorhinolaryngologie L:0.02 M:0.54|département d'oreille, de nez et de gorge L:0.01 M:0.92|département d'oto-rhino-laryngologique L:0.00 M:0.44
+département de chirurgie endocrinienne L:0.38 M:0.94|département de chirurgie endocrine L:0.18 M:0.95|service de chirurgie endocrinienne L:0.03 M:0.98|service de chirurgie endocrine L:0.01 M:0.98|département de chirurgie endocrinale L:0.00 M:0.94
+département de chirurgie digestive L:0.07 M:0.77|département de chirurgie gastrointestinale L:0.05 M:0.86|service de chirurgie digestive L:0.00 M:0.76|département de chirurgie gastro intestinale L:0.00 M:0.83|département de chirurgie gastro-intestinal L:0.00 M:0.83
+département de chirurgie digestive générale L:0.29 M:0.81|service de chirurgie digestive générale L:0.04 M:0.81|département de chirurgie digestive L:0.03 M:0.79|département de chirurgie gastro-intestinale L:0.03 M:0.85|département de chirurgie gastrointestinale générale L:0.01 M:0.89
+département de chirurgie colorectale L:0.49 M:0.90|service de chirurgie colorectale L:0.04 M:0.97|département de la chirurgie colorectale L:0.00 M:0.90|département de chirurgie colique L:0.00 M:0.75|département de chirurgie colorectal L:0.00 M:0.91
+département de chirurgie générale L:0.48 M:0.93|département général de chirurgie L:0.04 M:0.92|département chirurgical général L:0.03 M:0.96|département de chirurgie général L:0.02 M:0.93|service de chirurgie générale L:0.02 M:0.94
+département de chirurgie de la main L:0.39 M:0.89|service de chirurgie de la main L:0.06 M:0.96|département de chirurgie des mains L:0.03 M:0.90|département de chirurgie de main L:0.01 M:0.88|département de chirurgie de la peau L:0.00 M:0.76
+département de chirurgie hépatobiliaire L:0.37 M:0.89|département chirurgical hépatobiliaire L:0.03 M:0.89|département de chirurgie hépato-biliaire L:0.02 M:0.85|service de chirurgie hépatobiliaire L:0.02 M:0.94|département de la chirurgie hépatobiliaire L:0.01 M:0.88
+département de neurochirurgie L:0.48 M:0.95|département neurochirurgical L:0.21 M:0.96|service de neurochirurgie L:0.01 M:0.97|département de neuro chirurgie L:0.00 M:0.96|département de neurochirurgie. L:0.00 M:0.97
+département d'ophtalmologie L:0.47 M:0.95|département d'ophthalmologie L:0.03 M:0.97|service d'ophtalmologie L:0.01 M:0.96|département de l'ophtalmologie L:0.01 M:0.94|département ophtalmologique L:0.00 M:0.96
+département orthopédique L:0.19 M:0.95|département d'orthopédie L:0.01 M:0.80|département de l'orthopédie L:0.01 M:0.77|département d'Orthopédie L:0.01 M:0.72
+département de chirurgie pancréatique L:0.51 M:0.92|service de chirurgie pancréatique L:0.03 M:0.96|département de chirurgie du pancréas L:0.01 M:0.94|département de la chirurgie pancréatique L:0.01 M:0.92|département de chirurgie pancreatique L:0.00 M:0.96
+département de chirurgie pédiatrique L:0.55 M:0.88|service de chirurgie pédiatrique L:0.04 M:0.92|Service de chirurgie pédiatrique L:0.02 M:0.91|département chirurgical pédiatrique L:0.01 M:0.89|Département de chirurgie pédiatrique L:0.00 M:0.93
+service de chirurgie plastique L:0.05 M:0.97|département de chirurgie plastique L:0.00 M:0.94|département de chirurgie esthétique L:0.00 M:0.70|département de la chirurgie plastique L:0.00 M:0.92
+département des transplantations chirurgicales L:0.18 M:0.93|département des greffes chirurgicales L:0.10 M:0.77|département de transplantation chirurgicale L:0.09 M:0.90|département des transplants chirurgicaux L:0.05 M:0.94|département des greffes de chirurgie L:0.03 M:0.83
+département de chirurgie traumatique L:0.12 M:0.93|département de chirurgie traumatologique L:0.11 M:0.92|département de chirurgie du traumatisme L:0.04 M:0.92|département de traumatologie chirurgicale L:0.03 M:0.94|département de chirurgie de trauma L:0.00 M:0.95
+département d'urologie L:0.62 M:0.90|service d'urologie L:0.04 M:0.93|département de l'urologie L:0.01 M:0.91|département urologique L:0.01 M:0.94|Service d'urologie L:0.00 M:0.93
+service de chirurgie vasculaire L:0.02 M:0.97|département de chirurgie vasculaire L:0.00 M:0.90|Service de chirurgie vasculaire L:0.00 M:0.97|département de la chirurgie vasculaire L:0.00 M:0.89
+salle de jour L:0.28 M:0.75|service de jour L:0.05 M:0.77|unité de jour L:0.04 M:0.63|chambre de jour L:0.01 M:0.73|salle de garde L:0.01 M:0.64
+département des urgences pédiatriques L:0.10 M:0.80|département des urgences et des accidents pédiatriques L:0.03 M:0.76|département des accidents et urgences pédiatriques L:0.02 M:0.76|département des urgences pédiatriques et traumatologiques L:0.00 M:0.78|département des urgences pédiatriques et traumatologie L:0.00 M:0.80
+département des urgences ophtalmologiques L:0.06 M:0.92|département des accidents et des urgences en ophtalmologie L:0.02 M:0.90|département des urgences et des accidents ophtalmologiques L:0.01 M:0.87|département des accidents et urgences ophtalmologiques L:0.01 M:0.88|département des urgences ophtalmologiques et traumatiques L:0.00 M:0.87
+service de physiothérapie L:0.04 M:0.91|département de physiothérapie L:0.00 M:0.89|département de physithérapie L:0.00 M:0.90
+école primaire L:0.06 M:0.71|école élémentaire L:0.04 M:0.68|école d'enseignement supérieur L:0.01 M:0.69|école de secteur L:0.01 M:0.73|école d'enseignement régulier L:0.00 M:0.73
+hôpital de soins de longue durée L:0.26 M:0.98|hôpital de long séjour L:0.05 M:0.95|hôpital de soins prolongés L:0.02 M:0.91|hôpital de soins de long séjour L:0.01 M:0.95|hôpital de soins de courte durée L:0.00 M:0.47
+service de consultation externe d'un hôpital L:0.10 M:0.82|service de consultations externes d'un hôpital L:0.03 M:0.81|département de consultation externe d'un hôpital L:0.03 M:0.80|service hospitalier de consultation externe L:0.02 M:0.78|service de consultation externe d'hôpital L:0.01 M:0.82
+hôpital général L:0.78 M:0.98|Hôpital général L:0.01 M:0.98|hospitalier général L:0.00 M:0.95|hopital général L:0.00 M:0.92|centre hospitalier L:0.00 M:0.92
+bureau à domicile L:0.09 M:0.95|cabinet médical L:0.06 M:0.55|cabinet domestique L:0.05 M:0.90|cabinet de santé L:0.01 M:0.42|cabinet de soins L:0.01 M:0.61
+centre de brûlés L:0.24 M:0.96|centre de brûlure L:0.10 M:0.95|centre des brûlés L:0.06 M:0.95|centre de brûlures L:0.04 M:0.96|centre des brûlures L:0.01 M:0.94
+pratique professionnelle multidisciplinaire L:0.11 M:0.97|exercice professionnel pluridisciplinaire L:0.06 M:0.93|pratique professionnelle pluridisciplinaire L:0.06 M:0.97|exercice professionnel multidisciplinaire L:0.01 M:0.90
+exercice professionnel monodisciplinaire L:0.04 M:0.82|pratique professionnelle monodisciplinaire L:0.04 M:0.84|exercice professionnel unidisciplinaire L:0.01 M:0.79|exercice professionnel unique L:0.01 M:0.61|exercice professionnel à but unique L:0.00 M:0.85
+service hospitalier d'allergologie en consultation externe L:0.02 M:0.72|service hospitalier d'allergie en consultation externe L:0.01 M:0.81|service d'allergie en consultation externe d'hôpital L:0.01 M:0.85|service d'allergologie en consultation externe d'hôpital L:0.01 M:0.74|service de consultation hospitalière externe en allergie L:0.00 M:0.84
+service d'immunologie en consultation externe d'un hôpital L:0.24 M:0.86|service d'immunologie en consultation externe d'hôpital L:0.01 M:0.87|service hospitalier d'immunologie en consultation externe L:0.01 M:0.83|service d'immunologie ambulatoire d'un hôpital L:0.01 M:0.80|service de consultation hospitalière externe en immunologie L:0.01 M:0.87
+centre de traumatologie L:0.43 M:0.93|centre de trauma L:0.02 M:0.97|centre du traumatisme L:0.02 M:0.94|centre traumatique L:0.01 M:0.92|centre de traumas L:0.01 M:0.97
+site de pratique L:0.07 M:0.66|site d'exercice L:0.03 M:0.50|site des cabinets médicaux L:0.01 M:0.54|site de pratique du médecin L:0.01 M:0.64|site de pratique médicale L:0.01 M:0.58
+lieux de rencontre sanitaire L:0.04 M:0.88|lieux de rencontre en santé L:0.03 M:0.79|sites de rencontre sanitaire L:0.03 M:0.90|sites de rencontres sanitaires L:0.02 M:0.90|lieux de rencontre L:0.02 M:0.46
+État L:0.51 M:0.98|état L:0.20 M:0.89|Etat L:0.05 M:0.95|Allemagne L:0.01 M:0.15|Australie L:0.01 M:0.45
+Appareil d'anesthésie postopératoire L:0.03 M:0.95|unité de soins d'anesthésie postopératoire L:0.02 M:0.93|unité de soins post-opératoires L:0.02 M:0.82|Unité de soins post-opératoires L:0.01 M:0.82|unité de soins post-anesthésiques L:0.01 M:0.95
+Unité de soins intensifs psychiatriques L:0.18 M:0.98|unité de soins intensifs psychiatriques L:0.13 M:0.97|Unité de réanimation psychiatrique L:0.02 M:0.82|Unité de soins intensifs psychiatrique L:0.02 M:0.97|unité de soins psychiatriques intensifs L:0.01 M:0.95
+unité de soins intensifs néonataux L:0.08 M:0.95|unité de soins intensifs néonatals L:0.07 M:0.94|Unité de soins intensifs néonataux L:0.06 M:0.94|Unité de soins intensifs néonatals L:0.06 M:0.94|unité de soins intensifs néonatale L:0.02 M:0.95
+Unité de travail et d'accouchement L:0.20 M:0.58|unité de travail et d'accouchement L:0.04 M:0.62|Unité de travail et de délivrance L:0.02 M:0.62|Unité du travail et de l'accouchement L:0.02 M:0.54|Unité de travail et de livraison L:0.01 M:0.71
+centre chirurgical ambulatoire L:0.02 M:0.93|Centre de chirurgie ambulatoire L:0.02 M:0.96|centre de chirurgie ambulatoire L:0.00 M:0.96|centre hospitalier de chirurgie ambulatoire L:0.00 M:0.95
+cadre de blessés multiples L:0.00 M:0.60|ajustement de blessés multiples L:0.00 M:0.48|traitement de blessés multiples L:0.00 M:0.46|ajustement d'une catastrophe L:0.00 M:0.54|ajustement d'une catastrophe massive L:0.00 M:0.59
+mise en place de blessés L:0.00 M:0.61|ajustement d'une victime L:0.00 M:0.58|mise en place d'une victime L:0.00 M:0.55|mise en place d'un blessé L:0.00 M:0.61|mise en place de la victime L:0.00 M:0.52
+zone chaude L:0.74 M:0.91|zone chaud L:0.02 M:0.93|Zone chaude L:0.02 M:0.92|zone de chaud L:0.01 M:0.93|zone chauffée L:0.00 M:0.90
+zone chaude L:0.33 M:0.91|zone réchauffée L:0.04 M:0.86|zone de chaleur L:0.02 M:0.79|zone chauffée L:0.02 M:0.81|zone de Warm L:0.01 M:1.00
+zone froide L:0.78 M:0.98|zone de froid L:0.01 M:0.98|zone du froid L:0.01 M:0.98|Zone froide L:0.01 M:0.98|zone froid L:0.00 M:0.98
+salle d'isolement hospitalier L:0.10 M:0.83|chambre d'isolement hospitalier L:0.08 M:0.84|chambre d'isolement L:0.04 M:0.68|chambre d'isolement d'hôpital L:0.03 M:0.82|salle d'isolement d'hôpital L:0.02 M:0.81
+Afrique subsaharienne L:0.31 M:0.99|Afrique sub-saharienne L:0.29 M:0.99|Afrique sub-subsaharienne L:0.01 M:0.99|afrique subsaharienne L:0.01 M:0.98|Afrique sud-saharienne L:0.00 M:0.84
+salle d'induction L:0.04 M:0.89|chambre d'induction L:0.01 M:0.90|salle d'administration L:0.01 M:0.75
+unité de soins intensifs chirurgicaux L:0.21 M:0.96|Unité de soins intensifs chirurgicaux L:0.13 M:0.96|unité de réanimation chirurgicale L:0.03 M:0.85|Appareil de réanimation chirurgicale L:0.02 M:0.84|Appareil de soins intensifs chirurgicaux L:0.02 M:0.95
+unité de dialyse L:0.31 M:0.95|Unité de dialyse L:0.14 M:0.96|dialyse L:0.00 M:0.97|Dialyse L:0.00 M:0.97|dialyse en unité L:0.00 M:0.90
+établissement résidentiel L:0.17 M:0.95|institution résidentielle L:0.08 M:0.96|Établissement résidentiel L:0.07 M:0.90|maison de retraite L:0.03 M:0.73|institution résidentiel L:0.01 M:0.96
+département de médecine pédiatrique L:0.39 M:0.83|service de médecine pédiatrique L:0.03 M:0.91|département de pneumologie L:0.02 M:0.67|département de pédiatrie L:0.02 M:0.86|département de la médecine pédiatrique L:0.01 M:0.85
+New York L:0.57 M:1.00|New Jersey L:0.02 M:0.55|New Kong L:0.02 M:0.57|New New York L:0.02 M:1.00|New Londres L:0.01 M:0.74
+Ohio L:0.52 M:1.00|Australie L:0.06 M:0.13|Alaska L:0.01 M:0.20|Illinois L:0.01 M:0.53|Allemagne L:0.01 M:0.28
+Rivière L:0.24 M:0.72|rivière L:0.22 M:0.99|River L:0.06 M:1.00|fleuve L:0.04 M:0.23|Mer L:0.02 M:0.44
+Virginie L:0.35 M:0.90|Californie L:0.02 M:0.28|Australie L:0.02 M:0.30|Brésil L:0.01 M:0.20|Égypte L:0.01 M:0.37
+Oklahoma L:0.54 M:1.00|oklahoma L:0.09 M:0.89|Oklahomoa L:0.00 M:0.91|Okazhoma L:0.00 M:0.54|Oklahoman L:0.00 M:1.00
+pont L:0.04 M:0.36|bassin L:0.03 M:0.56|lac L:0.02 M:0.76|île L:0.01 M:0.31|Effluent L:0.01 M:0.59
+Wyoming L:0.55 M:1.00|Wyfort L:0.00 M:0.39|Wytom L:0.00 M:0.13|wyoming L:0.00 M:0.79|Wyoming. L:0.00 M:0.99
+Tennessee L:0.55 M:1.00|tennessee L:0.02 M:0.46|Ténessee L:0.01 M:0.35|Tennésee L:0.01 M:0.50|Tennessée L:0.00 M:0.37
+Nouveau Mexique L:0.50 M:0.94|Nouveau Brésil L:0.06 M:0.30|Nouveau-Mexique L:0.04 M:0.86|New Mexico L:0.02 M:1.00|Nouveau Monde L:0.01 M:0.41
+virginie occidentale L:0.11 M:0.92|virginia west L:0.06 M:0.97|virginia occidentale L:0.05 M:0.97|virginia occidental L:0.04 M:0.98|virginia de West L:0.02 M:0.99
+lac L:0.59 M:0.98|Lac L:0.07 M:0.90|pays L:0.01 M:0.37|Mer L:0.00 M:0.35|lake L:0.00 M:1.00
+Caroline du Sud L:0.01 M:0.64|Caroline du Nord L:0.00 M:0.96|Caroline du nord L:0.00 M:0.94
+Dakota du Nord L:0.48 M:0.99|Dakota du Sud L:0.01 M:0.75|Dakota du nord L:0.01 M:0.99|Dakota Nord L:0.01 M:1.00|Caroline du Nord L:0.01 M:0.43
+rivière non tidale L:0.04 M:0.93|rivière non-tidale L:0.02 M:0.89|rivière sans courant L:0.02 M:0.78|rivière sans marée L:0.01 M:0.80|rivière non tidal L:0.01 M:0.95
+région d'Inuvik L:0.00 M:0.89|Région d'Inuvik L:0.00 M:0.89|région d'Inuvik (Territoires du Nord) L:0.00 M:0.87|Région d'Inuvik (Territoires du Nord) L:0.00 M:0.87|région d'Inuvik aux Territoires du Nord L:0.00 M:0.89
+Vermont L:0.66 M:1.00|vermont L:0.07 M:0.98|de Vermont L:0.00 M:1.00|Vermontais L:0.00 M:0.55|Vermont. L:0.00 M:0.99
+Caroline du Sud L:0.45 M:0.94|Caroline du sud L:0.05 M:0.93|Caroline du Nord L:0.02 M:0.56|Caroline Sud L:0.00 M:0.89|Caroline du Japon L:0.00 M:0.47
+New Jersey L:0.65 M:1.00|Nouveau Jersey L:0.01 M:0.91|Nouveau-Jersey L:0.01 M:0.85|New New Jersey L:0.01 M:0.99|Nouvelle-Jersey L:0.00 M:0.94
+rivière Tidal L:0.11 M:0.98|rivière toïdale L:0.00 M:0.78|rivière Tidale L:0.00 M:0.82|rivière de la marée L:0.00 M:0.85|rivière à goudron L:0.00 M:0.69
+Pennsylvanie L:0.40 M:0.98|Pennsylvania L:0.01 M:1.00|Californie L:0.00 M:0.08|Panama L:0.00 M:0.10|Pennsylvane L:0.00 M:0.97
+Nunavut L:0.54 M:1.00|Brésil L:0.02 M:0.33|Canada L:0.01 M:0.38|Panama L:0.01 M:0.34|Royaume Nunavut L:0.00 M:0.64
+Texas L:0.65 M:1.00|Brésil L:0.07 M:0.17|Panama L:0.04 M:0.15|Venezuela L:0.01 M:0.18|Royaume L:0.00 M:0.23
+Dakota du Sud L:0.43 M:0.97|Dakota Sud L:0.03 M:0.99|Dakota du sud L:0.02 M:0.95|Dakota du Nord L:0.01 M:0.68|Panama Sud L:0.01 M:0.23
+district du territoire canadien L:0.28 M:0.98|District du territoire canadien L:0.09 M:0.99|département du territoire canadien L:0.01 M:0.92|district du territoire du Canada L:0.01 M:0.98|district d'un territoire canadien L:0.01 M:0.98
+New Hampshire L:0.41 M:1.00|New Jersey L:0.02 M:0.43|Nouveau Hampshire L:0.01 M:0.90|New Buchshire L:0.01 M:0.59|New Hampland L:0.00 M:0.91
+Washington L:0.54 M:1.00|Panama L:0.04 M:0.27|Australie L:0.02 M:0.29|Californie L:0.01 M:0.41|Hong L:0.01 M:0.38
+partie géographique du Nunavut L:0.06 M:0.99|région géographique de Nunavut L:0.05 M:0.98|région géographique du Nunavut L:0.05 M:0.98|partie géographique de Nunavut L:0.04 M:0.99|division géographique de Nunavut L:0.01 M:0.93
+Oregon L:0.32 M:1.00|Australie L:0.05 M:0.20|Allemagne L:0.02 M:0.19|Islande L:0.01 M:0.31|Alaska L:0.01 M:0.36
+Rhode Island L:0.36 M:1.00|Rhode island L:0.07 M:0.99|rhode island L:0.05 M:0.48|Rhode île L:0.03 M:0.97|Rhode-Island L:0.02 M:0.98
+Utah L:0.67 M:1.00|utah L:0.03 M:0.77|usa L:0.00 M:0.28|uva L:0.00 M:0.32|Uta L:0.00 M:0.49
+unité de télémétrie L:0.26 M:0.88|Unité de télémétrie L:0.14 M:0.89|Appareil de télémétrie L:0.04 M:0.91|unité de télémesure L:0.02 M:0.86|Unité de télémesure L:0.01 M:0.87
+unité de soins intensifs pour brûlures L:0.05 M:0.96|unité de soins intensifs pour brûlés L:0.05 M:0.93|unité de soins intensifs des brûlés L:0.03 M:0.93|Unité de soins intensifs pour brûlures L:0.03 M:0.96|Unité de soins intensifs pour brûlés L:0.02 M:0.94
+établissement de soins de longue durée L:0.10 M:0.95|Établissement de soins de longue durée L:0.08 M:0.95|centre de soins de longue durée L:0.05 M:0.93|unité de soins de longue durée L:0.04 M:0.81|maison de soins de longue durée L:0.03 M:0.89
+Wisconsin L:0.54 M:1.00|Brésil L:0.02 M:0.33|Australie L:0.01 M:0.22|Panama L:0.01 M:0.06|Royaume Wisconsin L:0.00 M:0.98
+Taiwan L:0.34 M:1.00|Panama L:0.04 M:0.50|Australie L:0.03 M:0.20|Taïwan L:0.02 M:0.99|Hong L:0.02 M:0.47
+site de soins L:0.29 M:0.91|lieu de soins L:0.12 M:0.88|établissement de soins L:0.05 M:0.82|Site de soins L:0.01 M:0.91|site de soin L:0.01 M:0.71
+Macédoine du Nord L:0.22 M:0.99|Macedonia du Nord L:0.01 M:0.99|Allemagne du Nord L:0.01 M:0.41|Macédoine du nord L:0.01 M:0.99|République du Nord L:0.00 M:0.58
+territoires britanniques d'outre-mer L:0.04 M:0.96|territoires d'outre-mer L:0.02 M:0.73|Territoires d'outre-mer L:0.01 M:0.68|Régions britanniques d'outre-mer L:0.01 M:0.89|Régions d'outre-mer L:0.00 M:0.58
+environnement hospitalier L:0.42 M:0.90|milieu hospitalier L:0.05 M:0.88|environment hospitalier L:0.03 M:0.86|environnement intérieur L:0.01 M:0.62|environnement patient hospitalier L:0.00 M:0.96
+environnement extrahospitalier L:0.20 M:0.55|milieu extrahospitalier L:0.06 M:0.53|environnement hospitalier L:0.03 M:0.64|environnement extrapatient L:0.02 M:0.50|environnement en externe L:0.01 M:0.64
+département de médecine tropicale L:0.55 M:0.90|service de médecine tropicale L:0.04 M:0.95|département de médecine tropical L:0.01 M:0.91|département de la médecine tropicale L:0.01 M:0.90|département de la médecine tropical L:0.00 M:0.91
+États fédérés de Micronésie L:0.17 M:0.98|États-unis de Micronésie L:0.03 M:0.95|États fédérés de Micronesia L:0.03 M:0.98|États-unis de micronésie L:0.01 M:0.93|États fédérés de micronésie L:0.01 M:0.91
+Iles Marshall L:0.24 M:0.73|Ilots Marshall L:0.08 M:0.64|Îles Marshall L:0.02 M:0.95|île Marshall L:0.01 M:0.97|îles Marshall L:0.01 M:0.93
+Timor-Leste L:0.10 M:1.00|Timor-Orient L:0.01 M:0.96|Timor-Congo L:0.00 M:0.74|Timor-Lanka L:0.00 M:0.95|Timor oriental L:0.00 M:0.95
+Gibraltar L:0.50 M:1.00|Panama L:0.02 M:0.30|Hong L:0.02 M:0.46|Guam L:0.01 M:0.51|Royaume L:0.01 M:0.56
+département d'imagerie diagnostique L:0.47 M:0.92|département d'imagerie médicale L:0.02 M:0.86|service d'imagerie diagnostique L:0.02 M:0.95|département d'imagerie clinique L:0.00 M:0.87|département de l'imagerie médicale L:0.00 M:0.87
+République de Serbie L:0.20 M:1.00|république de Serbie L:0.05 M:0.99|République de Corée L:0.01 M:0.23|République de la Serbie L:0.01 M:0.99|république de Corée L:0.00 M:0.23
+département d'histopathologie L:0.54 M:0.88|service d'histopathologie L:0.03 M:0.92|département de l'histopathologie L:0.01 M:0.87|département des histopathologies L:0.00 M:0.93|département d'histopaologie L:0.00 M:0.75
+unité de soins intensifs médicaux L:0.19 M:0.94|Unité de soins intensifs médicaux L:0.16 M:0.95|Appareil de soins intensifs médicaux L:0.02 M:0.92|Unité des soins intensifs médicaux L:0.01 M:0.77|Appareil de réanimation médicale L:0.01 M:0.77
+Érythrée L:0.17 M:0.64|Eritrea L:0.15 M:1.00|Australie L:0.04 M:0.31|Brésil L:0.02 M:0.27|Afrique L:0.01 M:0.53
+Palau L:0.58 M:1.00|palau L:0.08 M:0.31|palais L:0.01 M:0.53|Palan L:0.00 M:0.41|Palor L:0.00 M:0.34
+Monténégro L:0.46 M:0.96|Brésil L:0.07 M:0.21|Panama L:0.03 M:0.34|Venezuela L:0.01 M:0.07|Royaume L:0.01 M:0.44
+construction d'un compartiment avec ascenseur L:0.00 M:0.86|construction de l'appartement avec ascenseur L:0.00 M:0.94|construction d'un appartement avec ascenseur L:0.00 M:0.94|construction d'un compartiment avec accès élévateur L:0.00 M:0.65|construction de l'appartement avec accès élévateur L:0.00 M:0.83
+construction d'un appartement sans ascenseur L:0.01 M:0.89|construction de l'appartement sans ascenseur L:0.01 M:0.89|construction d'un compartiment sans ascenseur L:0.01 M:0.76|construction d'une loge sans ascenseur L:0.00 M:0.86|construction d'un compartiment sans ascenseur d'accès L:0.00 M:0.80
+clinique d'apnées du sommeil L:0.08 M:0.91|clinique spécialisée dans l'apnée du sommeil L:0.07 M:0.90|Clinique d'apnées du sommeil L:0.07 M:0.81|clinique des apnées du sommeil L:0.05 M:0.91|clinique spécialisée dans les apnées du sommeil L:0.04 M:0.90
+clinique indépendante de santé mentale L:0.41 M:0.79|clinique indépendante en santé mentale L:0.03 M:0.80|Clinique indépendante de santé mentale L:0.02 M:0.84|clinique autonome de santé mentale L:0.01 M:0.73|clinique indépendante de la santé mentale L:0.01 M:0.80
+hôpital psychiatrique L:0.67 M:0.98|Hôpital psychiatrique L:0.03 M:0.99|hopital psychiatrique L:0.01 M:0.97|centre hospitalier psychiatrique L:0.00 M:0.96|hôpitaux psychiatriques L:0.00 M:0.97
+soins dispensés dans une maison privée L:0.09 M:0.93|Soins dispensés dans une maison privée L:0.02 M:0.90|soins dispensés à domicile L:0.01 M:0.73|soins dispensés en maison privée L:0.01 M:0.94|soins dispensés à domicile privé L:0.01 M:0.96
+clinique indépendante L:0.66 M:0.75|clinique autonome L:0.04 M:0.70|Clinique indépendante L:0.02 M:0.76|consultation indépendante L:0.01 M:0.46|service indépendant L:0.00 M:0.53
+centre local de santé communautaire L:0.27 M:0.98|centre de santé communautaire local L:0.08 M:0.99|centre régional de santé communautaire L:0.02 M:0.92|Centre local de santé communautaire L:0.01 M:0.98|centre local de soins communautaires L:0.01 M:0.93
+piscine L:0.47 M:0.91|pool L:0.06 M:0.99|bassin L:0.02 M:0.70|Pool L:0.02 M:1.00|bloc L:0.01 M:0.46
+espace public en extérieur L:0.05 M:0.92|espace public extérieur L:0.03 M:0.92|site public en extérieur L:0.03 M:0.94|espace public en dehors L:0.02 M:0.92|espace public de plein air L:0.00 M:0.87
+Clinique de greffe de moelle osseuse L:0.08 M:0.84|clinique de greffe de moelle osseuse L:0.07 M:0.89|clinique de transplantation de moelle osseuse L:0.04 M:0.95|Clinique de transplantation de moelle osseuse L:0.03 M:0.95|clinique des greffes de moelle osseuse L:0.01 M:0.88
+clinique du sein L:0.30 M:0.98|clinique mammaire L:0.14 M:0.86|Clinique du sein L:0.07 M:0.91|clinique maternelle L:0.03 M:0.76|Clinique maternelle L:0.01 M:0.75
+clinique de médecine interne L:0.42 M:0.95|clinique en médecine interne L:0.02 M:0.96|clinique médicale interne L:0.01 M:0.95|service de médecine interne L:0.01 M:0.88|clinique de médecine intérieure L:0.00 M:0.95
+ambulance terrestre L:0.40 M:0.95|ambulance - terrestre L:0.03 M:0.93|ambulance de terre L:0.02 M:0.93|ambulance - terre L:0.02 M:0.89|ambulance aérienne L:0.01 M:0.78
+Mayotte L:0.63 M:1.00|mayotte L:0.15 M:0.75|maiotte L:0.00 M:0.65|Mayote L:0.00 M:0.87|Maïotte L:0.00 M:0.59
+organisation de maintien sanitaire L:0.12 M:0.92|organisation du maintien sanitaire L:0.06 M:0.92|organisation d'entretien sanitaire L:0.05 M:0.86|organisation de maintien en santé L:0.05 M:0.92|organisation sanitaire de maintien L:0.01 M:0.93
+Orphelinat L:0.13 M:0.55|Orphelage L:0.09 M:0.42|orphelinat L:0.04 M:0.73|Orphanage L:0.03 M:1.00|Orphage L:0.01 M:0.33
+centre de réadaptation professionnelle L:0.48 M:0.85|centre de réadaptation professionnel L:0.03 M:0.84|Centre de réadaptation professionnelle L:0.01 M:0.85|centre de réadaptation scolaire L:0.01 M:0.56|centre de réhabilitation professionnelle L:0.01 M:0.91
+hôpital de réadaptation L:0.50 M:0.87|centre de réadaptation L:0.06 M:0.60|centre hospitalier de réadaptation L:0.04 M:0.85|Hôpital de réadaptation L:0.01 M:0.85|hôpital de réhabilitation L:0.01 M:0.96
