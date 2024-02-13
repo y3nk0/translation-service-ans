@@ -1,0 +1,194 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "ANS Translation API",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/get_suggestion": {
+        "post": {
+          "description": "Get a suggested translation for a term",
+          "tags": ["suggestion"],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "translation data",
+              "in": "body",
+              "description": "JSON data for the api",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/suggestion"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "File successfully sent!"
+            },
+            "400": {
+              "description": "Invalid request data"
+            }
+          }
+        }
+      },
+      "/store": {
+        "post": {
+          "description": "Store a suggested translation for a term",
+          "tags": [
+            "suggestion"
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "translation data",
+              "in": "body",
+              "description": "JSON data for the api",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/store"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Invalid request data"
+            }
+          }
+        }
+      },
+      "/translate": {
+        "post": {
+          "description": "Translate a term",
+          "tags": [
+            "translation"
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "translation data",
+              "in": "body",
+              "description": "JSON data for the api",
+              "required": true,
+              "schema": {
+                "$ref": "#/definitions/translate"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Invalid request data"
+            }
+          }
+        }
+      },
+      "/upload_translate_file": {
+        "post": {
+          "description": "Upload and translate a file with sentences or terms separated by newline",
+          "tags": [
+            "translation"
+          ],
+          "consumes": [
+            "multipart/form-data"
+          ],
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "name": "file",
+              "in": "formData",
+              "description": "file to upload",
+              "required": false,
+              "type": "file"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK"
+            },
+            "400": {
+              "description": "Invalid request data"
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+      "translate": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "example": "Unintentional exposure to or harmful effects of oxazolidinediones)"
+          },
+          "trModel": {
+            "type": "string",
+            "example": "en"
+          },
+          "boolMult": {
+            "type": "string",
+            "example": "False"
+          },
+          "applyRules": {
+            "type": "string",
+            "example": "False"
+          },
+          "metric": {
+            "type": "string",
+            "example": "False"
+          }
+        }
+      },
+      "store": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "example": "Unintentional exposure to or harmful effects of oxazolidinediones"
+          },
+          "trans": {
+            "type": "string",
+            "example": "exposition non intentionnelle à des oxazolidinediones ou effets nocifs"
+          },
+          "user": {
+            "type": "string",
+            "example": "kskianis"
+          },
+          "sugg": {
+            "type": "string",
+            "example": "exposition involontaire ou effets nocifs des oxazolidinediones"
+          }
+        }
+      },
+      "suggestion": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "example": "Unintentional exposure to or harmful effects of oxazolidinediones"
+          }
+        }
+      }
+    }
+  }

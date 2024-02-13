@@ -22,6 +22,9 @@
                     <a class="nav-link" href="{{ url_for('serve_sphinx_docs') }}">Documentation</a>
                   </li>
                   <li class="nav-item active">
+                    <a class="nav-link" href="/swagger">Swagger</a>
+                  </li>
+                  <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for('login') }}"><i class="fas fa-sign-in"></i>Login</a>
                   </li>
                 </ul>
@@ -36,21 +39,21 @@
                 <!--<form action="/translate" method="post">-->
                     <!-- Enter text to translate. -->
                     <div class="form-group">
-                        <label for="text1"><strong>Entrez le texte à traduire:</strong></label> <br>
-                        <textarea class="form-control" id="text1" name="text1" rows="4"></textarea>
+                        <label for="text"><strong>Entrez le texte à traduire:</strong></label> <br>
+                        <textarea class="form-control" id="text" name="text" rows="4"></textarea>
                         <p>Vous pouvez ajouter plusieurs termes ou phrases séparés par une nouvelle ligne (limite de 5000 caractères).</p>
 
                         <label for="select-language"><strong>Modèle :</strong></label>
                         <select class="form-control" id="trModel" name="trModel">
                           <option value="en">Anglais -> Français (Convolutional)</option>
-                          <option value="en-tran">Anglais -> Français (Transformer)</option>
+                          <!-- <option value="en-tran">Anglais -> Français (Transformer)</option> -->
                           <option value="fr">Français -> Anglais (Transformer)</option>
                         </select>
   		                  <br>
-                        <label for="extra"><strong>Plus (Anglais -> Français):</strong></label><br>
+                        <label for="extra"><strong>Options (Anglais -> Français):</strong></label><br>
   		                  <input type="checkbox" id="mult" name="mult"/> Traductions multiples <br>
-                        <input type="checkbox" id="rules" name="rules"/> Appliquer les règles de post-traitement <br>
-                        <input type="checkbox" id="metric" name="metric"/> Métrique d'évaluation
+                        <input type="checkbox" id="metric" name="metric"/> Métrique d'évaluation <br>
+                        <input type="checkbox" id="rules" name="rules"/> Appliquer les règles de post-traitement
 		                </div>
                     <button id="clicked" class="btn btn-primary mb-2" onclick="myFunction()">Traduire</button>
 
@@ -83,7 +86,6 @@
             <hr>
 
             <div class="row">
-                <!-- <p>This is a joint research effort by <a href="http://bluai.gr/" target="_blank">BLUAI</a>, <a href="https://esante.gouv.fr/" target="_blank">l'Agence du Numérique en Santé (ANS)</a> and <a href="https://www.atih.sante.fr/" target="_blank">l'Agence technique de l'information sur l'hospitalisation (ATIH)</a>: -->
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
                     <a href="http://bluai.gr/" target="_blank"><img src="../static/images/bluai_new.png" style="width: 80%; max-width: 80%; margin-top:30px" class="mx-auto d-block img-responsive" alt="Responsive image"></a>
@@ -92,117 +94,113 @@
                     <a href="https://esante.gouv.fr/" target="_blank"><img src="../static/images/ans_logo.jpeg" style="width: 50%; max-width: 50%;" class="mx-auto d-block img-responsive" alt="Responsive image"></a>
                 </div>
                 <div class="col-md-2"></div>
-                <!-- <div class="col-md-4">
-                    <a href="https://www.atih.sante.fr/" target="_blank"><img src="../static/images/atih_logo.png" class="mx-auto d-block img-responsive" alt="Responsive image"></a>
-                </div> -->
             </div>
 
             <hr>
-            <p style="text-align:center">© 2023 ANS</p>
+            <p style="text-align:center">© 2024 ANS</p>
 
 
         </div>
 
-<script>
+<script type=text/javascript>
 
-$("#trModel" ).change(function() {
-    var trModel = $('#trModel').val();
-     $.ajax({
-             url: "/change_language",
-             type: "POST",
-             data: {trModel: trModel}
-             // text2:text2}
-         }).done(function(response) {
-     });
-});
+    $("#trModel" ).change(function() {
+        var trModel = $('#trModel').val();
+         $.ajax({
+                 url: "/change_language",
+                 type: "POST",
+                 data: {trModel: trModel}
+                 // text2:text2}
+             }).done(function(response) {
+         });
+    });
 
-function myFunction() {
-    var text1 = $('#text1').val();
-    var trModel = $('#trModel').val();
-    var boolMult = "False";
-    if (document.getElementById("mult").checked) {
-	     boolMult = "True";
-    }
-    var applyRules = "False";
-    if (document.getElementById("rules").checked) {
-  	    applyRules = "True";
-    }
-    var metric = "False";
-    if (document.getElementById("metric").checked) {
-  	    metric = "True";
-    }
+    function myFunction() {
+        var text1 = $('#text').val();
+        var trModel = $('#trModel').val();
+        var boolMult = "False";
+        if (document.getElementById("mult").checked) {
+             boolMult = "True";
+        }
+        var applyRules = "False";
+        if (document.getElementById("rules").checked) {
+            applyRules = "True";
+        }
+        var metric = "False";
+        if (document.getElementById("metric").checked) {
+            metric = "True";
+        }
 
-    //var trModel = $('#trModel').val();
-      $.ajax({
-                  url: "/translate",
-                  type: "POST",
-                  data: {text1:text1, boolMult:boolMult, applyRules:applyRules, trModel:trModel, metric:metric}
-                  // text2:text2}
-              }).done(function(response) {
+        //var trModel = $('#trModel').val();
+          $.ajax({
+                      url: "/translate",
+                      type: "POST",
+                      data: {text:text1, boolMult:boolMult, applyRules:applyRules, trModel:trModel, metric:metric}
+                      // text2:text2}
+                  }).done(function(response) {
 
-                var html = "";
-                response=response.result;
-                // var foo = jquery
-                if (document.getElementById("metric").checked){
-                  translation = response['output'];
-                  $("#result").html(translation);
-                  if(document.getElementById("mult").checked){
-                    $("#score").html("");
-                    $("#score2").html("");
+                    var html = "";
+                    response=response.result;
 
-                  }else{
-                    score = response['score'];
-                    score2 = response['score2'];
+                    if(document.getElementById("mult").checked){
+                        $.each(response,function(key,val){
+                            html+=val
+                        });
+                        html +="";
+                        $("#result").html(html);
+                        $("#score").html("");
+                        $("#score2").html("");
 
-                    $("#score").html("Likelihood score: "+score);
-                    $("#score2").html("Multilingual vector score: "+score2);
-                  }
-                }else{
+                    }else{
+                      translation = response['output'];
+                      $("#result").html(translation);
+                      if(document.getElementById("metric").checked){
 
-                    $.each(response,function(key,val){
-                     console.log(val);
-                        html+=val
+                        score = response['score'];
+                        score2 = response['score2'];
+
+                        $("#score").html("Likelihood score: "+score);
+                        $("#score2").html("Multilingual vector score: "+score2);
+                      }else{
+                        $("#score").html("");
+                        $("#score2").html("");
+                      }
+                    }
+                              // $("#result").attr('rows', 8);
+                          // var x = document.getElementById("suggestion-label");
+                          // x.style.display = 'block';
+                          // var w = document.getElementById("sugg-descr");
+                          // w.style.display = 'block';
+                          // var v = document.getElementById("suggestion");
+                          // v.style.display = 'block';
+                          // var y = document.getElementById("stored");
+                          // y.style.display = 'block';
                     });
-                    html +="";
-                    $("#result").html(html);
-                    $("#score").html("");
-                    $("#score2").html("");
-                }
-		                  // $("#result").attr('rows', 8);
-                      // var x = document.getElementById("suggestion-label");
-                      // x.style.display = 'block';
-                      // var w = document.getElementById("sugg-descr");
-                      // w.style.display = 'block';
-                      // var v = document.getElementById("suggestion");
-                      // v.style.display = 'block';
-                      // var y = document.getElementById("stored");
-                      // y.style.display = 'block';
-                });
-  };
+      };
 
-  function myStore() {
-      var eng = $('#text1').val();
-      var trans = $('#result').val();
-      var sugg = $('#suggestion').val();
-      //var trModel = $('#trModel').val();
-        $.ajax({
-                    url: "/store",
-                    type: "POST",
-                    data: {text1:eng, trans:trans, sugg:sugg}
-                    // text2:text2}
-                }).done(function(response) {
+      function myStore() {
+          var eng = $('#text').val();
+          var trans = $('#result').val();
+          var sugg = $('#suggestion').val();
+          //var trModel = $('#trModel').val();
+            $.ajax({
+                        url: "/store",
+                        type: "POST",
+                        data: {text:eng, trans:trans, sugg:sugg}
+                        // text2:text2}
+                    }).done(function(response) {
 
-                  var html = "";
-                  response=response.result;
-                       $.each(response,function(key,val){
-                       console.log(val);
-                          html+=val
+                      var html = "";
+                      response=response.result;
+                           $.each(response,function(key,val){
+                           console.log(val);
+                              html+=val
+                          });
+                          html +="";
+                          $("#store_result").html("Stored!");
+                              // $("#result").attr('rows', 8);
                       });
-                      html +="";
-                      $("#store_result").html("Stored!");
-  		                  // $("#result").attr('rows', 8);
-                  });
-    };
+        };
 
   </script>
 <!-- <body>

@@ -1,20 +1,34 @@
 import os
 import flask
-from flask import Flask, request, jsonify, render_template, send_from_directory
+from flask import Flask, request, jsonify, render_template, send_from_directory, send_file
 from flask import redirect, url_for, session
 from translate import Translator
 from config import *
 
-from flask import Flask,render_template, request
 from flaskext.mysql import MySQL
 
-from flask_paginate import Pagination, get_page_parameter
+from flask_paginate import get_page_parameter
 from flask_bcrypt import Bcrypt
+from flask_swagger_ui import get_swaggerui_blueprint
 
 import re
 
 app = Flask(__name__)
 bcrypt = Bcrypt(app)
+
+SWAGGER_URL = "/swagger"
+API_URL = "/static/swagger.json"
+UPLOAD_FOLDER = 'uploads'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+
+swagger_ui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL,
+    API_URL,
+    config={
+        'app_name': 'Access API'
+    }
+)
+app.register_blueprint(swagger_ui_blueprint, url_prefix=SWAGGER_URL)
 
 # Change this to your secret key (can be anything, it's for extra protection)
 app.secret_key = 'mykey'
@@ -23,13 +37,20 @@ app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = ''
 app.config['MYSQL_DATABASE_DB'] = 'ans'
 app.config['MYSQL_DATABASE_HOST'] = 'localhost'
-
 app.config["DEBUG"] = True # turn off in prod
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
 
 mysql = MySQL()
 mysql.init_app(app)
 
 translator = Translator(MODEL_PATH)
+
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 @app.route('/')
 @app.route('/index', methods=['GET'])
@@ -44,110 +65,162 @@ def home():
     # User is not loggedin redirect to login page
     #return redirect(url_for('login'))
 
-@app.route('/docs/', defaults={'filename':'index.html'})
+
+@app.route('/docs/', defaults={'filename': 'index.html'})
 @app.route('/docs/<path:filename>')
 def serve_sphinx_docs(filename) -> flask.send_from_directory:
     docs_dir = os.path.join(os.path.dirname(__file__), 'docs')
     return send_from_directory(directory=docs_dir, path=filename)
 
-@app.route('/change_language', methods=["GET","POST"])
+
+@app.route('/change_language', methods=["GET", "POST"])
 def change_language():
-    trModel = request.form['trModel']
-    translator.load_model(trModel)
+    tr_model = request.form['trModel']
+    translator.load_model(tr_model)
     return "Machine translation service is up and running."
 
-@app.route('/translate_with_parameters', methods=['GET','POST'])
+
+@app.route('/upload', methods=['POST'])
+def upload_file():
+    if 'file' not in request.files:
+        return 'No file part'
+    file = request.files['file']
+    if file.filename == '':
+        return 'No selected file'
+    if file:
+        # Here, you can save the file or process it
+        file.save(UPLOAD_FOLDER + "/" + file.filename)
+        return 'File successfully uploaded'
+
+
+@app.route('/translate_file', methods=['POST'])
+def translate_file():
+    file_name = request.form['filename2'].split("\\")[-1]
+    if file_name != "":
+        f = open(UPLOAD_FOLDER+"/"+file_name, 'r')
+        lines = f.readlines()
+        f.close()
+        mult, apply_rules, metric = False, False, False
+        f = open('tmp/'+file_name.strip(".txt")+'_translated.txt', 'w')
+        for line in lines:
+            text = line.strip()
+            translation = translator.translate_fairseq(text, mult, apply_rules, metric)
+            f.write(translation+"\n")
+        f.close()
+        # Return the file for download
+        return send_file('tmp/'+file_name.strip(".txt")+'_translated.txt', as_attachment=True)
+
+
+@app.route('/upload_translate_file', methods=['POST'])
+def upload_translate_file():
+    file = request.files['file']
+    lines = file.readlines()
+    mult, apply_rules, metric = False, False, False
+    f = open('tmp/' + file.filename.strip(".txt") + '_translated.txt', 'w')
+    for line in lines:
+        text = line.strip()
+        translation = translator.translate_fairseq(text, mult, apply_rules, metric)
+        f.write(translation + "\n")
+    f.close()
+    return send_file('tmp/'+file.filename.strip(".txt")+'_translated.txt', as_attachment=True)
+
+
+@app.route('/translate', methods=['GET', 'POST'])
 def my_post():
-    text = request.args.get('text')
-    trModel = request.args.get('trModel')
-    mult = "False"
-    applyRules = "False"
-    metric = "False"
-    score = "0000"
-    # print(mult)
-    # print(request.form['boolMult'])
-    if request.args.get('boolMult')=="True":
-        mult = "True"
-    if request.args.get('applyRules')=="True":
-        applyRules = "True"
-    if request.args.get('metric')=="True":
-        metric = "True"
-    if trModel=="fr":
-        translation = translator.translate_reverse(text, mult, applyRules)
-        result = {
-            "output": translation
-        }
-    else:
-        if metric=="True":
-            translation, score, score2 = translator.translate_fairseq(text, mult, applyRules, metric)
-            result = {
-                "output": translation,
-                "score": score,
-                "score2": score2
-            }
-        else:
-            translation = translator.translate_fairseq(text, mult, applyRules, metric)
-            result = {
-                "output": translation
-            }
-
-    result = {str(key): value for key, value in result.items()}
-    return jsonify(result=result)
-
-@app.route('/translate', methods=['GET','POST'])
-def my_form_post():
-    text = request.form['text1']
-    trModel = request.form['trModel']
-    mult = "False"
-    applyRules = "False"
-    metric = "False"
-    score = "0000"
-    # print(mult)
-    # print(request.form['boolMult'])
-    if request.form['boolMult']=="True":
-        mult = "True"
-    if request.form['applyRules']=="True":
-        applyRules = "True"
-    if request.form['metric']=="True":
-        metric = "True"
-    if trModel=="fr":
-        translation = translator.translate_reverse(text, mult, applyRules)
-        result = {
-            "output": translation
-        }
-    else:
-        if metric=="True":
-            translation, score, score2 = translator.translate_fairseq(text, mult, applyRules, metric)
-            result = {
-                "output": translation,
-                "score": score,
-                "score2": score2
-            }
-        else:
-            translation = translator.translate_fairseq(text, mult, applyRules, metric)
-            result = {
-                "output": translation
-            }
-
-    result = {str(key): value for key, value in result.items()}
-    return jsonify(result=result)
-
-@app.route('/store', methods = ['POST', 'GET'])
-def store():
-    if request.method == 'GET':
-        return "Login via the login Form"
-
+    metric = 'False'
+    mult = 'False'
+    metric = 'False'
+    apply_rules = 'False'
     if request.method == 'POST':
-        eng = request.form['text1']
+        if request.headers['Content-Type'] == 'application/json':
+            data = request.get_json()
+            text = data['text']
+            trModel = data['trModel']
+            mult = data['boolMult']
+            apply_rules = data['applyRules']
+            metric = data['metric']
+        else:
+            text = request.form['text']
+            trModel = request.form['trModel']
+            mult = request.form['boolMult']
+            apply_rules = request.form['applyRules']
+            metric = request.form['metric']
+    else:
+        text = request.args.get('text')
+        trModel = request.args.get('trModel')
+        if request.args.get('boolMult') == "True":
+            mult = "True"
+        if request.args.get('applyRules') == "True":
+            apply_rules = "True"
+        if request.args.get('metric') == "True":
+            metric = "True"
+
+    suggestion = get_suggestion(text)
+
+    if trModel == "fr":
+        translation = translator.translate_reverse(text, mult, apply_rules)
+        result = {
+            "output": translation
+        }
+    else:
+        if metric == "True":
+            translation, score, score2 = translator.translate_fairseq(text, mult, apply_rules, metric)
+            if suggestion:
+                result = {
+                    "output": translation,
+                    "score": score,
+                    "score2": score2,
+                    "suggestion": suggestion
+                }
+            else:
+                result = {
+                    "output": translation,
+                    "score": score,
+                    "score2": score2
+                }
+        else:
+            translation = translator.translate_fairseq(text, mult, apply_rules, metric)
+            if suggestion:
+                result = {
+                    "output": translation, "suggestion": suggestion
+                }
+            else:
+                result = {
+                    "output": translation
+                }
+
+    result = {str(key): value for key, value in result.items()}
+    return jsonify(result=result)
+
+
+@app.route('/store', methods=['POST'])
+def store():
+    if request.method == 'POST':
+        eng = request.form['text']
         trans = request.form['trans']
-        user = session['username']
+        if 'user' in request.form:
+            user = request.form['user']
+        else:
+            user = session['username']
         sugg = request.form['sugg']
         conn = mysql.connect()
         cursor = conn.cursor()
-        cursor.execute(''' INSERT INTO suggestions VALUES(%s,%s,%s,%s)''',(eng,trans,sugg,user))
+        cursor.execute(''' INSERT INTO suggestions VALUES(%s,%s,%s,%s)''', (eng, trans, sugg, user))
         conn.commit()
         # cursor.close()
         return f"Done!!"
+
+
+@app.route('/get_suggestion', methods=['POST'])
+def get_suggestion(text):
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM suggestions WHERE eng = %s', (text,))
+    result = cursor.fetchone()
+    if result:
+        return result[1]
+    return ""
+
 
 @app.route('/suggestions')
 def show_suggestions():
@@ -202,22 +275,22 @@ def login():
             else:
                 msg = 'Incorrect username/password!'
         else:
-            # Account doesnt exist or username/password incorrect
             msg = 'Incorrect username/password!'
     # Show the login form with message (if any)
     return render_template('index.html', msg=msg)
 
+
 @app.route('/logout')
 def logout():
     # Remove session data, this will log the user out
-   session.pop('loggedin', None)
-   session.pop('id', None)
-   session.pop('username', None)
-   # Redirect to login page
-   # return redirect(url_for('login'))
-   return render_template('home.html')
+    session.pop('loggedin', None)
+    session.pop('id', None)
+    session.pop('username', None)
+    # Redirect to login page
+    # return redirect(url_for('login'))
+    return render_template('home.html')
 
-# http://localhost:5000/pythinlogin/register - this will be the registration page, we need to use both GET and POST requests
+
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     # Output message if something goes wrong...
@@ -244,7 +317,7 @@ def register():
         elif not username or not password or not email:
             msg = 'Please fill out the form!'
         else:
-            # Account doesnt exists and the form data is valid, now insert new account into accounts table
+            # Account doesn't exist and the form data is valid, now insert new account into accounts table
             pw_hash = bcrypt.generate_password_hash(password)
             cursor.execute('INSERT INTO accounts VALUES (NULL, %s, %s, %s)', (username, pw_hash, email,))
             conn.commit()
@@ -257,13 +330,14 @@ def register():
     # Show registration form with message (if any)
     return render_template('register.html', msg=msg)
 
-# http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
+
 @app.route('/profile')
 def profile():
     # Check if user is loggedin
     if 'loggedin' in session:
         # We need all the account info for the user so we can display it on the profile page
-        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        conn = mysql.connect()
+        cursor = conn.cursor()
         cursor.execute('SELECT * FROM accounts WHERE id = %s', (session['id'],))
         account = cursor.fetchone()
         # Show the profile page with account info
@@ -271,27 +345,21 @@ def profile():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
+
 @app.route('/lang_routes', methods = ["GET"])
 def get_lang_route():
     lang = request.args['lang']
     all_langs = translator.get_supported_langs()
     lang_routes = [l for l in all_langs if l[0] == lang]
-    return jsonify({"output":lang_routes})
+    return jsonify({"output": lang_routes})
+
 
 @app.route('/supported_languages', methods=["GET"])
 def get_supported_languages():
     langs = translator.get_supported_langs()
-    return jsonify({"output":langs})
+    return jsonify({"output": langs})
 
-# @app.route('/translate', methods=["POST"])
-# def get_prediction():
-#     # source = request.json['source']
-#     # target = request.json['target']
-#     text = request.json['text']
-#     # translation = translator.translate(source, target, text)
-#     translation = translator.translate_fairseq(text)
-#     return jsonify({"output":translation})
 
 if __name__ == '__main__':
     app.config['JSON_AS_ASCII'] = False
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0", port=5000)

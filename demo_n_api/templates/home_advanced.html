@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <title>Medical neural machine translation app</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -17,16 +21,18 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="http://anstranslation.ddns.net:9001">VizSeq</a>
-                  </li>
+<!--                  <li class="nav-item active">-->
+<!--                    <a class="nav-link" href="http://anstranslation.ddns.net:9001">VizSeq</a>-->
+<!--                  </li>-->
                   <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for('show_suggestions') }}">Suggestions</a>
                   </li>
                   <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for('serve_sphinx_docs') }}">Documentation</a>
                   </li>
-
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/swagger">Swagger</a>
+                  </li>
                   <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout</a>
                   </li>
@@ -42,21 +48,21 @@
                 <!--<form action="/translate" method="post">-->
                     <!-- Enter text to translate. -->
                     <div class="form-group">
-                        <label for="text1"><strong>Entrez le texte à traduire:</strong></label> <br>
-                        <textarea class="form-control" id="text1" name="text1" rows="4"></textarea>
+                        <label for="text"><strong>Entrez le texte à traduire:</strong></label> <br>
+                        <textarea class="form-control" id="text" name="text" rows="4"></textarea>
                         <p>Vous pouvez ajouter plusieurs termes ou phrases séparés par une nouvelle ligne (limite de 5000 caractères).</p>
 
                         <label for="select-language"><strong>Model :</strong></label>
                         <select class="form-control" id="trModel" name="trModel">
                           <option value="en">Anglais -> Français (Convolutional)</option>
-                          <option value="en-tran">Anglais -> Français (Transformer)</option>
+                          <!-- <option value="en-tran">Anglais -> Français (Transformer)</option> -->
                           <option value="fr">Français -> Anglais (Transformer)</option>
                         </select>
   		                  <br>
-                        <label for="extra"><strong>More (for Anglais -> Français):</strong></label><br>
+                        <label for="extra"><strong>Options (for Anglais -> Français):</strong></label><br>
   		                  <input type="checkbox" id="mult" name="mult"/> Traductions multiples <br>
+                        <input type="checkbox" id="metric" name="metric"/> Métrique d'évaluation <br>
                         <input type="checkbox" id="rules" name="rules"/> Appliquer les règles de post-traitement
-                        <input type="checkbox" id="metric" name="metric"/> Métrique d'évaluation
 		                </div>
                     <button id="clicked" class="btn btn-primary mb-2" onclick="myFunction()">Traduire</button>
 
@@ -71,15 +77,24 @@
                 <div class="col">
                   <!-- <form> -->
                     <div class="form-group" id="translator-text-response">
-                      <label for="translation-result"><strong>Traduction:</strong></label>
+                      <label><strong>Traduction:</strong></label>
                       <textarea readonly class="form-control" id="result" rows="4"></textarea>
-                      <p id="sugg-descr" style="display:none;">Vous pouvez suggérer une meilleure traduction sous forme de commentaires pour le modèle.</p>
 
-                      <label id="suggestion-label" for="suggestion-result" style="display:none;"><strong>Suggestion:</strong></label>
-                      <textarea class="form-control" id="suggestion" name="suggestion" rows="4" style="display:none;"></textarea>
+                        <div id="suggestion_div" style="display:none;">
+                          <p id="sugg-descr">Vous pouvez suggérer une meilleure traduction sous forme de commentaires pour le modèle.</p>
+                          <label id="suggestion-label"><strong>Suggestion:</strong></label>
+                            <textarea class="form-control" id="suggestion" name="suggestion" rows="4" style="display:none;"></textarea><br>
+                            <button id="stored" class="btn btn-primary mb-2" onclick="myStore()" style="display:none;">Enregistrer la suggestion</button>
+                            <p id="store_result"></p>
+                        </div>
+
+                        <div id="suggestion_found_div" style="display:none;">
+                          <label id="suggestion-found-label"><strong>Suggestion trouvée:</strong></label>
+                            <textarea readonly class="form-control" id="suggestion_found" name="suggestion_found" rows="4"></textarea>
+                        </div>
+
                     </div>
-                    <button id="stored" class="btn btn-primary mb-2" onclick="myStore()" style="display:none;">Enregistrer la suggestion</button>
-                    <p id="store_result"></p>
+
                   <!-- </form> -->
                 </div>
               </div>
@@ -87,7 +102,27 @@
             <hr>
 
             <div class="row">
-                <!-- <p>This is a joint research effort by <a href="http://bluai.gr/" target="_blank">BLUAI</a>, <a href="https://esante.gouv.fr/" target="_blank">l'Agence du Numérique en Santé (ANS)</a> and <a href="https://www.atih.sante.fr/" target="_blank">l'Agence technique de l'information sur l'hospitalisation (ATIH)</a>: -->
+              <div class="col-md-12">
+                <h3>Téléverser un fichier</h3>
+                <form id="upload" method="post" enctype=multipart/form-data>
+                  <input class="mb-2" id='filename1' type=file name=file>
+                  <input class="btn btn-primary mb-2" type="button" value="Télécharger" onclick="uploadFile()">
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <!-- <h3>Translate file</h3> -->
+                <form id="translate_file" method="post" enctype=multipart/form-data style="display:none">
+                  <input class="mb-2" type=text id="filename2" name="filename2" value="" hidden>
+                  <input class="btn btn-primary mb-2" type="button" value="Traduire le fichier" onclick="translateFile()">
+                </form>
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-4">
                     <a href="http://bluai.gr/" target="_blank"><img src="../static/images/bluai_new.png" style="width: 80%; max-width: 80%; margin-top:30px" class="mx-auto d-block img-responsive" alt="Responsive image"></a>
@@ -96,13 +131,10 @@
                     <a href="https://esante.gouv.fr/" target="_blank"><img src="../static/images/ans_logo.jpeg" style="width: 50%; max-width: 50%;" class="mx-auto d-block img-responsive" alt="Responsive image"></a>
                 </div>
                 <div class="col-md-2"></div>
-                <!-- <div class="col-md-4">
-                    <a href="https://www.atih.sante.fr/" target="_blank"><img src="../static/images/atih_logo.png" class="mx-auto d-block img-responsive" alt="Responsive image"></a>
-                </div> -->
             </div>
 
             <hr>
-            <p style="text-align:center">© 2023 ANS</p>
+            <p style="text-align:center">© 2024 ANS</p>
 
 
         </div>
@@ -120,8 +152,63 @@ $("#trModel" ).change(function() {
      });
 });
 
+function translateFile() {
+  var formData = new FormData(document.getElementById('translate_file'));
+  fetch('http://anstranslation.ddns.net:5000/translate_file', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.blob())
+  .then(blob => {
+
+    // Create a new object URL for the blob
+    var url = window.URL.createObjectURL(blob);
+
+    // Create a new anchor element
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'translated.txt'; // You can give a default file name here
+    document.body.appendChild(a); // Append the anchor to the body
+    a.click(); // Programmatically click the anchor to trigger the download
+    document.body.removeChild(a); // Remove the anchor after clicking
+    window.URL.revokeObjectURL(url); // Release the object URL
+  })
+  .catch(error => console.error('Error:', error));
+}
+
+function uploadFile() {
+  var formData = new FormData(document.getElementById('upload'));
+  fetch('http://anstranslation.ddns.net:5000/upload', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.text())
+  .then(data => {
+    Toastify({
+      text: data,
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+    }).showToast();
+    document.getElementById('filename2').value = document.getElementById('filename1').value;
+    document.getElementById('translate_file').style.display = 'block';
+  })
+  .catch(error => {
+    Toastify({
+      text: "Error: " + error,
+      duration: 3000,
+      close: true,
+      gravity: "top",
+      position: "center",
+      backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)",
+    }).showToast();
+  });
+}
+
 function myFunction() {
-    var text1 = $('#text1').val();
+    var text1 = $('#text').val();
     var trModel = $('#trModel').val();
     var boolMult = "False";
     if (document.getElementById("mult").checked) {
@@ -136,44 +223,74 @@ function myFunction() {
   	    metric = "True";
     }
 
+    document.getElementById("suggestion_found_div").style.display = 'none';
+    document.getElementById("suggestion_div").style.display = 'none';
+
     //var trModel = $('#trModel').val();
       $.ajax({
                   url: "/translate",
                   type: "POST",
-                  data: {text1:text1, boolMult:boolMult, applyRules:applyRules, trModel:trModel, metric:metric}
+                  data: {text:text1, boolMult:boolMult, applyRules:applyRules, trModel:trModel, metric:metric}
                   // text2:text2}
               }).done(function(response) {
 
                 var html = "";
                 response=response.result;
-                     $.each(response,function(key,val){
-                     console.log(val);
-                        html+=val
-                    });
-                    html +="";
-                    $("#result").html(html);
+                if('suggestion' in response){
+                    suggestion = response['suggestion'];
+                    $("#suggestion_found").html(suggestion);
+                    var x = document.getElementById("suggestion_found_div");
+                    x.style.display = 'block';
+                }else{
+                    var x = document.getElementById("suggestion_div");
+                    x.style.display = 'block';
+                }
+
+                if(document.getElementById("mult").checked){
+                        $.each(response,function(key,val){
+                            html+=val
+                        });
+                        html +="";
+                        $("#result").html(html);
+                        $("#score").html("");
+                        $("#score2").html("");
+
+                    }else{
+                      translation = response['output'];
+                      $("#result").html(translation);
+                      if(document.getElementById("metric").checked){
+
+                        score = response['score'];
+                        score2 = response['score2'];
+
+                        $("#score").html("Likelihood score: "+score);
+                        $("#score2").html("Multilingual vector score: "+score2);
+                      }else{
+                        $("#score").html("");
+                        $("#score2").html("");
+                      }
+                    }
 
 		                  // $("#result").attr('rows', 8);
-                      var x = document.getElementById("suggestion-label");
-                      x.style.display = 'block';
-                      var w = document.getElementById("sugg-descr");
-                      w.style.display = 'block';
-                      var v = document.getElementById("suggestion");
-                      v.style.display = 'block';
-                      var y = document.getElementById("stored");
-                      y.style.display = 'block';
-                });
+
+                  var w = document.getElementById("sugg-descr");
+                  w.style.display = 'block';
+                  var v = document.getElementById("suggestion");
+                  v.style.display = 'block';
+                  var y = document.getElementById("stored");
+                  y.style.display = 'block';
+              });
   };
 
   function myStore() {
-      var eng = $('#text1').val();
+      var eng = $('#text').val();
       var trans = $('#result').val();
       var sugg = $('#suggestion').val();
       //var trModel = $('#trModel').val();
         $.ajax({
                     url: "/store",
                     type: "POST",
-                    data: {text1:eng, trans:trans, sugg:sugg}
+                    data: {text:eng, trans:trans, sugg:sugg}
                     // text2:text2}
                 }).done(function(response) {
 

@@ -27,9 +27,9 @@ model_sim = SentenceTransformer('sentence-transformers/stsb-xlm-r-multilingual',
 
 class Translator():
     def __init__(self, models_dir):
-        # en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', encoding='utf8', tokenizer='moses', bpe='subword_nmt', source_lang='en', target_lang='fr', checkpoint_file='E:/icd11/models/round_5th_checkpoint_best.pt')
+        # self.model = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', encoding='utf8', tokenizer='moses', bpe='subword_nmt', source_lang='en', target_lang='fr', checkpoint_file='E:/icd11/models/round_5th_checkpoint_best.pt')
         self.model = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', tokenizer='moses', bpe='subword_nmt', source_lang='en', target_lang='fr', checkpoint_file='E:/icd11/models/round_3rd_checkpoint_best.pt|E:/icd11/models/round_4th_checkpoint_best.pt|E:/icd11/models/round_5th_checkpoint_best.pt')
-        # en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', tokenizer='moses', bpe='subword_nmt', source_lang='en', target_lang='fr', checkpoint_file='E:\icd11\models\round_3rd_checkpoint_best.pt:E:\icd11\models\round_4th_checkpoint_best.pt:E:\icd11\models\round_5th_checkpoint_best.pt')
+        # self.model = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', tokenizer='moses', bpe='subword_nmt', source_lang='en', target_lang='fr', checkpoint_file='E:\icd11\models\round_3rd_checkpoint_best.pt|E:\icd11\models\round_4th_checkpoint_best.pt|E:\icd11\models\round_5th_checkpoint_best.pt')
         self.model.eval()  # disable dropout
         self.model.cuda()
 
@@ -124,7 +124,7 @@ class Translator():
                             # model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2', device='cpu', cache_folder='/')
 
                             corpus_embedding = model_sim.encode(text, convert_to_tensor=True, normalize_embeddings=True)
-                            query_embedding = model_sim.encode(translation, convert_to_tensor=True, normalize_embeddings=True)
+                            query_embedding = model_sim.encode(fr, convert_to_tensor=True, normalize_embeddings=True)
                             hits = util.cos_sim(query_embedding, corpus_embedding)
                             score2 = "{:.2f}".format(float(hits[0][0].item()))
                             if fr not in translations:
@@ -138,7 +138,7 @@ class Translator():
                     # translations = list(set(translations))
                     new_trans = []
                     if metric=="True":
-                        for w in sorted(scored, key=scored.get, reverse=True):
+                        for w in sorted(scored2, key=scored2.get, reverse=True):
                             new_trans.append(w+" L:"+"{:.2f}".format(scored[w])+" M:" +"{:.2f}".format(scored2[w]))
                         translation = "\n".join(new_trans)
                     else:
@@ -162,45 +162,75 @@ class Translator():
                                 translation += self.model.translate(sent) + " "
                         translation = translation.strip()
                     else:
-                        #for beam in [5,10,100,200,1000,5000]:
-                        #translation = self.model.translate(text)
-                        en = self.model.encode(text)
-                        # output = self.model.generate(en, beam=5)
-                        output = self.model.generate(en, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
-                        translation = self.model.decode(output[0]['tokens'])
-
-                    if metric=="True":
-                        # scorer = SequenceScorer(self.model.tgt_dict)
-                        # enc_src = self.model.encode(text).to('cuda')
-                        # ref_enc = self.model.encode(translation).to('cuda')
-                        # prev = torch.LongTensor([self.model.tgt_dict.eos() for _ in ref_enc]).unsqueeze(0).to('cuda')
-                        # net_input = {"net_input": {"src_tokens": enc_src.unsqueeze(0), "src_lengths": [enc_src.shape[0]], "prev_output_tokens": prev}, "target": ref_enc.unsqueeze(0)}
-                        # score = scorer.generate(self.model.models, net_input)
-                        # # print log_e prob
-                        # score = float(score[0][0]["score"].item())
-                        # # score = math.exp(score)
-                        # score = "{:.2f}".format(score)
+                        # en = self.model.encode(text)
+                        # output = self.model.generate(en, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
+                        # translation = self.model.decode(output[0]['tokens'])
 
                         en_toks = self.model.tokenize(text)
                         # Manually apply BPE:
                         en_bpe = self.model.apply_bpe(en_toks)
-                        # assert en_bpe == 'H@@ ello world !'
-                        # Manually binarize:
                         en_bin = self.model.binarize(en_bpe)
-                        # Generate five translations with top-k sampling:
-                        #fr_bin = en2fr.generate(en_bin, beam=20, nbest=1, sampling=True, sampling_topk=150)
-                        # fr_bin = self.model.generate(en_bin, stochastic_beam_search=True)
                         fr_bin = self.model.generate(en_bin, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
-                        score = fr_bin[0]['score'].item()
-                        score = math.exp(score)
-                        score = "{:.2f}".format(score)
 
-                        # model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2', device='cpu', cache_folder='/')
-                        # model_sim = SentenceTransformer('sentence-transformers/stsb-xlm-r-multilingual', device='cpu')
-                        corpus_embedding = model_sim.encode(text, convert_to_tensor=True, normalize_embeddings=True)
-                        query_embedding = model_sim.encode(translation, convert_to_tensor=True, normalize_embeddings=True)
-                        hits = util.cos_sim(query_embedding, corpus_embedding)
-                        score2 = "{:.2f}".format(float(hits[0][0].item()))
+                        # Convert one of the samples to a string and detokenize
+                        translation = ""
+                        translations = []
+                        scored = {}
+                        scored2 = {}
+                        for ind, fr in enumerate(fr_bin):
+                            fr_sample = fr_bin[ind]['tokens']
+                            fr_bpe = self.model.string(fr_sample)
+                            fr_toks = self.model.remove_bpe(fr_bpe)
+                            fr = self.model.detokenize(fr_toks)
+                            #translation += fr + "\n"
+
+                            score = fr_bin[ind]['score'].item()
+                            score = math.exp(score)
+                            score = "{:.2f}".format(score)
+
+                            # model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2', device='cpu', cache_folder='/')
+
+                            corpus_embedding = model_sim.encode(text, convert_to_tensor=True, normalize_embeddings=True)
+                            query_embedding = model_sim.encode(fr, convert_to_tensor=True, normalize_embeddings=True)
+                            hits = util.cos_sim(query_embedding, corpus_embedding)
+                            score2 = "{:.2f}".format(float(hits[0][0].item()))
+                            if fr not in translations:
+                                translations.append(fr+" l:"+score+" M:"+score2)
+                                scored[fr] = float(score)
+                                scored2[fr] = float(score2)
+
+                        sorted_scored2 = sorted(scored2, key=scored2.get, reverse=True)
+                        translation_score2 = sorted_scored2[0]
+                        translation = translation_score2
+
+                        sorted_scored = sorted(scored, key=scored.get, reverse=True)
+                        translation_score = sorted_scored[0]
+
+                        if translation==text:
+                            translation = translation_score
+
+                    if metric=="True":
+
+                        # en_toks = self.model.tokenize(text)
+                        # # Manually apply BPE:
+                        # en_bpe = self.model.apply_bpe(en_toks)
+                        # # assert en_bpe == 'H@@ ello world !'
+                        # # Manually binarize:
+                        # en_bin = self.model.binarize(en_bpe)
+                        # # Generate five translations with top-k sampling:
+                        # #fr_bin = en2fr.generate(en_bin, beam=20, nbest=1, sampling=True, sampling_topk=150)
+                        # # fr_bin = self.model.generate(en_bin, stochastic_beam_search=True)
+                        # fr_bin = self.model.generate(en_bin, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
+                        # score = fr_bin[0]['score'].item()
+                        # score = math.exp(score)
+                        # score = "{:.2f}".format(score)
+                        #
+                        # corpus_embedding = model_sim.encode(text, convert_to_tensor=True, normalize_embeddings=True)
+                        # query_embedding = model_sim.encode(translation, convert_to_tensor=True, normalize_embeddings=True)
+                        # hits = util.cos_sim(query_embedding, corpus_embedding)
+                        # score2 = "{:.2f}".format(float(hits[0][0].item()))
+                        score = scored[translation]
+                        scored2 = scored2[translation]
 
                 if apply_rules=="True":
                     # translation = sc6_replace_comp_symbols(translation)
