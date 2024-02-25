@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unsupervised quality estimation &mdash; ANS Translation Service 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Configuration" href="configuration.html" />
+    <link rel="prev" title="Ground truth data for validation/evaluation" href="validation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ANS Translation Service
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline.html">Pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="preprocessing.html">Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="training.html">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postprocessing.html">Postprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Ground truth data for validation/evaluation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Unsupervised quality estimation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#test-data">Test data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#set-up">Set-up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#translate-the-data-using-standard-decoding">Translate the data using standard decoding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#results">Results</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use-cases.html">Use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vizseq.html">VizSeq</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ANS Translation Service</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Unsupervised quality estimation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/unsupervised_metric.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="unsupervised-quality-estimation">
+<h1>Unsupervised quality estimation<a class="headerlink" href="#unsupervised-quality-estimation" title="Link to this heading"></a></h1>
+<p>This documentation includes instructions for running unsupervised quality estimation, as described in the paper Unsupervised Quality Estimation for Neural Machine Translation (Fomicheva et al., 2020). We check the unsupervised metric with our ensemble model, which combines three cnn models.</p>
+<section id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>mosesdecoder: <a class="reference external" href="https://github.com/moses-smt/mosesdecoder">https://github.com/moses-smt/mosesdecoder</a></p></li>
+<li><p>subword-nmt: <a class="reference external" href="https://github.com/rsennrich/subword-nmt">https://github.com/rsennrich/subword-nmt</a></p></li>
+<li><p>flores: <a class="reference external" href="https://github.com/facebookresearch/flores">https://github.com/facebookresearch/flores</a></p></li>
+</ul>
+</section>
+<section id="test-data">
+<h2>Test data<a class="headerlink" href="#test-data" title="Link to this heading"></a></h2>
+<p>We test the unsupervised metric on the new ATIH ground truth dataset.</p>
+</section>
+<section id="set-up">
+<h2>Set-up<a class="headerlink" href="#set-up" title="Link to this heading"></a></h2>
+<p>Given a test set consisting of source sentences and reference translations:</p>
+<ul class="simple">
+<li><p>SRC_LANG: source language</p></li>
+<li><p>TGT_LANG: target language</p></li>
+<li><p>INPUT: input prefix, such that the file $INPUT.$SRC_LANG contains source sentences and $INPUT.$TGT_LANG contains the reference sentences</p></li>
+<li><p>OUTPUT_DIR: output path to store results</p></li>
+<li><p>MOSES_DECODER: path to mosesdecoder installation</p></li>
+<li><p>BPE_ROOT: path to subword-nmt installation</p></li>
+<li><p>BPE: path to BPE model</p></li>
+<li><p>MODEL_DIR: directory containing the NMT model .pt file as well as the source and target vocabularies.</p></li>
+<li><p>TMP: directory for intermediate temporary files</p></li>
+<li><p>GPU: if translating with GPU, id of the GPU to use for inference</p></li>
+<li><p>DROPOUT_N: number of stochastic forward passes</p></li>
+</ul>
+<p>Our set-up is:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SRC_LANG</span><span class="o">=</span><span class="s2">&quot;en&quot;</span>
+<span class="nv">TGT_LANG</span><span class="o">=</span><span class="s2">&quot;fr&quot;</span>
+<span class="nv">IN_DIR</span><span class="o">=</span><span class="s2">&quot;data_2021&quot;</span>
+<span class="nv">INPUT</span><span class="o">=</span><span class="s2">&quot;new_atih_ground_truth&quot;</span>
+<span class="nv">OUTPUT_DIR</span><span class="o">=</span><span class="s2">&quot;qe_output&quot;</span>
+<span class="nv">MOSES_DECODER</span><span class="o">=</span><span class="s2">&quot;mosesdecoder&quot;</span>
+<span class="nv">BPE_ROOT</span><span class="o">=</span><span class="s2">&quot;subword-nmt&quot;</span>
+<span class="nv">BPE</span><span class="o">=</span><span class="s2">&quot;../wmt14.en-fr.fconv-py/bpecodes&quot;</span>
+<span class="nv">MODEL_DIR</span><span class="o">=</span><span class="s2">&quot;../wmt14.en-fr.fconv-py&quot;</span>
+<span class="nv">MY_MODEL</span><span class="o">=</span><span class="s1">&#39;round_3rd/checkpoint_best.pt:round_4th/checkpoint_best.pt:round_5th/checkpoint_best.pt&#39;</span>
+<span class="nv">TMP</span><span class="o">=</span><span class="s2">&quot;tmp&quot;</span>
+<span class="nv">GPU</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">DROPOUT_N</span><span class="o">=</span><span class="m">30</span>
+<span class="nv">SCRIPTS</span><span class="o">=</span><span class="s2">&quot;fairseq/examples/unsupervised_quality_estimation&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="translate-the-data-using-standard-decoding">
+<h2>Translate the data using standard decoding<a class="headerlink" href="#translate-the-data-using-standard-decoding" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">## Preprocess the input data</span>
+<span class="k">for</span><span class="w"> </span>LANG<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$SRC_LANG</span><span class="w"> </span><span class="nv">$TGT_LANG</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span>perl<span class="w"> </span><span class="nv">$MOSES_DECODER</span>/scripts/tokenizer/tokenizer.perl<span class="w"> </span>-threads<span class="w"> </span><span class="m">80</span><span class="w"> </span>-a<span class="w"> </span>-l<span class="w"> </span><span class="nv">$LANG</span><span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$INPUT</span>.<span class="nv">$LANG</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$TMP</span>/preprocessed.tok.<span class="nv">$LANG</span>
+<span class="w">  </span>python<span class="w"> </span><span class="nv">$BPE_ROOT</span>/apply_bpe.py<span class="w"> </span>-c<span class="w"> </span><span class="si">${</span><span class="nv">BPE</span><span class="si">}</span><span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$TMP</span>/preprocessed.tok.<span class="nv">$LANG</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$TMP</span>/preprocessed.tok.bpe.<span class="nv">$LANG</span>
+<span class="k">done</span>
+
+<span class="c1">## Binarize the data for faster translation:</span>
+fairseq-preprocess<span class="w"> </span>--srcdict<span class="w"> </span><span class="nv">$MODEL_DIR</span>/dict.<span class="nv">$SRC_LANG</span>.txt<span class="w"> </span>--tgtdict<span class="w"> </span><span class="nv">$MODEL_DIR</span>/dict.<span class="nv">$TGT_LANG</span>.txt<span class="w"> </span>--source-lang<span class="w"> </span><span class="si">${</span><span class="nv">SRC_LANG</span><span class="si">}</span><span class="w"> </span>--target-lang<span class="w"> </span><span class="si">${</span><span class="nv">TGT_LANG</span><span class="si">}</span><span class="w"> </span>--testpref<span class="w"> </span><span class="nv">$TMP</span>/preprocessed.tok.bpe<span class="w"> </span>--destdir<span class="w"> </span><span class="nv">$TMP</span>/bin<span class="w"> </span>--workers<span class="w"> </span><span class="m">4</span>
+
+<span class="c1">## Translate</span>
+<span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="nv">$GPU</span><span class="w"> </span>fairseq-generate<span class="w"> </span><span class="nv">$TMP</span>/bin<span class="w"> </span>--path<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_DIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">SRC_LANG</span><span class="si">}</span>-<span class="si">${</span><span class="nv">TGT_LANG</span><span class="si">}</span>.pt<span class="w"> </span>--beam<span class="w"> </span><span class="m">5</span><span class="w"> </span>--source-lang<span class="w"> </span><span class="nv">$SRC_LANG</span><span class="w"> </span>--target-lang<span class="w"> </span><span class="nv">$TGT_LANG</span><span class="w"> </span>--no-progress-bar<span class="w"> </span>--unkpen<span class="w"> </span><span class="m">5</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$TMP</span>/fairseq.out
+grep<span class="w"> </span>^H<span class="w"> </span><span class="nv">$TMP</span>/fairseq.out<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d-<span class="w"> </span>-f2-<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f3-<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$TMP</span>/mt.out
+
+
+<span class="c1">## Post-process</span>
+sed<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;s/(@@ )| (@@ ?$)//g&#39;</span><span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$TMP</span>/mt.out<span class="w"> </span><span class="p">|</span><span class="w"> </span>perl<span class="w"> </span><span class="nv">$MOSES_DECODER</span>/scripts/tokenizer/detokenizer.perl
+-l<span class="w"> </span><span class="nv">$TGT_LANG</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/mt.out
+
+
+<span class="c1">### Produce uncertainty estimates</span>
+
+<span class="c1">#Scoring</span>
+<span class="c1">#Make temporary files to store the translations repeated N times.</span>
+python<span class="w"> </span><span class="si">${</span><span class="nv">SCRIPTS</span><span class="si">}</span>/scripts/uncertainty/repeat_lines.py<span class="w"> </span>-i<span class="w"> </span><span class="nv">$TMP</span>/preprocessed.tok.bpe.<span class="nv">$SRC_LANG</span><span class="w"> </span>-n<span class="w"> </span><span class="nv">$DROPOUT_N</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$TMP</span>/repeated.<span class="nv">$SRC_LANG</span>
+python<span class="w"> </span><span class="si">${</span><span class="nv">SCRIPTS</span><span class="si">}</span>/scripts/uncertainty/repeat_lines.py<span class="w"> </span>-i<span class="w"> </span><span class="nv">$TMP</span>/mt.out<span class="w"> </span>-n<span class="w"> </span><span class="nv">$DROPOUT_N</span><span class="w"> </span>-o<span class="w"> </span><span class="nv">$TMP</span>/repeated.<span class="nv">$TGT_LANG</span>
+
+fairseq-preprocess<span class="w"> </span>--srcdict<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_DIR</span><span class="si">}</span>/dict.<span class="si">${</span><span class="nv">SRC_LANG</span><span class="si">}</span>.txt<span class="w"> </span><span class="nv">$TGT_DIC</span><span class="w"> </span>--source-lang<span class="w"> </span><span class="si">${</span><span class="nv">SRC_LANG</span><span class="si">}</span><span class="w"> </span>--target-lang<span class="w"> </span><span class="si">${</span><span class="nv">TGT_LANG</span><span class="si">}</span><span class="w"> </span>--testpref<span class="w"> </span><span class="si">${</span><span class="nv">TMP</span><span class="si">}</span>/repeated<span class="w"> </span>--destdir<span class="w"> </span><span class="si">${</span><span class="nv">TMP</span><span class="si">}</span>/bin-repeated
+
+
+<span class="c1">## Produce model scores for the generated translations using --retain-dropout option to apply dropout at inference time:</span>
+<span class="nv">CUDA_VISIBLE_DEVICES</span><span class="o">=</span><span class="si">${</span><span class="nv">GPU</span><span class="si">}</span><span class="w"> </span>fairseq-generate<span class="w"> </span><span class="si">${</span><span class="nv">TMP</span><span class="si">}</span>/bin-repeated<span class="w"> </span>--path<span class="w"> </span><span class="si">${</span><span class="nv">MODEL_DIR</span><span class="si">}</span>/<span class="si">${</span><span class="nv">LP</span><span class="si">}</span>.pt<span class="w"> </span>--beam<span class="w"> </span><span class="m">5</span><span class="w"> </span>--source-lang<span class="w"> </span><span class="nv">$SRC_LANG</span><span class="w"> </span>--target-lang<span class="w"> </span><span class="nv">$TGT_LANG</span><span class="w"> </span>--no-progress-bar<span class="w"> </span>--unkpen<span class="w"> </span><span class="m">5</span><span class="w"> </span>--score-reference<span class="w"> </span>--retain-dropout<span class="w"> </span>--retain-dropout-modules<span class="w"> </span><span class="s1">&#39;[&quot;TransformerModel&quot;,&quot;TransformerEncoder&quot;,&quot;TransformerDecoder&quot;,&quot;TransformerEncoderLayer&quot;]&#39;</span><span class="w"> </span>TransformerDecoderLayer<span class="w"> </span>--seed<span class="w"> </span><span class="m">46</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$TMP</span>/dropout.scoring.out
+
+grep<span class="w"> </span>^H<span class="w"> </span><span class="nv">$TMP</span>/dropout.scoring.out<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-d-<span class="w"> </span>-f2-<span class="w"> </span><span class="p">|</span><span class="w"> </span>sort<span class="w"> </span>-n<span class="w"> </span><span class="p">|</span><span class="w"> </span>cut<span class="w"> </span>-f2<span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$TMP</span>/dropout.scores
+
+
+<span class="c1">## Compute the mean of the resulting output distribution:</span>
+python<span class="w"> </span><span class="nv">$SCRIPTS</span>/scripts/uncertainty/aggregate_scores.py<span class="w"> </span>-i<span class="w"> </span><span class="nv">$TMP</span>/dropout.scores<span class="w"> </span>-o<span class="w"> </span><span class="nv">$OUTPUT_DIR</span>/dropout.scores.mean<span class="w"> </span>-n<span class="w"> </span><span class="nv">$DROPOUT_N</span>
+</pre></div>
+</div>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Link to this heading"></a></h2>
+<p>We see that the unsupervised metric is closely correlated with the BLEU2VEC supervised metric. Although they are not always aligned, the metric can be very useful when no ground truth data is available. The histograms illustrate the correlation between the two metrics.</p>
+<figure class="align-default">
+<img alt="ans" src="_images/bleu2vec.png" />
+</figure>
+<p>The unsupervised metric is ranged between -5 and 0. Larges values indicate larger probability of a good translation.</p>
+<figure class="align-default">
+<img alt="ans" src="_images/unsupervised.png" />
+</figure>
+<p>We have used an unsupervised approach to QE where no training or access to any additional resources besides the MT system is required. Besides exploiting softmax output probability distribution and the entropy of attention weights from the NMT model, we leverage uncertainty quantification for unsupervised QE. We show that the indicators extracted from the NMT system constitute a rich source of information, competitive with supervised QE methods.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="validation.html" class="btn btn-neutral float-left" title="Ground truth data for validation/evaluation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="configuration.html" class="btn btn-neutral float-right" title="Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Konstantinos Skianis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

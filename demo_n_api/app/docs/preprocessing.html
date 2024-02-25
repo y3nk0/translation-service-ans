@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preprocessing &mdash; ANS Translation Service 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2709fde1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Training" href="training.html" />
+    <link rel="prev" title="Pipeline" href="pipeline.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            ANS Translation Service
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation &amp; requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline.html">Pipeline</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Preprocessing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#datasets">Datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download-pretrained-model">Download pretrained model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-preprocessing">Running preprocessing</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="training.html">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="postprocessing.html">Postprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="validation.html">Ground truth data for validation/evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="unsupervised_metric.html">Unsupervised quality estimation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="use-cases.html">Use cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vizseq.html">VizSeq</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ANS Translation Service</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Preprocessing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/preprocessing.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="preprocessing">
+<h1>Preprocessing<a class="headerlink" href="#preprocessing" title="Link to this heading"></a></h1>
+<section id="datasets">
+<h2>Datasets<a class="headerlink" href="#datasets" title="Link to this heading"></a></h2>
+<p>In the following table, we present the parallel datasets that we will first preprocess and then use later for training and resulting models.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+<col style="width: 33.3%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Rounds</p></th>
+<th class="head"><p>Model</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1st and 2nd rounds</p></td>
+<td><p>CNN</p></td>
+<td><p>2020 Datasets: ICD-10, CHU Rouen, ORDO, ACAD, MEDDRA, ATC, MESH, ICD-O, DBPEDIA, ICPC, ICF</p></td>
+</tr>
+<tr class="row-odd"><td><p>3rd round</p></td>
+<td><p>CNN</p></td>
+<td><p>Cleaning to remove bilingual sentences leading to ambiguities (e.g. ICPC is not relevantly structured for use in a training set)</p></td>
+</tr>
+<tr class="row-even"><td><p>4th round</p></td>
+<td><p>CNN</p></td>
+<td><p>3rd round + PatTR corpus (patents database)</p></td>
+</tr>
+<tr class="row-odd"><td><p>5th round</p></td>
+<td><p>CNN</p></td>
+<td><p>3rd round + Medline (training2), Scielo datasets</p></td>
+</tr>
+<tr class="row-even"><td><p>6th round</p></td>
+<td><p>Transformer</p></td>
+<td><p>5th, with Transformer architecture</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ensemble</p></td>
+<td><p>CNNs</p></td>
+<td><p>an ensemble of the 3 CNN models was created : 3rd, 4th, 5th rounds</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="download-pretrained-model">
+<h2>Download pretrained model<a class="headerlink" href="#download-pretrained-model" title="Link to this heading"></a></h2>
+<p>We also need to download the pretrained model from <a class="reference external" href="https://github.com/facebookresearch/fairseq/blob/main/examples/translation/README.md">https://github.com/facebookresearch/fairseq/blob/main/examples/translation/README.md</a>:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>data-bin
+curl<span class="w"> </span>https://dl.fbaipublicfiles.com/fairseq/models/wmt14.v2.en-fr.fconv-py.tar.bz2<span class="w"> </span><span class="p">|</span><span class="w"> </span>tar<span class="w"> </span>xvjf<span class="w"> </span>-<span class="w"> </span>-C<span class="w"> </span>data-bin
+</pre></div>
+</div>
+</section>
+<section id="running-preprocessing">
+<h2>Running preprocessing<a class="headerlink" href="#running-preprocessing" title="Link to this heading"></a></h2>
+<p>Assuming we have our palallel datasets in the files training.fr and training.en we are now ready to execute the preprocessing script:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">SCRIPTS</span><span class="o">=</span>mosesdecoder/scripts
+<span class="nv">TOKENIZER</span><span class="o">=</span><span class="nv">$SCRIPTS</span>/tokenizer/tokenizer.perl
+<span class="nv">CLEAN</span><span class="o">=</span><span class="nv">$SCRIPTS</span>/training/clean-corpus-n.perl
+<span class="nv">NORM_PUNC</span><span class="o">=</span><span class="nv">$SCRIPTS</span>/tokenizer/normalize-punctuation.perl
+<span class="nv">REM_NON_PRINT_CHAR</span><span class="o">=</span><span class="nv">$SCRIPTS</span>/tokenizer/remove-non-printing-char.perl
+<span class="nv">BPEROOT</span><span class="o">=</span>subword-nmt/subword_nmt
+<span class="nv">BPE_TOKENS</span><span class="o">=</span><span class="m">50000</span>
+
+<span class="nv">src</span><span class="o">=</span>en
+<span class="nv">tgt</span><span class="o">=</span>fr
+<span class="nv">lang</span><span class="o">=</span>en-fr
+<span class="nv">tmp</span><span class="o">=</span>tmp
+<span class="nv">orig</span><span class="o">=</span>orig
+
+mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$tmp</span><span class="w"> </span><span class="nv">$prep</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;pre-processing train data...&quot;</span>
+<span class="k">for</span><span class="w"> </span>l<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$src</span><span class="w"> </span><span class="nv">$tgt</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>rm<span class="w"> </span><span class="nv">$tmp</span>/train.tags.<span class="nv">$lang</span>.tok.<span class="nv">$l</span>
+<span class="w">    </span>cat<span class="w"> </span><span class="s1">&#39;data/training.$l | \</span>
+<span class="s1">        perl $NORM_PUNC $l | \</span>
+<span class="s1">        perl $REM_NON_PRINT_CHAR | \</span>
+<span class="s1">        perl $TOKENIZER -threads 8 -a -l $l &gt;&gt; $tmp/train.tags.$lang.tok.$l</span>
+<span class="s1">done</span>
+
+<span class="s1">echo &quot;splitting train and valid...&quot;</span>
+<span class="s1">for l in $src $tgt; do</span>
+<span class="s1">    awk &#39;</span><span class="o">{</span><span class="k">if</span><span class="w"> </span><span class="o">(</span>NR%500<span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w">  </span>print<span class="w"> </span><span class="nv">$0</span><span class="p">;</span><span class="w"> </span><span class="o">}</span><span class="s1">&#39; $tmp/train.tags.$lang.tok.$l &gt; $tmp/valid.$l</span>
+<span class="s1">    awk &#39;</span><span class="o">{</span><span class="k">if</span><span class="w"> </span><span class="o">(</span>NR%500<span class="w"> </span>!<span class="o">=</span><span class="w"> </span><span class="m">0</span><span class="o">)</span><span class="w">  </span>print<span class="w"> </span><span class="nv">$0</span><span class="p">;</span><span class="w"> </span><span class="o">}</span><span class="err">&#39;</span><span class="w"> </span><span class="nv">$tmp</span>/train.tags.<span class="nv">$lang</span>.tok.<span class="nv">$l</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$tmp</span>/train.<span class="nv">$l</span>
+<span class="k">done</span>
+
+<span class="nv">TRAIN</span><span class="o">=</span><span class="nv">$tmp</span>/train.fr-en
+<span class="nv">BPE_CODE</span><span class="o">=</span>../wmt14.en-fr.fconv-py/bpecodes
+
+rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$TRAIN</span>
+<span class="k">for</span><span class="w"> </span>l<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$src</span><span class="w"> </span><span class="nv">$tgt</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span>cat<span class="w"> </span><span class="nv">$tmp</span>/train.<span class="nv">$l</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="nv">$TRAIN</span>
+<span class="k">done</span>
+
+<span class="c1">#echo &quot;learn_bpe.py on ${TRAIN}...&quot;</span>
+<span class="c1">#python $BPEROOT/learn_bpe.py -s $BPE_TOKENS &lt; $TRAIN &gt; $BPE_CODE</span>
+
+<span class="k">for</span><span class="w"> </span>L<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">$src</span><span class="w"> </span><span class="nv">$tgt</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span>f<span class="w"> </span><span class="k">in</span><span class="w"> </span>train.<span class="nv">$L</span><span class="w"> </span>valid.<span class="nv">$L</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;apply_bpe.py to </span><span class="si">${</span><span class="nv">f</span><span class="si">}</span><span class="s2">...&quot;</span>
+<span class="w">        </span>python<span class="w"> </span><span class="nv">$BPEROOT</span>/apply_bpe.py<span class="w"> </span>-c<span class="w"> </span><span class="nv">$BPE_CODE</span><span class="w"> </span>&lt;<span class="w"> </span><span class="nv">$tmp</span>/<span class="nv">$f</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$tmp</span>/bpe.<span class="nv">$f</span>
+<span class="w">    </span><span class="k">done</span>
+<span class="k">done</span>
+
+<span class="c1">#python $BPEROOT/apply_bpe.py -c $BPE_CODE &lt; test.$lang.tok.en &gt; data/bpe.test</span>
+
+perl<span class="w"> </span><span class="nv">$CLEAN</span><span class="w"> </span>-ratio<span class="w"> </span><span class="m">1</span>.5<span class="w"> </span><span class="nv">$tmp</span>/bpe.train<span class="w"> </span><span class="nv">$src</span><span class="w"> </span><span class="nv">$tgt</span><span class="w"> </span>data_2021/train<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">5000</span>
+perl<span class="w"> </span><span class="nv">$CLEAN</span><span class="w"> </span>-ratio<span class="w"> </span><span class="m">1</span>.5<span class="w"> </span><span class="nv">$tmp</span>/bpe.valid<span class="w"> </span><span class="nv">$src</span><span class="w"> </span><span class="nv">$tgt</span><span class="w"> </span>data_2021/valid<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">5000</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pipeline.html" class="btn btn-neutral float-left" title="Pipeline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="training.html" class="btn btn-neutral float-right" title="Training" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Konstantinos Skianis.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

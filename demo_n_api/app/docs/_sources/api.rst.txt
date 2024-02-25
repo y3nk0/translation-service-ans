@@ -1,0 +1,23 @@
+API
+===
+
+Translate
+---------
+
+You can check out the Swagger docs in the following link: `http://anstranslation.ddns.net:5000/swagger/ <http://anstranslation.ddns.net:5000/swagger/>`_.
+
+An example API call is the following: `anstranslation.ddns.net:5000/translate?text=cat&trModel=en&boolMult=False&applyRules=False&metric=True <anstranslation.ddns.net:5000/translate?text=cat&trModel=en&boolMult=False&applyRules=False&metric=True>`_
+
+Parameters:
+
+* text: text to be translated
+* trModel: translation model to be used (e.g. en for en->fr)
+* boolMult: return multiple translations (True of False)
+* applyRules: apply postprocessing rules (True of False)
+* metric: return unsupervised metrics (True of False)
+
+Returns json with:
+
+* Translation output: returns translations (multiple if requested),
+* Score: the translation likelihood of the model,
+* Score2: sentence-BERT similarity score with english label.
