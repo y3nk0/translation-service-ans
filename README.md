@@ -20,4 +20,4 @@ To run:
 docker compose up --build
 ```
 
-The front end should then become available at http://localhost:5000. If you don't run the demo locally use the online tool http://anstranslation.ddns.net:5000/.
+The front end should then become available at http://localhost. If you don't run the demo locally use the online tool http://anstranslation.ddns.net.
