@@ -12,6 +12,7 @@ To run:
 
 ```
 sudo apt-get install docker.io
+cd demo_n_api
 sudo docker compose up --build
 ```
 
