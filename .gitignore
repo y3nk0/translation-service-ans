@@ -3,6 +3,10 @@
 .AppleDouble
 .LSOverride
 
+# Data & models
+demo_n_api/data/*
+demo_n_api/app/models/*
+
 # Icon must end with two \r
 Icon
 

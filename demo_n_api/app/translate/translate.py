@@ -14,7 +14,8 @@ import sys
 # sys.path.insert(0,'..')
 # from sequence_scorer import SequenceScorer
 
-model_sim = SentenceTransformer('sentence-transformers/stsb-xlm-r-multilingual', device='cpu')
+# model_sim = SentenceTransformer('sentence-transformers/stsb-xlm-r-multilingual', device='cpu')
+model_sim = SentenceTransformer('sentence-transformers/distiluse-base-multilingual-cased-v1', device='cpu')
 #en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', source_lang='en', target_lang='fr', tokenizer='moses', bpe='subword_nmt', checkpoint_file='/home/dbnet/kostas/icd11/checkpoints/fconv_wmt_en_fr_medical_dicts_5th_round_2021/checkpoint_best.pt')
 #en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', source_lang='en', target_lang='fr', tokenizer='moses', bpe='subword_nmt', checkpoint_file='/home/dbnet/kostas/icd11/round_3rd/1_checkpoint_best.pt')
 #en2fr = torch.hub.load('pytorch/fairseq', 'conv.wmt14.en-fr', source_lang='en', target_lang='fr', tokenizer='moses', bpe='subword_nmt', checkpoint_file='/home/dbnet/kostas/icd11/round_4th/2_checkpoint_best.pt')
@@ -89,6 +90,7 @@ class Translator:
             trans = []
             scores = []
             for text in texts:
+                text = text.strip()
                 if multiple=="True":
                     #translation = en2fr.translate(text, beam=5000)
                     en_toks = self.model.tokenize(text)
@@ -158,48 +160,49 @@ class Translator:
                                 translation += self.model.translate(sent) + " "
                         translation = translation.strip()
                     else:
-                        # en = self.model.encode(text)
-                        # output = self.model.generate(en, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
-                        # translation = self.model.decode(output[0]['tokens'])
+                        en = self.model.encode(text)
+                        output = self.model.generate(en, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
+                        translation = self.model.decode(output[0]['tokens'])
 
-                        en_toks = self.model.tokenize(text)
-                        # Manually apply BPE:
-                        en_bpe = self.model.apply_bpe(en_toks)
-                        en_bin = self.model.binarize(en_bpe)
-                        fr_bin = self.model.generate(en_bin, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.3)
-
-                        # Convert one of the samples to a string and detokenize
-                        translation = ""
-                        translations = []
-                        scored = {}
-                        scored2 = {}
-                        for ind, fr in enumerate(fr_bin):
-                            fr_sample = fr_bin[ind]['tokens']
-                            fr_bpe = self.model.string(fr_sample)
-                            fr_toks = self.model.remove_bpe(fr_bpe)
-                            fr = self.model.detokenize(fr_toks)
-                            #translation += fr + "\n"
-
-                            score = fr_bin[ind]['score'].item()
-                            score = math.exp(score)
-                            score = "{:.2f}".format(score)
-
-                            corpus_embedding = model_sim.encode(text, convert_to_tensor=True, normalize_embeddings=True)
-                            query_embedding = model_sim.encode(fr, convert_to_tensor=True, normalize_embeddings=True)
-                            hits = util.cos_sim(query_embedding, corpus_embedding)
-                            score2 = "{:.2f}".format(float(hits[0][0].item()))
-                            if fr not in translations:
-                                translations.append(fr+" l:"+score+" M:"+score2)
-                                scored[fr] = float(score)
-                                scored2[fr] = float(score2)
-
-                        sorted_scored2 = sorted(scored2, key=scored2.get, reverse=True)
-                        best_translation_m = sorted_scored2[0]
-
-                        sorted_scored = sorted(scored, key=scored.get, reverse=True)
-                        best_translation_l = sorted_scored[0]
-                        translation = best_translation_l
-
+                        # en_toks = self.model.tokenize(text)
+                        # # Manually apply BPE:
+                        # en_bpe = self.model.apply_bpe(en_toks)
+                        # en_bin = self.model.binarize(en_bpe)
+                        # fr_bin = self.model.generate(en_bin, stochastic_beam_search=True, beam=10, nbest=5, no_early_stopping=True, unnormalized=True, sampling_temperature=0.2)
+                        #
+                        # # Convert one of the samples to a string and detokenize
+                        # translation = ""
+                        # translations = []
+                        # scored = {}
+                        # scored2 = {}
+                        # for ind, fr in enumerate(fr_bin):
+                        #     fr_sample = fr_bin[ind]['tokens']
+                        #     fr_bpe = self.model.string(fr_sample)
+                        #     fr_toks = self.model.remove_bpe(fr_bpe)
+                        #     fr = self.model.detokenize(fr_toks)
+                        #     #translation += fr + "\n"
+                        #
+                        #     score = fr_bin[ind]['score'].item()
+                        #     score = math.exp(score)
+                        #     score = "{:.2f}".format(score)
+                        #
+                        #     corpus_embedding = model_sim.encode(text, convert_to_tensor=True, normalize_embeddings=True)
+                        #     query_embedding = model_sim.encode(fr, convert_to_tensor=True, normalize_embeddings=True)
+                        #     hits = util.cos_sim(query_embedding, corpus_embedding)
+                        #     score2 = "{:.2f}".format(float(hits[0][0].item()))
+                        #     if fr not in translations:
+                        #         translations.append(fr+" l:"+score+" M:"+score2)
+                        #         scored[fr] = float(score)
+                        #         scored2[fr] = float(score2)
+                        #
+                        # sorted_scored2 = sorted(scored2, key=scored2.get, reverse=True)
+                        # best_translation_m = sorted_scored2[0]
+                        #
+                        # sorted_scored = sorted(scored, key=scored.get, reverse=True)
+                        # best_translation_l = sorted_scored[0]
+                        #
+                        # translation = best_translation_l
+                        #
                         # if scored2[best_translation_m]<1:
                         #     if scored2[best_translation_m]>scored2[best_translation_l]:
                         #         translation = best_translation_m

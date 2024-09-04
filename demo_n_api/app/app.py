@@ -220,11 +220,14 @@ def store():
 
 @app.route('/get_suggestion', methods=['POST'])
 def get_suggestion(text):
-    cursor = mysql.connection.cursor()
-    cursor.execute('SELECT * FROM suggestions WHERE eng = %s', (text,))
-    result = cursor.fetchone()
-    if result:
-        return result[1]
+    try:
+        cursor = mysql.connection.cursor()
+        cursor.execute('SELECT * FROM suggestions WHERE eng = %s', (text,))
+        result = cursor.fetchone()
+        if result:
+            return result[1]
+    except:
+        pass
     return ""
 
 
@@ -365,4 +368,4 @@ def get_supported_languages():
 
 if __name__ == '__main__':
     app.config['JSON_AS_ASCII'] = False
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=80)

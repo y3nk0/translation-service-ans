@@ -7,6 +7,39 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+        <style>
+        /* Style for the loading spinner */
+        .spinner {
+            border: 4px solid #f3f3f3; /* Lighter border */
+            border-top: 4px solid #3498db; /* Blue border */
+            border-radius: 50%;
+            width: 20px; /* Smaller width */
+            height: 20px; /* Smaller height */
+            animation: spin 2s linear infinite;
+            display: none; /* Hidden by default */
+            margin-left: 10px; /* Space between button and spinner */
+        }
+
+        /* Animation for the spinner */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Flexbox to align the button and spinner side-by-side */
+        .button-container {
+            display: inline-flex;
+            align-items: center; /* Vertically align spinner with button */
+        }
+
+        /* Style for the button */
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        </style>
+
     </head>
     <body>
 
@@ -55,7 +88,12 @@
                         <input type="checkbox" id="metric" name="metric"/> Métrique d'évaluation <br>
                         <input type="checkbox" id="rules" name="rules"/> Appliquer les règles de post-traitement
 		                </div>
-                    <button id="clicked" class="btn btn-primary mb-2" onclick="myFunction()">Traduire</button>
+
+                    <!-- Container to hold both the button and spinner side-by-side -->
+                    <div class="button-container">
+                        <button id="clicked" class="btn btn-primary mb-2" onclick="myFunction()">Traduire</button>
+                        <div class="spinner" id="loadingSpinner"></div>
+                    </div>
 
         <!--
                     <div class="show-data" ></div>
@@ -104,6 +142,16 @@
 
 <script type=text/javascript>
 
+    // Example for handling 'Enter' across multiple fields or a form:
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+          // Prevent default behavior (like form submission, if needed)
+          event.preventDefault();
+
+          myFunction();
+      }
+    });
+
     $("#trModel" ).change(function() {
         var trModel = $('#trModel').val();
          $.ajax({
@@ -130,6 +178,10 @@
         if (document.getElementById("metric").checked) {
             metric = "True";
         }
+
+        const spinner = $('#loadingSpinner');
+        // Show the spinner
+        spinner.show();
 
         //var trModel = $('#trModel').val();
           $.ajax({
@@ -175,7 +227,11 @@
                           // v.style.display = 'block';
                           // var y = document.getElementById("stored");
                           // y.style.display = 'block';
-                    });
+                    })
+                  .always(function() {
+                      // Hide the spinner after the request is completed
+                      spinner.hide();
+                  });
       };
 
       function myStore() {
